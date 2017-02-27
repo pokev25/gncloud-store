@@ -1,0 +1,124 @@
+<html ng-app="gncloud" lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <!--FAVICON-->
+    <link rel="apple-touch-icon" sizes="57x57" href="/gn_images/apple-icon-57x57.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/gn_images/favicon-16x16.png">
+    <title>지앤클라우드 프라이빗</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/gn_css/bootstrap_gn_theme.css" />
+    <link rel="stylesheet" href="/gn_css/loading.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/xeicon/2/xeicon.min.css">
+    <link rel="stylesheet" href="/gn_css/demo.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/gn_css/angularjs-notify.css" />
+
+
+
+    <!-- 공통 JS 파일 시작 -->
+    <script src="/js/vendor/angular/angular.min.js"></script>
+    <script src="/js/vendor/angular/angular-route.min.js"></script>
+    <script src="/js/vendor/angular/angularjs-notify.min.js"></script>
+    <script src="/js/checklist-model.js"></script>
+    <script src="/chart/js/Chart.bundle.js"></script>
+    <script src="/js/ng-file-upload.js"></script>
+    <script src="/js/angular-ui-switch.js"></script>
+    <script src="/chart/js/jquery.min.js"></script>
+    <script src="/chart/js/Chart.bundle.js"></script>
+
+
+    <!-- 서비스 컨트롤러 모음 -->
+    <script type="text/javascript" src="/js/angular/app.js"></script>
+    <script type="text/javascript" src="/js/angular/config/service.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/main.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestList.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestCreate.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestSnapList.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/dashboard.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestMeList.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestDetail.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestSelectTeam.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestReadyTeam.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestCreateTeam.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestSystemList.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestTeamDetail.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/navbar.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestTeamList.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestCluster.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestImage.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestPrice.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestLoginHist.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestUseHist.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestProblemHist.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestSetting.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestNotice.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestQna.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestInvoice.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestBackupHist.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestTeamKey.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestTeamProfile.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestTeamReso.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestTeamWon.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestTeamBackup.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestServiceList.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestServiceCreate.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/guestServiceDetail.js"></script>
+    <script language="javascript">
+        /*$.ajax({
+         type: "GET",
+         url: '/api/manager/vm/logincheck',
+         headers: {'Content-Type': 'application/json; charset=utf-8'},
+         success:function(data) {
+         if (data.status == true) {
+         $("#name").html(data.message);
+         }else{
+         if(data.message != null) {
+         alert(data.message)
+         }
+         }
+
+         }
+         })*/
+        function logout()
+        {
+            $.ajax({
+                type: "GET",
+                url: '/api/manager/vm/guestLogout',
+                headers: {'Content-Type': 'application/json; charset=utf-8'},
+                success: function () {
+                    location.href="/";
+                }
+            })
+        }
+
+    </script>
+</head>
+
+<body>
+<navbar></navbar>
+
+
+<!--HEADER END-->
+
+<div class="container">
+    <ng-view></ng-view>
+    <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="/js/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/js/ie10-viewport-bug-workaround.js"></script>
+</div>
+</body>
+</html>

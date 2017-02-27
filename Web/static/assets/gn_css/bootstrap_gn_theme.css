@@ -1,0 +1,2102 @@
+/*지앤클라우드 프라이빗 인스턴스 스타일시트*/
+
+/*나눔바른고딕 폰트*/
+@import url(nanumbarungothic.css);
+/* ========== gncloud 공통 STYLE ========== */
+body{
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    overflow-y: scroll; 
+    font-family: 'Nanum Barun Gothic', sans-serif;
+    color: #6f6f6f;
+}
+
+h1{
+    font-size: 36px;
+    color: #505050;
+    margin-bottom: 55px; 
+    line-height: 1;
+}
+
+h2{
+    font-weight: normal;
+    font-size: 24px;
+    color: #505050;
+    margin-top: 0;
+    margin-bottom: 20px; 
+    line-height: 1;
+}
+
+h3{
+    font-weight: normal;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+img{border: 0;}
+a{color: #6f6f6f; cursor: pointer;}
+a:hover,
+a:focus {
+    outline: 0;
+    outline: 0 -webkit-focus-ring-color;
+    outline-offset: 0;
+    text-decoration: none;
+    color: #58c4c6;
+}
+
+li{
+    list-style: none;
+}
+
+.gn-box{
+    border-radius: 3px;
+    border: 2px solid rgba(215,215,215,.5);
+}
+
+.container{
+    padding-bottom: 150px;
+}
+
+.gn-container{
+    margin-bottom: 50px;
+}
+
+/*textarea 수직 상하 길이만 조절 가능하게*/ 
+textarea{resize: vertical;}
+
+.container:after,
+.container-fluid:after,
+.container-login:after,
+.sett-detail:after,
+.gn-container:after,
+.gn-select-error:after
+{ content:""; clear:both; display:block; }
+
+.logo h1{
+    display: none;
+}
+
+.gn-input{
+    height: 40px;
+    font-size: 15px;
+    font-weight: 200;
+    color: #7d7d7d;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.gn-form-control{
+    height: 37px;
+    font-weight: 200;
+    color: #7d7d7d;
+    border-radius: 3px;
+    border: 1px solid rgba(215,215,215,1);
+    padding-left: 10px;
+}
+
+textarea.gn-form-control{
+    font-weight: 200;
+    color: #7d7d7d;
+    border-radius: 3px;
+}
+
+.refresh{ 
+    cursor: pointer;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 6px solid;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    border-bottom: none;
+}
+
+/*tooltip*/
+.tooltip-inner {
+  max-width: 200px;
+  padding: 10px;
+  color: #fff;
+  text-align: justify;
+  text-decoration: none;
+  background-color: #58c4c6;
+  border-radius: 3px;
+}
+
+.tooltip.top .tooltip-arrow {
+  border-top-color: #58c4c6;
+}
+.tooltip.top-left .tooltip-arrow {
+  border-top-color: #58c4c6;
+}
+.tooltip.top-right .tooltip-arrow {
+  border-top-color: #58c4c6;
+}
+.tooltip.right .tooltip-arrow {
+  border-right-color: #58c4c6;
+}
+.tooltip.left .tooltip-arrow {
+  border-left-color: #58c4c6;
+}
+.tooltip.bottom .tooltip-arrow {
+  border-bottom-color: #58c4c6;
+}
+.tooltip.bottom-left .tooltip-arrow {
+  border-bottom-color: #58c4c6;
+}
+.tooltip.bottom-right .tooltip-arrow {
+  border-bottom-color: #58c4c6;
+}
+
+.gn-description-list{
+    font-size: 15px;
+}  
+.gn-description-list dt{
+    width: 70px;
+    text-align: left;
+    padding-bottom: 5px;
+    /*font-weight: 400;*/
+}
+
+.gn-description-list dd{
+    font-weight: 400;
+    margin-left: 100px;
+    /*padding: 2px 0;*/
+    padding-bottom: 5px;
+}
+
+.gn-description-list dd span{
+    font-weight: 400;
+    color: #7d7d7d;
+}
+
+.gn-table-ellip{
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;  
+    display: inline-block; 
+    vertical-align: middle;
+}
+
+.gn-disable-op{opacity: 0.3;}
+
+
+/*모달창에 description-list dt font-size*/
+.modal .gn-description-list dt,.modal .gn-description-list dd{font-size: 14px;}
+
+.gn-control-label{text-align: left !important;}
+
+
+/* ============================= gncloud BUTTON STYLE ============================= */
+/*인스턴스 생성버튼*/
+.btn-gn-primary {
+    color: #fff;
+    background-color: #58c4c6;
+    border-color: #58c4c6;
+    border-radius: 3px;
+}
+.btn-gn-primary:hover,
+.btn-gn-primary:focus,
+.btn-gn-primary.focus,
+.btn-gn-primary:active,
+.btn-gn-primary.active,
+.open > .dropdown-toggle.btn-gn-primary {
+    color: #ffffff;
+    background-color: #00afb4;
+    border-color: #00afb4;
+}
+.btn-gn-primary:active,
+.btn-gn-primary.active,
+.open > .dropdown-toggle.btn-success {
+    background-image: none;
+}
+
+/*삭제버튼*/
+.btn-delete{
+    background-color: #ffffff;
+    color: rgba(255, 0, 0, 0.75);
+    border: 1px solid rgba(255, 0, 0, 0.75);
+    border-radius: 3px; 
+}
+
+.btn-delete:hover,
+.btn-delete:active{
+    background-color: rgba(255, 0, 0, 0.75);    
+    color: #ffffff;
+    border: 1px solid rgba(255, 0, 0, 0.75);
+    border-radius: 3px; 
+    text-decoration: none;
+}
+
+.btn-delete:focus{
+    text-decoration: none;
+    background-color: #ffffff;
+    color: rgba(255, 0, 0, 0.75);
+    border: 1px solid rgba(255, 0, 0, 0.75);
+    border-radius: 3px; 
+}
+
+.btn-gn-sub {
+  color: #7d7d7d;
+    font-size: 14px;
+    font-weight: normal;
+  background-color: rgba(215,215,215,.5);
+    height: 37px;
+}
+
+.btn-gn-sub:hover,
+.btn-gn-sub:focus,
+.btn-gn-sub.focus,
+.btn-gn-sub:active,
+.btn-gn-sub.active,
+.open > .dropdown-toggle.btn-gn-sub {
+  color: #6f6f6f;
+  background-color: rgba(215,215,215,1);
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;    
+    
+  border-color: rgba(215,215,215,1);
+}
+
+.modal-open{padding-right: 15px;}
+
+.gn-btn-height{height: 37px;}
+
+/* ==================== gncloud HEADER STYLE ==================== */
+.gn-header{
+    position: relative;
+    height: 100px;
+    margin-bottom: 10px;
+    z-index: 100;
+}
+
+.gn-header > .container{padding-bottom: 0;}
+
+.navbar-default.gn-header{
+    background-color: #ffffff;
+    border: none;
+}
+
+.navbar-collapse.gn-header-collapsed{
+    background-color: #ffffff;
+    border: none;
+}
+
+.navbar-brand{
+    display: inline-table;
+    margin-top: 8px;
+}
+
+.navbar-brand img{
+    width:206px; 
+    height: 33px; 
+}
+
+.gn-noti{
+    background: url(../gn_images/gn-noti-img.png) no-repeat;    
+    width: 23px;
+    height: 21px;
+    margin: 31px 10px 29px 0px;
+}
+
+.navbar-nav{
+    text-align: center;
+}
+
+.nav>li>a{
+    display: block;
+    padding: 0px;
+}
+
+li.nav-link{
+}
+
+li.nav-link > a{
+    color: #505050 !important;
+    margin-left: 45px;
+    margin-top: 32px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+li.nav-link a:focus,
+li.nav-link a:hover,
+li.nav-link.active>a, 
+/*li.nav-link.active>a:focus, */
+li.nav-link.active>a:hover,
+.navbar-default .navbar-nav>li.nav-link.active>a, 
+/*.navbar-default .navbar-nav>li.nav-link.active>a:focus, */
+.navbar-default .navbar-nav>li.nav-link.active>a:hover,
+/*.navbar-default .navbar-nav>li.nav-link>a:focus,*/ 
+.navbar-default .navbar-nav>li.nav-link>a:hover{
+    color: #58c4c6 !important;
+    background-color: transparent;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;   
+}
+
+.gn-tab-content{
+    min-height: 145px;
+}
+
+.gn-nav-tabs > li {
+    float: left;
+    margin-bottom: -1px;
+}
+.gn-nav-tabs > li {
+    position: relative;
+    display: block;
+}
+
+.gn-nav-tabs > li > a {
+    margin-right: 35px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    margin-bottom: -1px;
+}
+
+.gn-nav-tabs{
+    border-bottom: 2px solid rgba(215,215,215,.5);
+}
+
+.gn-nav-tabs > li > a:hover{
+    background-color: #ffffff;
+}
+
+.gn-nav-tabs > li > a {
+    border: none;
+    font-size: 16px;
+    padding-bottom: 5px;
+}
+
+.gn-nav-tabs > li.active > a, 
+.gn-nav-tabs > li.active > a:hover, 
+.gn-nav-tabs > li.active > a:focus {
+    color: #58c4c6;
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+    border-bottom: 2px solid #58c4c6;
+    font-size: 16px;
+}
+
+/*HEADER 오른쪽*/
+/*인스턴스 생성 버튼*/
+.navbar-right li.create-btn{
+    margin-top: 20px;    
+}
+
+/*drop style*/
+.gn-head-drop,
+.gn-dropdown{
+    border-radius: 3px !important;
+    padding: 0;
+}
+
+.gn-head-drop li a,
+.gn-dropdown li a{
+    padding: 8px 20px;
+    color : #505050;
+}
+
+.gn-head-drop li a:hover,
+.gn-dropdown li a:hover{
+    background-color: transparent;
+}
+
+.gn-logout{border-top: 1px solid #e9e9e9;}
+
+.dropdown-menu > li a.gn-danger,
+.dropdown-menu-table > li a.gn-danger,
+.gn-head-drop > li a.gn-danger,
+.gn-dropdown > li a.gn-danger{
+    border-top: 1px solid #e9e9e9;
+    color: rgba(255, 0, 0, 0.75) !important;
+}
+
+.gn-head-drop > li > a:hover,
+.gn-dropdown > li > a:focus {
+  color: #58c4c6;
+}
+
+.gn-caret{
+    background: url(../gn_images/dd_arrow.png) no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+    margin-top: 37px;    
+}
+
+.gn-lead{
+    font-weight: 200;
+    color: #7d7d7d;
+    line-height: 1.5; 
+    font-size: 16px;
+}
+
+.user{
+    position: relative;
+    cursor: pointer;
+    float: right;
+}
+
+.user a{
+    float: left;
+    margin-top: 32px;
+    font-size: 16px;
+    color: #505050;
+}
+
+.gn-table>.gn-tdody>tr>td > .user > .gn-more,
+.dropdown > .user > .gn-more{display: block; float: left;}
+
+.head-dropdown .user{
+    margin-left: 20px;
+}
+
+/* 모바일 드롭다운 메뉴 */
+.navbar-right > .mobile-head-dropdown{display: none;}
+
+/*GN TABLE STYLE*/
+.gn-caret-table{
+    background: url(../gn_images/dd_arrow.png) no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-left: 5px; 
+    margin-top: 5px;
+}
+
+.gn-table-responsive > .gn-table thead tr th{
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    border-bottom: 2px solid rgba(215,215,215,.5);
+}
+
+.gn-table-responsive > .gn-table tbody tr td{
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(215,215,215,.5);
+    height: 70px;
+    vertical-align: middle;
+}
+
+.gn-table-responsive > .gn-table tbody tr td > p{
+    margin: 0;
+}
+
+.gn-table-responsive > .gn-table tbody tr td > a{
+    color: #6f6f6f;
+}
+
+.gn-table-responsive > .gn-table tbody tr td > a:hover{
+    color: #58c4c6;
+}
+
+.tag{
+    padding: 2px;
+    border-radius: 3px;
+    background-color: rgba(238,238,238,50);
+    color: #58c4c6;
+    margin-right: 5px;
+}
+
+.navbar-default .navbar-nav>.open>a, 
+.navbar-default .navbar-nav>.open>a:focus, 
+.navbar-default .navbar-nav>.open>a:hover {
+    color: #505050;
+    background-color: transparent;
+    
+}
+
+.navbar-nav > li > .dropdown-menu {
+    margin-top: 5px;;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.dropdown-menu.gn-head-drop{
+    position: absolute;
+    top: 112%;
+    right: 0;
+}
+
+/*인스턴스 리스트/이미지에들어가는*/
+.create-btn{
+    float: right;
+    margin-top: -10px;
+}
+.create-btn > a > button{
+    padding: 0px 20px;
+	height: 46px;   
+}
+
+/*.dropdown-menu.gn-dropdown.gn-list{
+    position: absolute;
+    top: 70%;
+    left : -45px;
+    min-width: 120px;
+    margin: 0;
+}*/
+
+.dropdown-menu.gn-dropdown{
+    position: absolute;
+    top: 75%;
+    right : 0px;
+    left: inherit;
+    min-width: 120px;
+    margin: 0;
+}
+
+.dropdown-menu > li > a{
+    display: block;
+    padding: 8px 20px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu-table > li > a:hover, 
+.dropdown-menu-table > li > a:focus{
+    color: #58c4c6;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.open > .dropdown-menu {
+  display: block;
+}
+
+/*-----gn table style end-----*/
+
+/* 모달창 공통 */
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgba(39, 39, 39, 0.6);
+}
+
+.modal {
+    position: fixed;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    display: none;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+}
+
+.modal-backdrop{background-color: transparent;}
+
+.click{
+    font-weight: 400 !important;
+    cursor: pointer;
+}
+
+.label-click{
+    font-weight: 400 !important;
+    cursor: pointer;  
+}
+
+.pointer{cursor: pointer;}
+
+.click:hover{
+    color: #58c4c6 !important; 
+    font-weight: normal;   
+}
+
+.gn-modal-header{
+    border-bottom: none;
+    /*padding-bottom: 0;*/
+}
+
+.gn-modal-body{
+    padding: 0px 15px;
+}
+
+.gn-modal-footer{
+    border-top: none;
+}
+
+/*-----모달 공통 end-----*/
+
+/* ========== gncloud 공지 HTML ========== */
+.gn-table-responsive > .gn-board-table thead tr th{
+    text-align: center;
+    font-size: 14px;
+    /*border: none;*/
+    border-bottom: 2px solid rgba(215,215,215,.5);
+}
+.gn-table-responsive > .gn-board-table tbody tr td{
+    text-align: center;
+    font-size: 14px;
+    height: 45px;
+    border-bottom: 1px solid rgba(215,215,215,.5);
+    vertical-align: middle;
+}
+
+.gn-table-responsive > .gn-board-table tbody tr td.second-td-name,
+.gn-table-responsive > .gn-board-table thead tr th.second-td-name{text-align: left;}
+
+#modal-board p{border-bottom: 1px solid rgba(215,215,215,0.5); padding-bottom: 10px;}
+
+/*모달창*/
+#modi-write label{text-align: left !important;}
+
+.gn-write{
+    font-weight: 300; 
+    color: #7d7d7d; 
+    line-height: 1.5;
+    font-family: 'Nanum Barun Gothic', sans-serif;
+}
+
+pre{white-space: pre-line;}
+
+pre.gn-write{
+    padding: 0px 15px;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    font-size: 14px;
+    white-space: pre-line;
+}
+
+#modal-board .gn-modal-footer{padding-top: 0;}
+
+.gn-page-btn .pull-left{margin-right: 5px;}
+.gn-content{padding-bottom: 30px;}
+
+/* ========== gncloud 묻고답하기 HTML ========== */
+
+#modal-board{overflow-y: auto;}
+
+#modal-board .glyphicon-trash{margin-left: 10px;}
+
+h2 > .pull-right{margin-top: -6px;}
+
+.gn-comment{padding: 20px 15px !important; background-color: #f8f8f8;}
+.comment-border{border-bottom: 1px solid rgba(215,215,215,0.5);  margin: 0px -15px;}
+
+/*.gn-answer span,.gn-comment span{padding-right: 0; padding-left: 0; display: block;}*/
+
+.gn-board-table .badge{
+    margin-left: 5px;
+    background-color: rgba(88, 196, 198,.8);
+    font-weight: 400;
+    padding: 5px 8px;
+    border-radius: 15px;
+}
+
+
+/*개발*/
+#changereply{padding-left: 0;}
+
+/* ========== gncloud 로그인 HTML ========== */
+.body-white{background-color: #ffffff; height: 100%;}
+.body-gray{background-color: #f6f6f6; height: 100%;}
+
+.container-login{
+    text-align: center;
+}
+
+.logo{
+    padding-top: 40px;
+    padding-bottom: 45px;
+    display: block;
+}
+
+/* 지앤클라우드 로그인 체크박스 스타일 */
+.btn-id{position:relative; text-align:left; cursor:pointer; overflow:hidden;}
+.btn-id input.form-inputPop {position:absolute; top:0; left:0; opacity:0; z-index:5;}
+.btn-id i {float:left; width: 15px; height: 15px; background:url(../gn_images/checkbox_arrow.png)no-repeat; border-radius: 3px;}
+.btn-id label {margin-left:10px; cursor:pointer; font-weight: 400;}
+.btn-id input.form-inputPop:checked+i {background-position:left bottom;}
+.btn-id input.form-inputPop:checked+i+label {color:#58c4c6;}
+/* -------login checkbox style end ------- */
+
+.error-message{
+    height: 20px;
+    line-height: 20px;
+    font-size:12px; 
+    text-align: left;
+    color: rgba(255, 0, 0, 0.75);
+    margin: 5px 0 2px 0;
+}
+
+p.error-message{
+    font-size: 14px;
+}
+
+.gn-input-error{
+    border: 1px solid rgba(255, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5);    
+}
+
+input.error{
+    border: 1px solid rgba(255, 0, 0, 0.75);
+    
+}
+form.signupForm label.error, label.error{
+    color :rgba(255, 0, 0, 0.75);
+}
+
+/*지앤클라우드 로그인버튼 < btn-gn-login > STYLE*/
+.btn-gn-login {
+  color: #fff;
+  background-color: #58c4c6;
+  border-color: #58c4c6;
+}
+
+.btn-gn-login:hover, 
+.btn-gn-login:focus, 
+.btn-gn-login.focus, 
+.btn-gn-login:active, 
+.btn-gn-login.active, 
+.open > .dropdown-toggle.btn-gn-login {
+    color: #fff;
+    background-color: #00afb4;
+    border-color: #00afb4;
+}
+
+.log-join-btn{ 
+    font-size:12px; 
+    color: #58c4c6;
+    margin-top: 10px;
+    display: block;
+}
+
+a.log-join-btn:hover,
+a.log-join-btn:focus{
+    text-decoration: none;
+    color: #00afb4;
+}
+
+.footer-log{
+    color: #bbbbbb;
+    font-weight: 300;
+    padding-top: 80px;
+}
+
+/*로그인 초기 페이지*/
+.gn-title-login{
+    padding-top: 150px;
+    padding-bottom: 100px;    
+}
+
+.gn-title-login span{
+    font-size: 43px;
+    font-weight: 200;
+    transition: all .3s ease;     
+}
+
+.gn-title-login span p{
+    font-size: 20px;
+    font-weight: 200;;
+}
+
+.gn-box-login{
+    font-weight: 200;
+    font-size: 20px;
+    color: #7d7d7d;
+    padding: 10px 0;
+}
+
+.gn-box-login>span{
+    padding: 10px 0;
+    display: inline-block;
+}
+
+.begin-box{
+    width: 37%;
+    margin: auto;
+    margin-bottom: 100px;    
+}
+
+.begin-sel-box{
+    margin: 10px 0;
+    display: block;
+}
+
+.begin-team-name{
+    height: 40px;
+    line-height: 40px;
+    width: 10%;
+    color: #7d7d7d;
+    font-size: 16px;
+}
+
+.begin-select{
+    width: 53%;
+    height: 40px;
+    margin: 0;
+}
+
+.btn-lg{
+    border-radius: 3px;
+}
+
+.gn-select-box span{
+    line-height: 37px;
+}
+
+.gn-select-box button{
+    height: 37px;
+}
+
+.gn-select{
+    height: 37px;
+    padding: 6px 12px;
+    border: 1px solid rgba(215,215,215,1);
+    background: url(../gn_images/select_arrow.png) no-repeat center right; /* 네이티브 화살표 대체 */  
+    border-radius: 4px;
+    -webkit-appearance: none; /* 네이티브 외형 감추기 */
+    -moz-appearance: none;
+    appearance: none;
+    margin-right: 10px;
+    font-size: 14px;
+}
+.gn-box-login span a{
+    color: #58c4c6;
+    font-weight: 400;
+}
+.gn-box-login span a:hover{
+    color: #00afb4;
+    font-weight: 400;
+}
+
+/* ========== gncloud 대시보드 HTML ========== */
+/*대시보드 TABLE STYLE*/
+.table-dash thead tr th{
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    border-bottom: 2px solid rgba(215,215,215,.5);
+    height: 45px;
+}
+
+.table-dash tbody tr td{
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(215,215,215,.5);
+    height: 50px;
+    vertical-align: middle;
+}
+
+.gn-table-responsive{
+    height: auto;
+    overflow-x: visible;
+    overflow-y: visible;    
+}
+
+
+/*대시보드 페이지*/
+.dash-body{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.dash-body > .row > div{
+    padding: 0;
+}
+
+.dash-body > .row .gn-box{
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+    margin-bottom: 10px;
+}
+
+.dash-margin-box{
+    margin: 20px 10px;
+}
+
+.gn-margin-box{
+    margin: 35px 50px;
+}
+
+.gn-sett-margin-box{
+    margin: 30px;
+}
+
+.dash-margin-box:after,
+.gn-sett-margin-box:after,
+.gn-margin-box:after{
+    content:""; clear:both; display:block; 
+}
+
+.dash-margin-box .table-dash{margin-bottom: 0;}
+
+.dash-margin-box .table-responsive{padding: 0px 5px;}
+
+/*박스 왼쪽*/
+.dash-margin-box > .gn-dash-graph-box{border-right: 1px solid rgba(215,215,215,.5);}
+
+.dash-margin-box > .gn-dash-graph-box img{width: 100%;}
+
+/*박스 오른쪽*/
+.dash-margin-box .gn-dash-per{
+    font-size: 40px; 
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.dash-margin-box > div.col-sm-6 p{
+    font-size: 24px;
+    font-weight: 400;  
+    margin-bottom: 10px;
+}
+
+.dash-margin-box > div{font-size: 16px; font-weight: 400;}
+
+.cpu-color{color: #FFA716;}
+
+.memo-color{color: #53C8AD;}
+
+.disk-color{color: #57A1F6;}
+
+.vm-color{color: #E27560;}
+
+.hyp-color{color: #3B5C91;}
+
+.on-color{color: #FFA716;}
+
+/*가상머신 개수*/
+.gn-dash-vm-right{  
+    padding: 0;
+}
+.gn-dash-vm-right ul{
+    clear: both;
+}
+.gn-dash-vm-right ul li{
+    font-size: 14px;
+    font-weight: 400;
+    display: block;
+    /*margin: auto;*/  
+    float: left;
+    padding: 0px 4px;
+}
+.vm-box{
+    border-radius: 3px;
+    /*margin-right: 10px;*/ 
+    width: 15px;
+    height: 15px;
+    margin-top: 2px;
+}
+.vm-play .vm-box{
+    background-color: #FCCC70;
+}
+.vm-stop .vm-box{
+    background-color: #e27560;
+}
+
+.gn-dash-vm-right ul{
+    padding: 0;
+    margin: auto;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+/*하이퍼 바이저 종류*/
+.gn-dash-hyp-right ul{
+    padding: 0;
+    margin: 10px 0;
+}
+
+.gn-dash-hyp-right ul li{font-size: 16px;}
+
+.gn-dash-hyp-right ul li.memo-color,
+.gn-dash-hyp-right ul li.hyp-color{
+    font-size: 23px;
+    font-weight: 600; 
+}
+
+/*컨테이너 개수/총 사용자*/
+/*박스 왼쪽*/
+.dash-count{position: relative;}
+
+.dash-count img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.dash-count div{
+    position: absolute;
+    top: 47px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+/*사용자(총 사용자 수 dash-count)*/
+.total-user .dash-count{min-height: 296px;}
+.total-user .dash-count img{margin-top: 25%;}
+.total-user .dash-count div{margin-top: 25%;}
+
+table.table-dash .gn-table-ellip{width: 130px;}
+table.table-dash.vm .gn-table-ellip{width: 180px;}
+
+/*대시보드 헬스체크*/
+.gn-health-check div,
+.gn-health-check ul{display: table; margin: auto;}
+.gn-health-check span{
+    font-size: 16px;
+    color: #505050;
+    line-height: 35px;
+    margin-right: 10px;}
+
+.gn-health-check ul{
+    padding: 0;
+}
+.gn-health-check ul li{
+    line-height: 35px;
+    text-align: left;
+}
+.gn-health-check tr td{
+    border: 2px dashed rgba(215,215,215,.5) ; 
+    vertical-align: middle !important;
+}
+.gn-health-check th{border-bottom:  2px dashed rgba(215,215,215,.5) !important;}
+.gn-health-check .gn-write{
+    font-size: 14px; 
+    display: inline-block; 
+    margin-bottom: 0; 
+    background-color: rgba(238,238,238,50); 
+    padding: 2px;
+    border-radius: 3px;}
+
+/*대시보드 헬스체크 - 개발에서 로딩 시 나타나는 애니메이션 여백*/
+div.load-3{padding: 5%;}
+
+/* 고정된 높이값 */
+.dash-body .dash-margin-box{min-height: 172px;} 
+.dash-body .dash-margin-box .gn-table-responsive{min-height: 296px;}
+
+
+/* ========== gncloud 인스턴스 > 리스트 HTML ========== */
+th.first-td{width: 65px;}
+
+td.first-td img{width: 35px; display: block;}
+
+.second-td-name{
+    text-align: left !important;
+}
+
+.gn-tdody > tr > td.visible-xs-3 > a{
+    width: 220px;
+    /*width: 170px;*/
+    line-height: 37px;
+}
+
+.gn-dot-stop{
+    background: url(../gn_images/gn_dot_stop.png) no-repeat;
+    width: 15px;
+    height: 35px;
+    float: left;
+    margin-right: 10px;
+}
+
+.gn-dot-play{
+    background: url(../gn_images/gn_dot_play.png) no-repeat;
+    width: 15px;
+    height: 35px;
+    float: left;
+    margin-right: 10px;    
+}
+
+.gn-dot-suspend{
+    background: url(../gn_images/gn_dot_suspend.png) no-repeat;
+    width: 15px;
+    height: 35px;
+    float: left;
+    margin-right: 10px;    
+}
+
+.gn-dot-error{
+    background: url(../gn_images/gn_dot_error.png) no-repeat;
+    width: 20px;
+    height: 35px;
+    float: left;
+    margin-right: 5px;    
+}
+
+.gn-working{
+    background: url(../gn_images/status-working-28.gif) no-repeat;
+    width: 28px;
+    height: 28px;
+    float: left;
+    margin-right: 10px; 
+    margin-top: 5px;
+}
+
+/* ========== gncloud 인스턴스 > 상세 HTML ========== */
+.gn-detail-icon{float: left;}
+
+.gn-detail-icon img{
+    width: 50px;
+    margin: 0px 15px;
+}
+
+.col-sm-11.gn-detail-title{padding-left: 0;}
+
+.gn-detail-title h2{margin-bottom: 5px;}
+
+.gn-spec-group{padding: 0;}
+
+.gn-spec-group:after { content:""; clear:both; display:block; }
+
+.gn-spec-group li{
+    list-style: none;
+    float: left;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0 px 3px;
+}
+
+ul.gn-tag-group > li.gn-pensil{
+    background-color: transparent; 
+    margin-right: 5px; 
+    cursor: pointer;
+}
+
+ul.gn-tag-group > li{
+    font-size: 16px;
+    font-weight: 300;
+    color : #58c4c6;
+    background-color: rgba(238,238,238,.5);
+    border-radius: 3px; 
+    padding: 3px;
+    margin: 0px 5px;
+}
+
+.gn-tag-group li{
+    list-style: none;
+    float: left;    
+}
+
+.gn-graph img{
+    width: 100%;
+}
+
+/*DISK 막대 그래프*/
+.gn-graph > .progress{
+    height: 50px !important;
+    margin-bottom: 10px;
+}
+
+.gn-graph > span{
+    margin-bottom: 10px;
+    display: block;
+}
+
+.progress-bar{
+    line-height: 50px;
+    font-size: 24px;
+    background-color: #58c4c6;
+}
+
+.graph-sm-box i{
+    width: 20px;
+    height: 20px;
+    float: left;
+    border-radius: 3px;
+    margin-right: 10px;    
+}
+
+.graph-sm-box .box-used i{
+    background-color: #58c4c6;   
+}
+
+.graph-sm-box i{
+    background-color: #cccccc;   
+}
+
+.gn-modal-header > .gn-lead{
+    font-size: 15px;
+}
+
+.gn-margin-box > p.gn-lead{
+    margin-bottom: 20px;
+}
+
+.gn-detail-main{margin-bottom: 30px;}
+.gn-detail-main .gn-margin-box > div{padding-left: 0; padding-right: 0;}
+.gn-detail-main > .gn-margin-box > .gn-description-list dd{margin-left: 120px;}
+.gn-detail-main > .gn-margin-box > .gn-description-list dd > p{margin: 0;}
+
+/*=======================SWITCH==========================*/
+.switch {
+  background: rgba(255, 0, 0, 0.75);
+  border: 1px solid rgba(255, 0, 0, 0.75);
+  position: relative;
+  display: inline-block;
+  box-sizing: content-box;
+  overflow: visible;
+  width: 52px;
+  height: 30px;
+  padding: 0px;
+  margin: 0px;
+  border-radius: 20px;
+  cursor: pointer;
+  /*box-shadow: rgb(223, 223, 223) 0px 0px 0px 0px inset;*/
+  transition: 0.3s ease-out all;
+  -webkit-transition: 0.3s ease-out all;
+  top: -1px;
+}
+/*adding a wide width for larger switch text*/
+.switch.wide {
+    width: 83px;
+    height: 32px;
+    margin-top: 5px;
+}
+.switch small {
+  background: #fff;
+  border-radius: 100%;
+  /*box-shadow: 0 1px 3px rgba(0,0,0,0.4);*/
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transition: 0.3s ease-out all;
+  -webkit-transition: 0.3s ease-out all;
+}
+.switch.checked {
+  background: rgb(52,200,74);
+  border-color: rgb(52,200,74);
+}
+.switch.checked small {
+  left: 22px;
+}
+/*wider switch text moves small further to the right*/
+.switch.wide.checked small {
+  left: 51px;
+}
+/*styles for switch-text*/
+.switch .switch-text {font-size:14px;}
+
+.switch .off {
+  display:block;
+  position: absolute;
+  right: 15%;
+  top: 21%;
+  z-index: 0;
+  color:#ffffff;
+}
+
+.switch .on {
+  display:none;
+   z-index: 0;
+  color:#fff;
+  position: absolute;
+  top: 21%;
+  left: 15%;
+}
+
+.switch.checked .off {
+  display:none;
+}
+
+.switch.checked .on {
+  display:block;
+
+}
+
+.switch.disabled {
+  opacity: .50;
+  cursor: not-allowed;
+}
+
+/*=======================SWITCH=================END=========*/
+
+.gn-detail-main > .gn-margin-box > .gn-description-list dt{
+    width: 110px;
+}
+
+/* ========== gncloud 인스턴스 > 생성 HTML ========== */
+/*서비스 생성(개발에서 타입을 선택해야 버튼이 생기는 btn-group에 해당) min-height*/
+.create-min{min-height: 82px !important;} 
+
+#snap > form > .btn-group,
+form > .btn-group{
+    width: 100%;
+}
+
+.btn-group > div{
+    padding: 0px 5px 10px 0;
+}
+
+.height-auto{
+    height:auto !important;
+}
+
+.gn-btn-create{
+    padding: 10px 14px;
+    font-size: 16px; 
+    color: #6f6f6f;
+    border: 2px solid rgba(215,215,215,.5); 
+    border-radius: 3px !important;  
+}
+
+.gn-btn-create:hover{
+    color: #7d7d7d;
+    background-color: rgba(215,215,215,.2);
+    border: 2px solid rgba(215,215,215,.5);   
+}
+
+.gn-btn-create.active{
+    border: 2px solid rgba(88,196,198,.5);
+    background-color: rgba(88,196,198,.1);
+    color: rgba(88,196,198,1);
+    border-radius: 3px; 
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.gn-btn-create > input[type=radio]{
+    display: none;
+}
+
+#snap > form > .btn-group > .col-xs-4{
+    padding: 0px 5px;
+}
+
+.btn-group p.label-name{
+    margin: 13px 0;
+    padding-right: 10px;
+}
+
+.ellipsis{   
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    margin-bottom: 0;
+    margin: 13px 0;
+    padding-left: 10px;
+}
+
+/*****====스냅샷에 있는 스프라이트 이미지 추가====*****/
+/***  스냅샷 스프라이트 이미지  ***/
+.sprite-img{
+    display: block;
+    margin: auto;
+    width: 35px;
+    height: 35px;
+    overflow: hidden;  
+    margin: 7px 0px 5px 0px;
+    float: left;
+}
+.sprite-hyperv{background: url(../gn_images/sprite_windows.png) no-repeat;}
+.sprite-windows{background: url(../gn_images/sprite_windows.png) no-repeat;}
+.sprite-ubuntu{background: url(../gn_images/sprite_ubuntu.png) no-repeat;}
+.sprite-docker{background: url(../gn_images/sprite_docker.png) no-repeat;}
+.sprite-kvm{background: url(../gn_images/sprite_kvm.png) no-repeat;}
+.sprite-centos{background: url(../gn_images/sprite_centos.png) no-repeat;}
+.sprite-tomcat{background: url(../gn_images/sprite_tomcat.png) no-repeat;}
+
+.gn-btn-create.active .sprite-hyperv,
+.gn-btn-create.active .sprite-windows,
+.gn-btn-create.active .sprite-ubuntu,
+.gn-btn-create.active .sprite-docker,
+.gn-btn-create.active .sprite-kvm,
+.gn-btn-create.active .sprite-centos,
+.gn-btn-create.active .sprite-tomcat
+{background-position: 0px -35px;}
+
+
+.gn-name-ellip{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 0;    
+}
+
+.windows-small{
+    font-size: 0.6em;
+    display: block;
+    width: 100%;
+    height: 20px;
+    white-space: normal;
+    overflow: hidden;
+}
+
+img.elli-img-icon{
+    margin-right: 10px;  
+}
+
+.size-info{
+    font-size: 16px;
+    margin:  auto;
+    padding: 23px 0px;
+}
+
+.border-bottom{
+    width: 50px;
+    margin: auto;
+    border-bottom: 1px solid rgba(215,215,215,.5);
+}
+
+.price-bg{
+    padding: 10px 0 5px 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background-color: rgba(215,215,215,.5);
+}
+
+.gn-btn-create.active .price-bg{background-color: rgba(88,196,198,.1);}
+
+.price-info {
+    text-align: center;
+    /*font-size: 13px;*/
+    padding: 2px 0;}
+
+.price-units {font-size: 12px;}
+
+#vm_size label{padding: 0;}
+
+.inp-box-size.active div.border-bottom{border-bottom: 1px solid rgba(88,196,198,.2);}
+
+.price-width{width: 38px; text-align: right; margin-right: 3px;}
+
+.gn-input-pw{
+    line-height: 37px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.gn-margin-bott10{margin-bottom: 10px;}
+
+/* ========== gncloud 이미지 HTML ========== */
+#container.gn-box{margin-top: 30px;}
+
+/*h2 tab > box tab*/
+.small-tabs{margin: 30px 0;}
+
+a.tab-sm-box{
+    width: 75px;
+    height: 35px;
+    line-height: 35px;
+    background-color: #ffffff;
+    border: 2px solid rgba(215,215,215,.5);
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    padding: 5px; 
+    display: block;
+}
+
+
+a.tab-sm-box:hover{color: #505050;}
+
+li.active > .tab-sm-box{
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #58c4c6 !important; 
+    border: 1px solid #58c4c6 !important;
+}
+
+[ng-click]{cursor : pointer;}
+
+/* ========== gncloud 서비스 관련 HTML ========== */
+.service-log div{padding: 0;}
+.service-log span{padding-bottom: 5px;}
+.service-log .gn-table-ellip{width: 210px;}
+.service-log .bite{margin-bottom: 0; text-align: right; color: #a8a8a8;}
+
+#detail-log pre{
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+/* ========== gncloud 설정 > 팀원/팀장 HTML ========== */
+.gn-ms-cursor{cursor: pointer;}
+.gn-ms-cursor:hover{color: #58c4c6;}
+
+.gn-left-menu > li{padding: 4px 0;}
+
+li.left-title{
+    width: 100%;
+    font-weight: bold;
+    font-size: 20px;
+    color: #505050;  
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+.gn-top{margin-top: 20px;}
+
+div.tab-content,
+#key-sett,#profile-team,#team-reso,#team-group,#backuplist,#invoice,#guestSetting{padding: 0;}
+
+.gn-left-menu > li{
+    width: 100%;
+    /*padding-left: 15px;*/
+}
+
+.gn-left-menu > li > a{
+    display: block;
+    font-size: 16px; 
+    background-color: transparent;
+    padding: 0;
+}
+
+.gn-left-menu > li > a:hover,
+.gn-left-menu > li > a:focus,
+.nav-pills>li.active>a, 
+.nav-pills>li.active>a:focus, 
+.nav-pills>li.active>a:hover{
+    color: #58c4c6;
+    background-color: transparent;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;  
+}
+
+.gn-sett-btn{
+    float: right;
+    margin-top: -45px;
+}
+
+#machine > .gn-sett-btn,
+#container > .gn-sett-btn{margin-top: -75px;} 
+
+ul.gn-sett-graph{text-align: center;}
+
+ul.gn-sett-graph li.cpu-color,
+ul.gn-sett-graph li.memo-color,
+ul.gn-sett-graph li.disk-color{margin-top: 15px; font-size: 20px;}
+
+
+/*목록에서 나(you)일 때 bg-color*/
+.tr-on-me{background-color: rgba(170,225,226,.2);}
+
+/*목록에서 가입 대기 중일때 bg-color*/
+.tr-on-wait{background-color: rgba(245,166,35,.1);}
+
+/*목록에서 에러가 났을 때 bg-color*/
+.tr-on-error{background-color: rgba(255, 130, 130, 0.2);}
+
+
+/* ========== gncloud 설정 > 시스템 관리자 HTML ========== */
+.gn-sett-margin-box > .container-fluid > h1{
+    margin-top: 0;
+    margin-bottom: 20px;}
+
+.sett-detail dt,
+.sett-detail dd,
+.sett-detail span
+{line-height: 37px; float: left;}
+
+.sett-detail dt{text-align: right; width: 77px;}
+.sett-detail dd{margin-left: 32px; width: 50px;}
+.gn-description-list.sett-detail > div{padding: 2px 0; margin-left: 5px;}
+.gn-description-list.sett-detail > div > span{margin-right: 35px;}
+.gn-description-list.sett-detail > div > span.sett-detail-span{width: 63px; margin-right: 5px; text-align: right;}
+.gn-description-list.sett-detail > div > input{width: 120px;  margin: 0px 5px; float: right;} 
+
+/*클러스터*/
+#cluster .form-group label.endpoint,#cluster-more .form-group label{padding-top: 0;}
+#cluster .form-group label{padding-top: 0;}
+
+#cluster-more .form-group label{line-height: 37px;}
+#cluster-more .form-group > div{padding-left: 0;}
+#cluster-more .form-group > span{line-height: 37px;}
+
+
+/*시스템 > 이미지 관리*/
+.img-icon-sett{
+    background: url(../gn_images/cloud_private_icon.png); 
+    border-radius: 3px;
+    cursor: pointer;
+    float: left;
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgba(215,215,215,.5);
+    background-color: #ffffff;
+    position: relative;
+}
+
+.img-icon-sett:hover{
+    background-color: rgba(100,100,100,.5);
+    box-sizing: border-box;
+}
+
+.hov-img-txt{
+    opacity: 0;
+    text-align: center;
+    margin: 0 auto;
+    width: 100px !important;
+    height: 100px !important;
+}
+
+.img-icon-sett:hover .hov-img-txt{
+    opacity: 1;
+    color: #ffffff;
+    padding-top: 65px;    
+}
+
+.open > .dropdown-img-icon-cont,
+.open > .dropdown-img-icon {
+    display: block;}
+
+.dropdown-img-icon{
+    position: absolute;
+    top: 34%;
+    left: 100px;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 120px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 3px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    /* overflow: visible; */    
+}
+
+.dropdown-img-icon-cont{
+    position: absolute;
+    top: 25%;
+    left: 175px;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 120px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 3px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    /* overflow: visible; */    
+}
+
+.dropdown-img-icon-cont > li > a,
+.dropdown-img-icon > li > a {
+    display: block;
+    padding: 5px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    white-space: nowrap;
+}
+
+
+.dropdown-img-icon-cont > li > a:hover, .dropdown-img-icon-cont > li > a:focus,
+.dropdown-img-icon > li > a:hover, .dropdown-img-icon > li > a:focus {
+    color: #58c4c6;
+    text-decoration: none;
+    /*transition: all .3s ease;*/
+}
+
+.form-control-img{
+    width: 286px;
+    margin-right: 0px;
+    display: block;
+    padding: 6px 12px;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 1.42857143;
+    color: #7d7d7d;
+    background-color: #fff;
+    background-image: visible;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    margin-top: 6px;
+    background-image: none;
+}
+
+.txtarea-img{
+    height: 50px;
+}
+
+.gn-syssett-td span{
+    display: block; 
+}
+
+.gn-modal-body form{
+    margin-top: 10px;
+}
+
+.gn-description-node dt{
+    line-height: 38px; 
+    font-weight: 600;
+    font-size: 14px;
+    width: 100px;
+    margin-bottom: 10px;
+}
+.gn-description-node dd{
+    margin-left: 115px;
+    margin-bottom: 10px;    
+}
+
+/*input=type 폼필드 디자인*/
+.filebox label {
+    display: inline-block;
+    padding: .5em .75em;
+    color: #999;
+    font-size: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    border-bottom-color: none;
+    border-radius: 0;
+}
+
+.filebox input[type="file"] {  /* 파일 필드 숨기기 */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+    border: 0;
+}
+
+/*리소스단위설정*/
+.price-mod form span{line-height: 37px;}
+#price .form-group label{padding-top: 0; line-height: 37px;}
+#price .form-group > div{padding: 0;}
+.gn-board-table .gn-danger{
+    border: none !important;
+}
+
+/*백업현황*/
+#modal-backup dl.gn-description-list{margin-bottom: 5px;}
+
+/*장애현황*/
+.gn-total-error div{padding-right: 5px; padding-left: 5px;}
+.gn-total-error > div > div > div{margin: 10px;}
+.gn-total-error span{color: #aaaaaa; padding: 5px 0; display: block;}
+
+.gn-select-error{margin-bottom: 30px; padding: 0px 5px;}
+.gn-select-error div{
+    padding: 0 0 0 10px; 
+    float: right; 
+    text-align: right; 
+    line-height: 37px;
+}
+
+.gn-select-error label{margin-left: 4px;}
+.gn-select-error span{font-weight: 400;}
+
+.gn-select-error select{line-height: 16px;}
+.gn-select-error input{margin-left: 10px;} 
+.gn-select-error .check-sm{display: none;}
+
+
+/*과금*/
+#invoice h2{margin-bottom: 10px}
+
+
+/*시스템관리자 > 설정*/
+.gn-sett-margin-box > h4{margin-top: 25px;}
+
+.gn-sys-sett input[type=radio]{margin-right: 10px;}
+
+.gn-sys-sett .list-inline{margin-left: 0px; margin-top: 5px;}
+.gn-sys-sett .list-inline span.gn-write{margin-left: 10px;}
+.radio label span{font-weight: 400;}
+
+.gn-sys-sett label{margin-right: 10px; font-weight: 200;}
+.gn-sys-sett label input[type=checkbox]{margin-right: 5px;}
+
+.gn-sys-sett form .list-inline{margin-left: 0;}
+
+.gn-sys-sett input[type=text]{padding-left: 10px;}
+
+
+
+
+
+
+
+
+
+
+/* ================================================= 반응형 ================================================= */
+/* 세로 방향 타블렛부터 가로 방향 타블렛과 데스크탑까지 */
+@media (min-width: 768px) and (max-width: 992px) {
+    
+    /* ======== gncloud 공통 ======== */
+    .gn-header .container{width: 100%;}
+    .container{width: 95%;}
+    
+    /* ======== gncloud HEADER ======== */
+   
+    /* ======== gncloud 로그인 ======== */
+    
+    /* ======== gncloud 대시보드 ======== */
+    
+    /*하이퍼바이저 종류*/
+    .gn-dash-hyp-right ul{
+        margin: 0;
+    } 
+    
+    .gn-dash-hyp-right ul li{font-size: 10px;}
+    
+    .gn-dash-hyp-right.col-sm-6{
+        padding: 0px 10px 0px 10px;
+    }     
+    .gn-dash-hyp-right ul li.memo-color,
+    .gn-dash-hyp-right ul li.hyp-color{
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    /*사용자*/
+    .dash-count div{top: 23px;}
+    
+    table.table-dash .gn-table-ellip{width: 80px;}
+    table.table-dash.vm  .gn-table-ellip{width: 80px;}
+    
+    /* ======== gncloud 인스턴스 리스트 ======== */ 
+    /*리스트 왼쪽 첫번째 "이름"*/
+    .gn-tdody > tr > td.visible-xs-3 > a{width: 173px;}    
+    
+    /* ======== gncloud 인스턴스 생성 ======== */
+ 
+    /* ======== gncloud 인스턴스 상세 ======== */
+    
+    /* ======== gncloud 서비스 ======== */
+    
+    
+    /* ======== gncloud 이미지 ======== */
+    
+    /* ======== gncloud 설정 ======== */
+    
+}
+
+
+
+/* 가로 방향 전화기부터 세로 방향 타블렛까지 */
+@media (max-width: 767px) {
+    
+    /* ======== gncloud 공통 ======== */    
+    .gn-table-responsive {border: none; width: auto;} 
+
+    .gn-margin-box{margin: 20px;}    
+     
+    .gn-description-list dt{float: left;}   
+    
+    /*.gn-description-list dd{margin-left: 0px;} */  
+    
+    .gn-noti{display: none !important;}
+    .gn-noti-mobile{
+        background: url(../gn_images/gn-noti-img.png) no-repeat;    
+        width: 23px;
+        height: 21px; 
+        position: absolute;
+        right: 25px;
+        margin-top: 25px;
+        z-index: 101;
+    }
+    
+    /* ======== gncloud HEADER ======== */      
+    .gn-header > .container > .navbar-header > .navbar-toggle{ 
+        border-color: transparent; 
+        background-color: transparent;
+    } 
+    
+    li.nav-link{margin-left: 0;}
+    
+    li.nav-link a{margin-left: 0; margin-top: 20px;}
+    
+    .navbar-collapse.gn-header-collapsed{background-color: #f7f7f7; padding-bottom: 20px;}
+    
+    .gn-header .navbar-header .navbar-toggle{margin-top: 20px;}
+
+    
+    /*모바일 width:767px이하부터 display:none;되는 dropdown*/ 
+    .navbar-right > .head-dropdown{display: none;}
+    .navbar-right > .mobile-head-dropdown{display: block;}
+    .mobile-user{margin: 8px 0 0 18px;}
+    .mobile-user a{font-size: 16px; color: #505050;}
+    .gn-mobile-caret{
+        background: url(../gn_images/dd_arrow.png) no-repeat;
+        cursor: pointer;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin-left: 5px;
+        margin-top: 10px;        
+    }
+    .gn-head-drop{text-align: center;}
+    .gn-head-drop li{margin: 10px 0;}
+
+    
+
+    
+    /* ======== gncloud 버튼 ======== */
+    .create-btn > a{margin-bottom: 15px;}
+    .create-btn > a > button.btn-success{width: 95%; margin: auto;}
+    
+    /* ======== gncloud 로그인 ======== */
+
+    
+    /* ======== gncloud 대시보드 ======== */
+    .dash-margin-box > .gn-dash-graph-box{border-right: none;}
+    
+    .dash-margin-box > .gn-dash-graph-box img{
+        width: 30%;
+        margin-bottom: 10px;}
+    
+    .total-user .dash-count img{margin-top: 0;}
+    .total-user .dash-count div{margin-top: 0;}
+    
+    /* 개발 */
+    .dash-margin-box > .gn-dash-graph-box canvas{
+        width: 50% !important;
+        height: inherit !important;
+        margin: auto;
+        margin-bottom: 10px;
+    } 
+    
+    /* 사용자 */
+    .dash-count div{top: 50px;}
+    
+    /* 사용자(총 사용자 수 dash-count) */
+    .total-user .dash-count{min-height: 142px;}    
+    
+    /* ======== gncloud 인스턴스 리스트 ======== */  
+    /*리스트 왼쪽 첫번째 "이름"*/
+    .gn-tdody > tr > td.visible-xs-3 > a{width: 100%;}    
+    
+    /* ======== gncloud 인스터스 상세 ======== */
+    .gn-detail-icon{display: none;}
+    /*.gn-tag-group{margin-left: 15px;}*/
+    .graph-sm-box > .col-sm-2{margin-bottom: 5px;}
+    
+    /*인스턴스 상세*/
+    .gn-detail-main .gn-margin-box{margin-bottom: 35px;}    
+    
+    /* ======== gncloud 인스턴스 생성 ======== */
+    #snap > form > .btn-group > div{padding: 0px 5px 10px 5px;}        
+    
+    /* ======== gncloud 이미지 ======== */
+    .row.gn-margin-bott10 > div.col-sm-2 > button.btn-gn-sub{margin-bottom: 10px;}  
+    
+    /* ======== gncloud 서비스 ======== */
+
+    
+    /* ======== gncloud 설정 ======== */ 
+    .gn-sett-margin-box{margin: 15px;}
+    
+    .gn-left-menu{margin-bottom: 20px;}
+    
+    ul.gn-sett-graph{margin-bottom: 50px;}
+    
+    /* ======== gncloud 시스템 설정 ======== */
+    .form-group > .col-sm-7 > .form-control,
+    .form-group > .col-sm-8 > .form-control{
+        margin-bottom: 10px;}
+    
+    /*장애현황*/
+    .gn-select-error .check-lg{display: none;}
+    .gn-select-error .check-sm{display: block;}
+    
+    /*개발*/
+    #changereply{margin: 10px 0; padding-right: 0;}
+
+}
+
+
+/* 가로 방향 전화기 이하 */
+@media (max-width: 480px) {
+    
+    /* ======== gncloud 공통 ======== */
+    /*대시보드*/
+    .gn-health-check p.gn-write{display: none;}
+    .gn-health-check .gn-table-ellip{width: 55px;}
+    
+    /*리스트 왼쪽 첫번째 "이름"*/
+    .gn-tdody > tr > td.visible-xs-3 > .gn-table-ellip{width: 120px;}
+    
+    #machine .gn-table-ellip{width: 80px;}    
+    
+    /*생성페이지*/
+    #snap > form > .btn-group > div{padding: 0px 0px 10px 0px;}    
+
+    /*대시보드*/
+    .vm-box{
+        width: 10px;
+        height: 10px;
+        margin-top: 4px;
+        margin-right: 5px;
+    }
+    
+    /*gn-board-table 에 속하는 이름 화면 최소로 줄였을 때 width 값*/
+    .gn-board-table > .gn-tdody > tr > td > .gn-table-ellip,
+    #snap a.gn-table-ellip{width: 80px;} 
+    
+    /*설정 > 넓은 dd가 필요하지 않은 경우*/
+    .gn-description-list.sm dd{
+        font-weight: 400;
+        margin-left: 70px;
+        /*padding: 2px 0;*/
+        padding-bottom: 5px;
+        overflow: hidden;
+    }
+    
+    /*설정 > ssh key*/
+    #key-sett .gn-table-ellip{width: 95px;}
+    #team-group .gn-table-ellip{width: 40px;}
+    
+    /*설정 이미지관리*/
+    #image-sett #machine .gn-table-ellip,
+    #image-sett #container .gn-table-ellip,
+    #use-history .gn-table-ellip{width: 48px;}
+    
+    /*서비스*/
+    .service-log .gn-table-ellip{width: 80px;}
+    
+    /*시스템관리자 상세 모달*/
+    .gn-description-list.sett-detail > div > span{margin-right: 0px;}
+    
+    
+}
+
+
+
+

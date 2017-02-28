@@ -26,49 +26,16 @@
     <script src="/js/vendor/angular/angular-route.min.js"></script>
     <script src="/js/vendor/angular/angularjs-notify.min.js"></script>
     <script src="/js/checklist-model.js"></script>
-    <script src="/chart/js/Chart.bundle.js"></script>
     <script src="/js/ng-file-upload.js"></script>
     <script src="/js/angular-ui-switch.js"></script>
-    <script src="/chart/js/jquery.min.js"></script>
-    <script src="/chart/js/Chart.bundle.js"></script>
 
 
     <!-- 서비스 컨트롤러 모음 -->
     <script type="text/javascript" src="/js/angular/app.js"></script>
     <script type="text/javascript" src="/js/angular/config/service.js"></script>
     <script type="text/javascript" src="/js/angular/controllers/main.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestList.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestCreate.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestSnapList.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/dashboard.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestMeList.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestDetail.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestSelectTeam.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestReadyTeam.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestCreateTeam.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestSystemList.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestTeamDetail.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/navbar.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestTeamList.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestCluster.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestImage.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestPrice.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestLoginHist.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestUseHist.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestProblemHist.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestSetting.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestNotice.js"></script>
     <script type="text/javascript" src="/js/angular/controllers/guestQna.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestInvoice.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestBackupHist.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestTeamKey.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestTeamProfile.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestTeamReso.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestTeamWon.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestTeamBackup.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestServiceList.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestServiceCreate.js"></script>
-    <script type="text/javascript" src="/js/angular/controllers/guestServiceDetail.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/store.js"></script>
     <script language="javascript">
         /*$.ajax({
          type: "GET",
@@ -101,11 +68,34 @@
 </head>
 
 <body>
-<navbar></navbar>
+<nav class="navbar navbar-default gn-header">
+    <div class="container" ng-show="user_info.team_code != '' ">
+        <!--지앤클라우드 로고-->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#dashboard">
+                <img src="/gn_images/gncloud_private_header_logo.png" alt="지앤클라우드 프라이빗 홈" ng-click="select(1)">
+            </a>
+        </div><!--class="navbar-header"-->
 
-
+        <div id="navbar" class="navbar-collapse collapse gn-header-collapsed">
+            <!--왼쪽메뉴-->
+            <ul class="nav navbar-nav" id="navigation">
+                <a href="#/guestNotice" class="gn-noti-mobile"></a></li>
+                <li class="nav-link" ng-class="{'active':1 == selected}" ng-click="select(1)"><a href="#/store">스토어</a></li>
+                <li class="nav-link" ng-class="{'active':2 == selected}" ng-click="select(2)"><a href="#/guestList">지원</a></li>
+                <li class="nav-link" ng-class="{'active':3 == selected}" ng-click="select(3)"><a href="#/guestServiceList">소개</a></li>
+            </ul><!--class="nav navbar-nav"-->
+        </div>
+    </div>
+    <div class="notifies" notifybar></div>
+</nav>
 <!--HEADER END-->
-
 <div class="container">
     <ng-view></ng-view>
     <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>

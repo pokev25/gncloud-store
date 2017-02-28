@@ -8,52 +8,6 @@ var serviceAddModules = [
 (function () {
 
     var app = angular.module('gncloud', serviceAddModules);
-
-    app.directive('navbar', function (){
-        return{
-            restrict: 'E',
-            templateUrl:'/main/navbar.html',
-            controller: function ($scope, $location) {
-
-            }
-        }
-    });
-
-    app.directive('navleft', function (){
-        return{
-            restrict: 'E',
-            templateUrl:'/main/navleft.html',
-            controller: function ($scope, $location) {
-                if($location.path() == "/guestSystemList") $scope.menu = 1;
-                if($location.path() == "/guestTeamList") $scope.menu = 2;
-                if($location.path() == "/guestCluster") $scope.menu = 3;
-                if($location.path() == "/guestImage") $scope.menu = 4;
-                if($location.path() == "/guestPrice") $scope.menu = 5;
-                if($location.path() == "/guestLoginHist") $scope.menu = 6;
-                if($location.path() == "/guestUseHist") $scope.menu = 7;
-                if($location.path() == "/guestBackupHist") $scope.menu = 8;
-                if($location.path() == "/guestProblemHist") $scope.menu = 9;
-                if($location.path() == "/guestInvoice") $scope.menu = 10;
-                if($location.path() == "/guestSetting") $scope.menu = 11;
-            }
-        };
-    });
-    app.directive('navme', function (){
-        return{
-            restrict: 'E',
-            templateUrl:'/main/navme.html',
-            controller: function ($scope, $location) {
-                if($location.path() == "/account/users/list") $scope.me_menu = 1;
-                if($location.path() == "/guestTeamKey") $scope.me_menu = 2;
-                if($location.path() == "/guestTeamProfile") $scope.me_menu = 3;
-                if($location.path() == "/guestTeamReso") $scope.me_menu = 4;
-                if($location.path() == "/guestTeamWon") $scope.me_menu = 5;
-                if($location.path() == "/guestTeamBackup") $scope.me_menu = 6;
-                if($location.path() == "/guestInvoice") $scope.me_menu = 7;
-            }
-        };
-    });
-
     app.run(function($rootScope,$http){
         $http({
             method: 'GET',

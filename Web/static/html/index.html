@@ -36,22 +36,8 @@
     <script type="text/javascript" src="/js/angular/controllers/main.js"></script>
     <script type="text/javascript" src="/js/angular/controllers/guestQna.js"></script>
     <script type="text/javascript" src="/js/angular/controllers/store.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/supportlist.js"></script>
     <script language="javascript">
-        /*$.ajax({
-         type: "GET",
-         url: '/api/manager/vm/logincheck',
-         headers: {'Content-Type': 'application/json; charset=utf-8'},
-         success:function(data) {
-         if (data.status == true) {
-         $("#name").html(data.message);
-         }else{
-         if(data.message != null) {
-         alert(data.message)
-         }
-         }
-
-         }
-         })*/
         function logout()
         {
             $.ajax({
@@ -69,7 +55,7 @@
 
 <body>
 <nav class="navbar navbar-default gn-header">
-    <div class="container" ng-show="user_info.team_code != '' ">
+    <div class="container">
         <!--지앤클라우드 로고-->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -86,10 +72,9 @@
         <div id="navbar" class="navbar-collapse collapse gn-header-collapsed">
             <!--왼쪽메뉴-->
             <ul class="nav navbar-nav" id="navigation">
-                <a href="#/guestNotice" class="gn-noti-mobile"></a></li>
-                <li class="nav-link" ng-class="{'active':1 == selected}" ng-click="select(1)"><a href="#/store">스토어</a></li>
-                <li class="nav-link" ng-class="{'active':2 == selected}" ng-click="select(2)"><a href="#/guestList">지원</a></li>
-                <li class="nav-link" ng-class="{'active':3 == selected}" ng-click="select(3)"><a href="#/guestServiceList">소개</a></li>
+                <li class="nav-link"><a href="#/store">스토어</a></li>
+                <li class="nav-link"  ><a href="#/supportlist">지원</a></li>
+                <li class="nav-link"  ><a href="#/guestServiceList">소개</a></li>
             </ul><!--class="nav navbar-nav"-->
         </div>
     </div>
@@ -109,6 +94,18 @@
     <script src="/js/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/js/ie10-viewport-bug-workaround.js"></script>
+    <script language="javascript">
+        $(function() {
+            $("li").click(function() {
+                // remove classes from all
+                $("li").removeClass("active");
+                // add class to the one we clicked
+                $(this).addClass("active");
+            });
+        });
+
+    </script>
 </div>
 </body>
 </html>
+

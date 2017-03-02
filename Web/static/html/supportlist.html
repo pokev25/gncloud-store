@@ -1,0 +1,31 @@
+<input class="gn-form-control from-control col-sm-10" type="search">&nbsp;<button type="button" class="btn btn-gn-primary">검색</button>
+
+<div class="gn-margin-bott10"></div>
+
+<div class="table-responsive gn-table-responsive">
+    <table class="table gn-board-table table-hover">
+        <thead>
+        <tr>
+            <th class="col-sm-1">&num;</th>
+            <th class="col-md-7 col-sm-6">제목</th>
+            <th class="col-md-2 col-sm-2 hidden-xs">작성자</th>
+            <th class="col-sm-2">작성일</th>
+        </tr>
+        </thead>
+        <tbody class="gn-tdody">
+        <tr class="" ng-repeat="list in list">
+            <td>{{total_page-($index+this_page)}}</td>
+            <td class="second-td-name">
+                <a class="gn-table-ellip" data-toggle="modal" data-target="#modal-board" ng-click="qna_info(list.id,data.page)">{{list.title}}</a>
+                <span class="badge" ng-show="list.count > 0">{{list.count}}</span>
+            </td>
+            <td class="hidden-xs">{{list.author_id}}</td>
+            <td>{{list.write_date}}</td>
+        </tr>
+
+        </tbody>
+    </table>
+</div><!--table-->
+
+<input type="button" class="btn btn-default" ng-click="noticeList(prev_page)" value="이전" ng-show="page_hist != 1">
+<input type="button" class="btn btn-default" ng-click="noticeList(next_page)" value="다음" ng-show="page_total!=page_hist">

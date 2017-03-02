@@ -61,6 +61,11 @@ def SupportDetail(id):
 def SupportDetailChange(id):
     text = request.json['post_text']
     return jsonify(status=True, message='success', list=supportchange(id,text,db_session))
+
+@app.route('/supportdetail/reply/<id>',methods=['POST'])
+def SupportDetailReply(id):
+    text = request.json['reply_text']
+    return jsonify(status=True, message='success', list=supportreplycreate(id,text,db_session))
 #### rest end ####
 
 

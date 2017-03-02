@@ -46,6 +46,25 @@ angular
                     console.log(status);
                 });
         }
+        $scope.replycreate=function (id) {
+            $http({
+                method: 'POST',
+                url: '/api/manager/supportdetail/reply/'+id,
+                data:$scope.data,
+            })
+                .success(function (data, status, headers, config) {
+                    if (data.status == true) {
+                        $scope.supportinfo();
+                        $scope.data.reply_text="";
+                    }
+                    else {
+                        notification.sendMessage("error",data.message);
+                    }
+                })
+                .error(function (data, status, headers, config) {
+                    console.log(status);
+                });
+        }
         $scope.supportinfo();
 
     });

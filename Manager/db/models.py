@@ -36,10 +36,10 @@ class GnUser(Base):
 
 class GnSupport(Base):
     __tablename__ = 'GN_SUPPORT'
-    id= Column(String(11), primary_key=True, nullable=False)
-    title= Column(nullable=False ,default='')
-    text= Column(nullable=False ,default='')
-    write_date = Column(DateTime, nullable=True, default='')
+    id= Column(Integer, primary_key=True, nullable=False)
+    title= Column(nullable=False)
+    text= Column(nullable=False)
+    write_date = Column(DateTime, nullable=True)
     author_id= Column(String(50), primary_key=False, nullable=False)
     author_name = Column(String(10), primary_key=False, nullable=False)
     parent_id = Column(Integer, primary_key=False, nullable=False)

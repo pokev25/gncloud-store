@@ -8,7 +8,7 @@ import requests
 from flask import render_template
 from pexpect import pxssh
 from sqlalchemy import func,or_
-
+import datetime
 from Manager.db.database import db_session
 from Manager.db.models import *
 from Manager.util.config import config
@@ -39,4 +39,9 @@ def supportinfo(id, sql_session): #게시판 상세페이지
 def supportchange(id,text,sql_session): #게시판 상세페이지 내용 수정
     post_info = sql_session.query(GnSupport).filter(GnSupport.id == id).one()
     post_info.text = text
+    sql_session.commit()
+
+def supportreplycreate(id,text,sql_session):
+    reply_info= GnSupport(text=text, author_id='shjoo', author_name='주성훈', parent_id=id, write_date=datetime.datetime.now().strftime('%Y%m%d%H%M%S'))
+    sql_session.add(reply_info)
     sql_session.commit()

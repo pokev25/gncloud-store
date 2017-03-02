@@ -19,7 +19,7 @@ def supportlist(page,sql_session):
     page_size=10
     page=int(page)-1
     total_count=[]
-    list = sql_session.query(GnSupport).filter(GnSupport.parent_id == None).order_by(GnSupport.write_date.asc()).limit(page_size).offset(page * page_size).all()
+    list = sql_session.query(GnSupport).filter(GnSupport.parent_id == None).order_by(GnSupport.write_date.desc()).limit(page_size).offset(page * page_size).all()
     total_page= sql_session.query(func.count(GnSupport.id).label("count"))\
         .filter(GnSupport.parent_id == None).one()
     for e in list:
@@ -44,4 +44,18 @@ def supportchange(id,text,sql_session): #게시판 상세페이지 내용 수정
 def supportreplycreate(id,text,sql_session):
     reply_info= GnSupport(text=text, author_id='shjoo', author_name='주성훈', parent_id=id, write_date=datetime.datetime.now().strftime('%Y%m%d%H%M%S'))
     sql_session.add(reply_info)
+    sql_session.commit()
+
+def supportdel(id, sql_session):
+    info = sql_session.query(GnSupport).filter(GnSupport.id == id).one()
+    if(info.parent_id == None):
+        sql_session.query(GnSupport).filter(GnSupport.parent_id ==id).delete()
+        sql_session.query(GnSupport).filter(GnSupport.id ==id).delete()
+    else:
+        sql_session.query(GnSupport).filter(GnSupport.id ==id).delete()
+    sql_session.commit()
+
+def supportwrite(title, text, sql_session):
+    post = GnSupport(title= title, text=text, author_id='shjoo', author_name='주성훈',write_date=datetime.datetime.now().strftime('%Y%m%d%H%M%S'))
+    sql_session.add(post)
     sql_session.commit()

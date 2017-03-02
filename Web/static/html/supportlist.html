@@ -1,5 +1,8 @@
 <input class="gn-form-control from-control col-sm-10" type="search">&nbsp;<button type="button" class="btn btn-gn-primary">검색</button>
 
+
+<h4 class="gn-write">전체 {{ total_page }} 건</h4>
+<button class="btn btn-gn-primary col-sm-1"><a href="#/supportwrite">질문하기</a></button>
 <div class="gn-margin-bott10"></div>
 
 <div class="table-responsive gn-table-responsive">
@@ -19,7 +22,7 @@
                 <a href="#/supportdetail?id={{list.id}}" class="gn-table-ellip"> {{ list.title }} </a>
                 <span class="badge" ng-show="list.count > 0">{{list.count}}</span>
             </td>
-            <td class="hidden-xs">{{list.author_id}}</td>
+            <td class="hidden-xs">{{list.author_name}}</td>
             <td>{{list.write_date}}</td>
         </tr>
 

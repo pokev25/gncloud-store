@@ -53,19 +53,29 @@ def Supportlist():
     page = request.args.get("page")
     return jsonify(status=True, message='success',list=supportlist(page,db_session))
 
-@app.route('/supportdetail/<id>',methods=['GET'])
+@app.route('/supportdetail/<id>',methods=['GET']) #지원게시판 상세페이지
 def SupportDetail(id):
     return jsonify(status=True, message='success', list=supportinfo(id,db_session))
 
-@app.route('/supportdetail/<id>',methods=['PUT'])
+@app.route('/supportdetail/<id>',methods=['PUT']) #지원게시판 내용 수정
 def SupportDetailChange(id):
     text = request.json['post_text']
     return jsonify(status=True, message='success', list=supportchange(id,text,db_session))
 
-@app.route('/supportdetail/reply/<id>',methods=['POST'])
+@app.route('/supportdetail/reply/<id>',methods=['POST']) # 지원게시판 댓글 작성
 def SupportDetailReply(id):
     text = request.json['reply_text']
     return jsonify(status=True, message='success', list=supportreplycreate(id,text,db_session))
+
+@app.route('/supportdetail/<id>', methods=['DELETE']) # 지원게시판 내용 / 댓글 삭제
+def SupportDetaildel(id):
+    return jsonify(status=True, message='success', list=supportdel(id,db_session))
+
+@app.route('/supportwrite', methods=['POST']) # 지원게시판 작성
+def SupportDetailWrtie():
+    title = request.json['title']
+    text = request.json['text']
+    return jsonify(status=True, message='success', list=supportwrite(title,text,db_session))
 #### rest end ####
 
 

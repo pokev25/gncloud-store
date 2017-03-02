@@ -2,9 +2,13 @@ angular
     .module('gncloud')
     .controller('supportdetailCtrl', function ($scope, $http, notification,$routeParams) {
         $scope.showData='nomal';
+        $scope.replyData='nomal';
         $scope.data={};
         $scope.click=function (data) {
             $scope.showData = data;
+        }
+        $scope.reply_data=function (data) {
+            $scope.replyData = data;
         }
         $scope.supportinfo=function () {
             $http({
@@ -50,7 +54,7 @@ angular
             $http({
                 method: 'POST',
                 url: '/api/manager/supportdetail/reply/'+id,
-                data:$scope.data,
+                data:$scope.data
             })
                 .success(function (data, status, headers, config) {
                     if (data.status == true) {
@@ -64,6 +68,49 @@ angular
                 .error(function (data, status, headers, config) {
                     console.log(status);
                 });
+        }
+        $scope.reply_del=function (id) {
+            var returnvalue = confirm("댓글을 삭제하시겠습니까 ?")
+            if(returnvalue){
+            $http({
+                    method: 'DELETE',
+                    url: '/api/manager/supportdetail/'+id,
+                })
+                    .success(function (data, status, headers, config) {
+                        if (data.status == true) {
+                            notification.sendMessage("success","댓글이 삭제되었습니다.");
+                            $scope.supportinfo();
+
+                        }
+                        else {
+                            notification.sendMessage("error",data.message);
+                        }
+                    })
+                    .error(function (data, status, headers, config) {
+                        console.log(status);
+                    });
+             }
+        }
+        $scope.del=function (id) {
+            var returnvalue = confirm("글을 삭제하시겠습니까 ?")
+            if(returnvalue){
+                $http({
+                    method: 'DELETE',
+                    url: '/api/manager/supportdetail/'+id,
+                })
+                    .success(function (data, status, headers, config) {
+                        if (data.status == true) {
+                            window.location.href = '#/supportlist'
+                            notification.sendMessage("success","글이 삭제되었습니다.");
+                        }
+                        else {
+                            notification.sendMessage("error",data.message);
+                        }
+                    })
+                    .error(function (data, status, headers, config) {
+                        console.log(status);
+                    });
+            }
         }
         $scope.supportinfo();
 

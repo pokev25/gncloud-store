@@ -4,6 +4,7 @@ var serviceConfig = function ($routeProvider, $httpProvider) {
         .when('/guestQna', {templateUrl: '/guestQna.html', controller: 'guestQnaCtrl'})
         .when('/supportlist', {templateUrl: '/supportlist.html', controller: 'supportlistCtrl'})
         .when('/supportdetail', {templateUrl: '/supportdetail.html', controller: 'supportdetailCtrl'})
+        .when('/supportwrite', {templateUrl: '/supportwrite.html', controller: 'supportwriteCtrl'})
     $httpProvider.interceptors.push('serviceLogger');
 }
 

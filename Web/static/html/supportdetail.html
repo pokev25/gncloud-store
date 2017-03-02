@@ -1,0 +1,22 @@
+<h1>{{post.title}}</h1>
+<p class="gn-write modal-header">{{post.author_name}} | {{post.write_date}}</p>
+<pre ng-show="showData == 'nomal'" class="gn-write">
+    {{ post.text }}
+</pre>
+<textarea id="post_text" ng-model="post.text" class="gn-write gn-form-control form-control" ng-show="showData == 'change'"></textarea>
+<div class="modal-footer"></div>
+<div ng-repeat="reply in reply">
+    <span class="gn-write">{{ reply.author_name }} | {{ reply.write_date }}</span>
+    <pre class="gn-write">{{reply.text}}</pre>
+</div>
+<div class="modal-footer"></div>
+<p class="gn-write">답</p>
+<div>
+    <textarea class="gn-write gn-form-control form-control col-sm-10"></textarea><button class="btn btn-default">등록</button>
+</div>
+<div style="margin: 10px">
+    <button class="btn btn-default pull-right"><a href="#/supportlist">목록</a></button>
+    <button ng-show="showData =='nomal'" class="btn btn-gn-primary pull-right" ng-click="click('change')">수정</button>
+    <button ng-show="showData =='change'" class="btn btn-gn-primary pull-right" ng-click="click('nomal');change(post.id,post.text)">저장</button>
+    <button class="btn btn-delete pull-left">삭제</button>
+</div>

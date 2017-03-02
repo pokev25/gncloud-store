@@ -48,11 +48,19 @@ def internal_error(error):
 def index():
     return jsonify(status=True, message='Logged in as %s'% escape(session['user_id']))
 
-@app.route('/supportlist',methods=['GET'])
+@app.route('/supportlist',methods=['GET']) #지원게시판
 def Supportlist():
     page = request.args.get("page")
     return jsonify(status=True, message='success',list=supportlist(page,db_session))
 
+@app.route('/supportdetail/<id>',methods=['GET'])
+def SupportDetail(id):
+    return jsonify(status=True, message='success', list=supportinfo(id,db_session))
+
+@app.route('/supportdetail/<id>',methods=['PUT'])
+def SupportDetailChange(id):
+    text = request.json['post_text']
+    return jsonify(status=True, message='success', list=supportchange(id,text,db_session))
 #### rest end ####
 
 

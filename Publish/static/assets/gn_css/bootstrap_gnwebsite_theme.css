@@ -1,0 +1,269 @@
+/*지앤클라우드 웹사이트 스타일시트*/
+
+/*나눔바른고딕 폰트*/
+@import url(nanumbarungothic.css);
+/* ========== gncloud 공통 STYLE ========== */
+body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow-y: scroll;
+    font-family: 'Nanum Barun Gothic', sans-serif;
+    color: #6f6f6f;
+}
+
+h1{
+    font-size: 36px;
+    color: #505050;
+    margin-bottom: 55px;
+    line-height: 1;
+}
+
+h2{
+    font-weight: normal;
+    font-size: 24px;
+    color: #505050;
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+h3{
+    font-weight: normal;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+img{border: 0;}
+a{color: #6f6f6f; cursor: pointer;}
+a:hover,
+a:focus {
+    outline: 0;
+    outline: 0 -webkit-focus-ring-color;
+    outline-offset: 0;
+    text-decoration: none;
+    color: #58c4c6;
+}
+
+li{
+    list-style: none;
+}
+
+.gn-box{
+    border-radius: 3px;
+    border: 2px solid rgba(215,215,215,.5);
+}
+
+.container{
+    padding-bottom: 150px;
+}
+
+.gn-container{
+    margin-bottom: 50px;
+}
+
+/*textarea 수직 상하 길이만 조절 가능하게*/
+textarea{resize: vertical;}
+
+.container:after,
+.container-fluid:after,
+.container-login:after,
+.sett-detail:after,
+.gn-container:after,
+.gn-select-error:after
+{ content:""; clear:both; display:block; }
+
+.logo h1{
+    display: none;
+}
+
+.gn-input{
+    height: 40px;
+    font-size: 15px;
+    font-weight: 200;
+    color: #7d7d7d;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.gn-form-control{
+    height: 37px;
+    font-weight: 200;
+    color: #7d7d7d;
+    border-radius: 3px;
+    border: 1px solid rgba(215,215,215,1);
+    padding-left: 10px;
+}
+
+textarea.gn-form-control{
+    font-weight: 200;
+    color: #7d7d7d;
+    border-radius: 3px;
+}
+
+.refresh{
+    cursor: pointer;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 6px solid;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    border-bottom: none;
+}
+
+/*tooltip*/
+.tooltip-inner {
+    max-width: 200px;
+    padding: 10px;
+    color: #fff;
+    text-align: justify;
+    text-decoration: none;
+    background-color: #58c4c6;
+    border-radius: 3px;
+}
+
+.tooltip.top .tooltip-arrow {
+    border-top-color: #58c4c6;
+}
+.tooltip.top-left .tooltip-arrow {
+    border-top-color: #58c4c6;
+}
+.tooltip.top-right .tooltip-arrow {
+    border-top-color: #58c4c6;
+}
+.tooltip.right .tooltip-arrow {
+    border-right-color: #58c4c6;
+}
+.tooltip.left .tooltip-arrow {
+    border-left-color: #58c4c6;
+}
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: #58c4c6;
+}
+.tooltip.bottom-left .tooltip-arrow {
+    border-bottom-color: #58c4c6;
+}
+.tooltip.bottom-right .tooltip-arrow {
+    border-bottom-color: #58c4c6;
+}
+
+.gn-description-list{
+    font-size: 15px;
+}
+.gn-description-list dt{
+    width: 70px;
+    text-align: left;
+    padding-bottom: 5px;
+    /*font-weight: 400;*/
+}
+
+.gn-description-list dd{
+    font-weight: 400;
+    margin-left: 100px;
+    /*padding: 2px 0;*/
+    padding-bottom: 5px;
+}
+
+.gn-description-list dd span{
+    font-weight: 400;
+    color: #7d7d7d;
+}
+
+.gn-table-ellip{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.gn-disable-op{opacity: 0.3;}
+
+
+/*모달창에 description-list dt font-size*/
+.modal .gn-description-list dt,.modal .gn-description-list dd{font-size: 14px;}
+
+.gn-control-label{text-align: left !important;}
+
+
+/* ============================= gncloud BUTTON STYLE ============================= */
+/*인스턴스 생성버튼*/
+.btn-gn-primary {
+    color: #fff;
+    background-color: #58c4c6;
+    border-color: #58c4c6;
+    border-radius: 3px;
+}
+.btn-gn-primary:hover,
+.btn-gn-primary:focus,
+.btn-gn-primary.focus,
+.btn-gn-primary:active,
+.btn-gn-primary.active,
+.open > .dropdown-toggle.btn-gn-primary {
+    color: #ffffff;
+    background-color: #00afb4;
+    border-color: #00afb4;
+}
+.btn-gn-primary:active,
+.btn-gn-primary.active,
+.open > .dropdown-toggle.btn-success {
+    background-image: none;
+}
+
+/*삭제버튼*/
+.btn-delete{
+    background-color: #ffffff;
+    color: rgba(255, 0, 0, 0.75);
+    border: 1px solid rgba(255, 0, 0, 0.75);
+    border-radius: 3px;
+}
+
+.btn-delete:hover,
+.btn-delete:active{
+    background-color: rgba(255, 0, 0, 0.75);
+    color: #ffffff;
+    border: 1px solid rgba(255, 0, 0, 0.75);
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.btn-delete:focus{
+    text-decoration: none;
+    background-color: #ffffff;
+    color: rgba(255, 0, 0, 0.75);
+    border: 1px solid rgba(255, 0, 0, 0.75);
+    border-radius: 3px;
+}
+
+.btn-gn-sub {
+    color: #7d7d7d;
+    font-size: 14px;
+    font-weight: normal;
+    background-color: rgba(215,215,215,.5);
+    height: 37px;
+}
+
+.btn-gn-sub:hover,
+.btn-gn-sub:focus,
+.btn-gn-sub.focus,
+.btn-gn-sub:active,
+.btn-gn-sub.active,
+.open > .dropdown-toggle.btn-gn-sub {
+    color: #6f6f6f;
+    background-color: rgba(215,215,215,1);
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+
+    border-color: rgba(215,215,215,1);
+}
+
+.modal-open{padding-right: 15px;}
+
+.gn-btn-height{height: 37px;}

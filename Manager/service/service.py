@@ -56,6 +56,6 @@ def supportdel(id, sql_session):
     sql_session.commit()
 
 def supportwrite(title, text, sql_session):
-    post = GnSupport(title= title, text=text, author_id='shjoo', author_name='주성훈',write_date=datetime.datetime.now().strftime('%Y%m%d%H%M%S'))
+    post = GnSupport(title= title, text=text, author_id='shjoo', author_name='주성훈',count=0,write_date=datetime.datetime.now().strftime('%Y%m%d%H%M%S'))
     sql_session.add(post)
     sql_session.commit()

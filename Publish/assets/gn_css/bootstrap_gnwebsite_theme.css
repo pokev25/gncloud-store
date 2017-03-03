@@ -213,6 +213,31 @@ textarea.gn-form-control{
     border-radius: 15px;
 }
 
+.error-message{
+    height: 20px;
+    line-height: 20px;
+    font-size:12px;
+    text-align: left;
+    color: rgba(255, 0, 0, 0.75);
+    margin: 5px 0 2px 0;
+}
+
+p.error-message{
+    font-size: 14px;
+}
+
+.gn-input-error{
+    border: 1px solid rgba(255, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5);
+}
+
+input.error{
+    border: 1px solid rgba(255, 0, 0, 0.75);
+
+}
+form.signupForm label.error, label.error{
+    color :rgba(255, 0, 0, 0.75);
+}
 
 /* ============================= gncloud BUTTON STYLE ============================= */
 
@@ -306,6 +331,30 @@ textarea.gn-form-control{
 .modal-open{padding-right: 15px;}
 
 .gn-btn-height{height: 37px;}
+
+
+/* 웹사이드 #58c4c6 버튼 */
+.btn-gn-blue {
+    color: #58c4c6;
+    background-color: #ffffff;
+    border-color: #58c4c6;
+    border-radius: 3px;
+}
+.btn-gn-blue:hover,
+.btn-gn-blue:focus,
+.btn-gn-blue.focus,
+.btn-gn-blue:active,
+.btn-gn-blue.active,
+.open > .dropdown-toggle.btn-gn-blue {
+    color: #ffffff;
+    background-color: #58c4c6;
+    border-color: #58c4c6;
+}
+.btn-gn-blue:active,
+.btn-gn-blue.active,
+.open > .dropdown-toggle.btn-success {
+    background-image: none;
+}
 
 
 

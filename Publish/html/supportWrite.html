@@ -55,68 +55,25 @@
     </nav> <!--class="navbar navbar-default navbar-fixed-top"-->
     <!--HEADER END-->
 
-    <div id="support" class="container main-container">
-        <h1>지원</h1>
-        <!--검색바-->
+    <div id="supportWrite" class="container main-container">
+        <h1>질문하기</h1>
+
+        <h4>제목</h4>
+        <input type="text" id="title" name="title" class="gn-form-control form-control gn-write">
+
+        <br>
+
+        <h4>내용</h4>
+        <textarea type="text" name="text" class="gn-form-control form-control gn-write" rows="15"></textarea>
+        <p class="error-message" id="error"> 내용을 입력하세요 </p>
+
         <div class="row">
-            <div class="col-md-12">
-                <div id="custom-search-input">
-                    <div class="input-group col-md-12">
-                        <input type="text" class="form-control input-lg" placeholder="검색어 입력" />
-                        <span class="input-group-btn">
-                            <button class="btn btn-info btn-lg" type="button">
-                                <i class="glyphicon glyphicon-search"></i>
-                            </button>
-                        </span>
-                    </div>
-                </div>
+            <div class="col-md-3 col-sm-4 col-xs-12 pull-right">
+                <button class="btn btn-gn-blue btn-block btn-lg">등록</button>
             </div>
         </div>
 
         <br>
-        <hr>
-        <br>
-
-        <!--인기주제 | 최신글-->
-        <div class="row gn-container">
-            <div class="col-lg-6">
-                <h2>인기주제</h2>
-                <ul>
-                    <li><a>지앤클라우드 설치방법</a></li>
-                    <li><a>팀원 추가방법</a></li>
-                    <li><a>클러스터 생성방법</a></li>
-                    <li><a>팀별 리소스 할당하기</a></li>
-                </ul>
-            </div>
-
-            <div class="col-lg-6">
-                <h2>최신글
-                    <button type="button" class="btn btn-default pull-right">더보기</button>
-                </h2>
-
-                <ul>
-                    <li><a>어떻게 지앤클라우드를 설치하나요.<span class="badge gn-badge">2</span></a></li>
-                    <li><a>팀원 추가하는 방법이 어떻게 되나요.<span class="badge gn-badge">1</span></a></li>
-                    <li><a>어떻게 클러스터 생성하나요?<span class="badge gn-badge">568</span></a></li>
-                    <li><a>삭제하는 방법 알려주세요.</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <!--추천 | 질문하기 버튼-->
-        <div class="row gn-container">
-            <div class="col-lg-6">
-                <h2>추천</h2>
-                <ul>
-                    <li><a>어떻게 지앤클라우드를 설치하나요</a></li>
-                    <li><a>팀원 추가하는 방법이 어떻게 되나요</a></li>
-                    <li><a>어떻게 클러스터 생성하나요?</a></li>
-                    <li><a>삭제하는 방법 알려주세요.</a></li>
-                </ul>
-            </div>
-
-            <div class="col-lg-2 pull-right"><button type="button" class="btn btn-gn-primary btn-block">질문하기</button></div>
-       </div>
 
     </div><!--class="container"-->
 

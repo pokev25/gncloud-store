@@ -50,8 +50,7 @@ def index():
 
 @app.route('/supportlist',methods=['GET']) #지원게시판
 def Supportlist():
-    page = request.args.get("page")
-    return jsonify(status=True, message='success',list=supportlist(page,db_session))
+    return jsonify(status=True, message='success',list=supportlist(db_session))
 
 @app.route('/supportdetail/<id>',methods=['GET']) #지원게시판 상세페이지
 def SupportDetail(id):

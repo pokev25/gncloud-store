@@ -73,8 +73,16 @@ def SupportDetaildel(id):
 
 @app.route('/supportwrite', methods=['POST']) # 지원게시판 작성
 def SupportDetailWrtie():
-    title = request.json['title']
-    text = request.json['text']
+    title=""
+    text=""
+    if 'title' in request.json:
+        title = request.json['title']
+    if 'vm_name' in request.json:
+        text = request.json['text']
+    if title =="":
+        return jsonify(status=False, message='title')
+    elif text == "":
+        return jsonify(status=False, message='text')
     return jsonify(status=True, message='success', list=supportwrite(title,text,db_session))
 #### rest end ####
 

@@ -1,7 +1,8 @@
 angular
     .module('gncloud')
     .controller('supportwriteCtrl', function ($scope, $http ,notification) {
-        $scope.data={}
+        $scope.data={};
+        $("#error").hide();
         $scope.write=function () {
             $http({
                 method: 'POST',
@@ -13,10 +14,8 @@ angular
                     if (data.status == true) {
                         window.location.href='#/supportlist'
                         notification.sendMessage('success',"등록되었습니다.")
-                    }else {
-                        if (data.message != null) {
-                            notification.sendMessage("error",data.message);
-                        }
+                    }else if (data.status == false){
+                        $("#error").show();
                     }
 
                 })

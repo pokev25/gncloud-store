@@ -15,27 +15,16 @@ from Manager.util.config import config
 from Manager.util.hash import random_string, convertToHashValue, convertsize
 
 #지원 게시판 부분
-def supportlist(page,sql_session):
-    page_size=10
-    page=int(page)-1
+def supportlist(sql_session):
     total_count=[]
-    list = sql_session.query(GnSupport).filter(GnSupport.parent_id == None).order_by(GnSupport.write_date.desc()).limit(page_size).offset(page * page_size).all()
+    list = sql_session.query(GnSupport).filter(GnSupport.parent_id == None).order_by(GnSupport.write_date.desc()).all()
     total_page= sql_session.query(func.count(GnSupport.id).label("count"))\
         .filter(GnSupport.parent_id == None).one()
     for e in list:
         e.write_date = e.write_date.strftime('%Y-%m-%d %H:%M')
         total_count.append(len(sql_session.query(GnSupport).filter(GnSupport.parent_id == e.id).all()))
     total=int(total_page.count)/10
-
-    al_total_count=[]
-    al_list = sql_session.query(GnSupport).filter(GnSupport.parent_id == None).order_by(GnSupport.write_date.desc()).all()
-    al_total_page= sql_session.query(func.count(GnSupport.id).label("count")) \
-        .filter(GnSupport.parent_id == None).one()
-    for a in al_list:
-        al_total_count.append(len(sql_session.query(GnSupport).filter(GnSupport.parent_id == a.id).all()))
-
-    return {"list":list,"total":total,"support_count":total_count,"page":page,"total_page":total_page.count\
-        ,"al_list":al_list,"al_support_count":al_total_count,"al_total_page":al_total_page.count}
+    return {"list":list,"total":total,"support_count":total_count,"total_page":total_page.count}
 
 def supportinfo(id, sql_session): #게시판 상세페이지
     post_info = sql_session.query(GnSupport).filter(GnSupport.id == id).filter(GnSupport.parent_id ==None).one()

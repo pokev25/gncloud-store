@@ -2,13 +2,11 @@ angular
     .module('gncloud')
     .controller('supportlistCtrl', function ($scope, $http, notification) {
         $scope.data = {}
-        $scope.supportlist=function (page) {
-            $scope.data.page = page;
+        $scope.supportlist=function () {
             $scope.showData='not';
             $http({
                 method: 'GET',
                 url: '/api/manager/supportlist',
-                params:$scope.data,
                 headers: {'Content-Type': 'application/json; charset=utf-8'}
             })
                 .success(function (data, status, headers, config) {
@@ -21,12 +19,6 @@ angular
                         $scope.total_page=data.list.total_page;
                         $scope.page_hist =data.list.page+1;
                         $scope.page_total =data.list.total+1;
-                        $scope.prev_page = page - 1;
-                        $scope.next_page = page + 1;
-                        $scope.this_page = data.list.page*10;
-                        $scope.allist = data.list.al_list;
-                        $scope.alreply = data.list.al_support_count;
-                        $scope.altotal_page=data.list.al_total_page;
                     }else {
                         if (data.message != null) {
                             notification.sendMessage("error",data.message);
@@ -35,6 +27,6 @@ angular
 
                 })
         }
-        $scope.supportlist(1);
+        $scope.supportlist();
 
     });

@@ -2,6 +2,8 @@ angular
     .module('gncloud')
     .controller('supportlistCtrl', function ($scope, $http, notification) {
         $scope.data = {}
+        $scope.currentPage = 0;
+        $scope.pageSize = 10;
         $scope.supportlist=function () {
             $scope.showData='not';
             $http({
@@ -19,6 +21,7 @@ angular
                         $scope.total_page=data.list.total_page;
                         $scope.page_hist =data.list.page+1;
                         $scope.page_total =data.list.total+1;
+                        $scope.last_page = Math.floor(data.list.total_page / $scope.pageSize);
                     }else {
                         if (data.message != null) {
                             notification.sendMessage("error",data.message);
@@ -28,5 +31,15 @@ angular
                 })
         }
         $scope.supportlist();
+        $scope.cli=function (data) {
+            if(data == '-'){
+                $scope.currentPage=$scope.currentPage-1;
 
+            }else if(data=='+'){
+                $scope.currentPage=$scope.currentPage+1;
+            }else{
+                $scope.currentPage=0;
+            }
+
+        }
     });

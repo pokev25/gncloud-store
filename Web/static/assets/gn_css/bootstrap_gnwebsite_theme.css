@@ -63,10 +63,11 @@ li{
 }
 
 .container{
-    padding-bottom: 150px;
+    padding-bottom: 0px;
 }
 
-.content{    min-height: 100%;
+.main-container{
+    min-height: 100%;
     height: auto !important;
     margin:  0 auto -206px;}
 
@@ -212,6 +213,31 @@ textarea.gn-form-control{
     border-radius: 15px;
 }
 
+.error-message{
+    height: 20px;
+    line-height: 20px;
+    font-size:12px;
+    text-align: left;
+    color: rgba(255, 0, 0, 0.75);
+    margin: 5px 0 2px 0;
+}
+
+p.error-message{
+    font-size: 14px;
+}
+
+.gn-input-error{
+    border: 1px solid rgba(255, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5);
+}
+
+input.error{
+    border: 1px solid rgba(255, 0, 0, 0.75);
+
+}
+form.signupForm label.error, label.error{
+    color :rgba(255, 0, 0, 0.75);
+}
 
 /* ============================= gncloud BUTTON STYLE ============================= */
 
@@ -305,6 +331,30 @@ textarea.gn-form-control{
 .modal-open{padding-right: 15px;}
 
 .gn-btn-height{height: 37px;}
+
+
+/* 웹사이드 #58c4c6 버튼 */
+.btn-gn-blue {
+    color: #58c4c6;
+    background-color: #ffffff;
+    border-color: #58c4c6;
+    border-radius: 3px;
+}
+.btn-gn-blue:hover,
+.btn-gn-blue:focus,
+.btn-gn-blue.focus,
+.btn-gn-blue:active,
+.btn-gn-blue.active,
+.open > .dropdown-toggle.btn-gn-blue {
+    color: #ffffff;
+    background-color: #58c4c6;
+    border-color: #58c4c6;
+}
+.btn-gn-blue:active,
+.btn-gn-blue.active,
+.open > .dropdown-toggle.btn-success {
+    background-image: none;
+}
 
 
 
@@ -677,12 +727,6 @@ li.nav-link.active>a:hover,
     /*border-left: solid 1px #ccc;*/
 }
 
-/*#custom-search-input button:hover{
-    border: 0;
-    box-shadow: none;
-    border-left: solid 1px #ccc;
-}*/
-
 #custom-search-input .glyphicon-search{
     font-size: 23px;
 }
@@ -693,8 +737,20 @@ li.nav-link.active>a:hover,
     z-index: 2;
 }
 
+.main-container ul > li{
+    line-height: 25px;
+    font-size: 16px;
+    list-style: url("../gn_images/list-style-bullet.png");
+}
+
+
 /* 지원 > 메인 */
+#support button.btn-gn-primary{padding: 65px 0;}
+
 /* 지원 > 질문하기 */
+#supportWrite span.error-message{margin: 5px 0; display: block;}
+#supportWrite button.btn-gn-blue{margin: 10px 0;}
+
 /* 지원 > 검색결과 */
 /* 지원 > 전체목록 */
 /* 지원 > 글 읽기 페이지 */

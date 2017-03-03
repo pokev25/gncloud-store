@@ -28,6 +28,8 @@ def supportlist(sql_session):
 
 def supportinfo(id, sql_session): #게시판 상세페이지
     post_info = sql_session.query(GnSupport).filter(GnSupport.id == id).filter(GnSupport.parent_id ==None).one()
+    post_info.count=post_info.count+1
+    sql_session.commit()
     post_info.write_date = post_info.write_date.strftime('%Y-%m-%d %H:%M')
     reply_info = sql_session.query(GnSupport).filter(GnSupport.parent_id == id).all()
     for reply in reply_info:
@@ -54,6 +56,6 @@ def supportdel(id, sql_session):
     sql_session.commit()
 
 def supportwrite(title, text, sql_session):
-    post = GnSupport(title= title, text=text, author_id='shjoo', author_name='주성훈',write_date=datetime.datetime.now().strftime('%Y%m%d%H%M%S'))
+    post = GnSupport(title= title, text=text, author_id='shjoo', author_name='주성훈',count=0,write_date=datetime.datetime.now().strftime('%Y%m%d%H%M%S'))
     sql_session.add(post)
     sql_session.commit()

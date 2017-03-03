@@ -14,7 +14,7 @@ angular
                 .success(function (data, status, headers, config) {
                     if (data.status == true) {
                         for(var i=0;i < data.list.support_count.length; i++){
-                            data.list.list[i].count = data.list.support_count[i];
+                            data.list.list[i].recount = data.list.support_count[i];
                         }
                         $scope.list = data.list.list;
                         $scope.reply = data.list.support_count;

@@ -1,4 +1,4 @@
-<input class="gn-form-control from-control col-sm-10" type="search" ng-model="search_text" ng-keyup="cli('!')">
+<input class="gn-form-control from-control col-sm-10" type="search" ng-model="search_text" placeholder="검색" ng-keyup="cli('!')">
 
 
 <h4 class="gn-write">전체 {{ (list | filter: search_text).length }} 건</h4>
@@ -10,8 +10,9 @@
         <thead>
         <tr>
             <th class="col-sm-1">&num;</th>
-            <th class="col-md-7 col-sm-6">제목</th>
+            <th class="col-md-4 col-sm-4">제목</th>
             <th class="col-md-2 col-sm-2 hidden-xs">작성자</th>
+            <th class="col-sm-2">조회수</th>
             <th class="col-sm-2">등록일</th>
         </tr>
         </thead>
@@ -20,9 +21,10 @@
             <td>{{total_page-($index+currentPage*pageSize)}}</td>
             <td class="second-td-name">
                 <a href="#/supportdetail?id={{list.id}}" class="gn-table-ellip"> {{ list.title }} </a>
-                <span class="badge" ng-show="list.count > 0">{{list.count}}</span>
+                <span class="badge" ng-show="list.recount > 0">{{list.recount}}</span>
             </td>
             <td class="hidden-xs">{{list.author_name}}</td>
+            <td>{{list.count}}</td>
             <td>{{list.write_date}}</td>
         </tr>
 

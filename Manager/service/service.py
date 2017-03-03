@@ -23,17 +23,26 @@ def supportlist(page,sql_session):
     total_page= sql_session.query(func.count(GnSupport.id).label("count"))\
         .filter(GnSupport.parent_id == None).one()
     for e in list:
-        e.write_date = e.write_date.strftime('%Y-%m-%d    %H:%M')
+        e.write_date = e.write_date.strftime('%Y-%m-%d %H:%M')
         total_count.append(len(sql_session.query(GnSupport).filter(GnSupport.parent_id == e.id).all()))
     total=int(total_page.count)/10
-    return {"list":list,"total":total,"support_count":total_count,"page":page,"total_page":total_page.count}
+
+    al_total_count=[]
+    al_list = sql_session.query(GnSupport).filter(GnSupport.parent_id == None).order_by(GnSupport.write_date.desc()).all()
+    al_total_page= sql_session.query(func.count(GnSupport.id).label("count")) \
+        .filter(GnSupport.parent_id == None).one()
+    for a in al_list:
+        al_total_count.append(len(sql_session.query(GnSupport).filter(GnSupport.parent_id == a.id).all()))
+
+    return {"list":list,"total":total,"support_count":total_count,"page":page,"total_page":total_page.count\
+        ,"al_list":al_list,"al_support_count":al_total_count,"al_total_page":al_total_page.count}
 
 def supportinfo(id, sql_session): #게시판 상세페이지
     post_info = sql_session.query(GnSupport).filter(GnSupport.id == id).filter(GnSupport.parent_id ==None).one()
-    post_info.write_date = post_info.write_date.strftime('%Y-%m-%d    %H:%M')
+    post_info.write_date = post_info.write_date.strftime('%Y-%m-%d %H:%M')
     reply_info = sql_session.query(GnSupport).filter(GnSupport.parent_id == id).all()
     for reply in reply_info:
-        reply.write_date = reply.write_date.strftime('%Y-%m-%d    %H:%M')
+        reply.write_date = reply.write_date.strftime('%Y-%m-%d %H:%M')
     return {"post":post_info, "reply":reply_info}
 
 def supportchange(id,text,sql_session): #게시판 상세페이지 내용 수정

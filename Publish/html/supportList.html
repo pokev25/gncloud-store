@@ -55,28 +55,98 @@
     </nav> <!--class="navbar navbar-default navbar-fixed-top"-->
     <!--HEADER END-->
 
-    <div id="supportWrite" class="container main-container">
-        <h1>질문하기</h1>
-
-        <hr>
-        <br>
-
-        <h4>제목</h4>
-        <input type="text" id="title" ng-model="data.title" name="title" class="gn-form-control form-control gn-write">
-
-        <br>
-
-        <h4>내용</h4>
-        <textarea type="text" name="text" ng-model="data.text" class="gn-form-control form-control gn-write" rows="15"></textarea>
-        <span class="error-message" id="error"> 내용을 입력하세요</span>
-
+    <div id="supportList" class="container main-container">
+        <h1>지원</h1>
+        <!--검색바-->
         <div class="row">
-            <div class="col-md-3 col-sm-4 col-xs-12 pull-right">
-                <button class="btn btn-gn-blue btn-block btn-lg" ng-click="write()">등록</button>
+            <div class="col-md-12">
+                <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                        <input type="search" class="form-control input-lg" placeholder="검색어 입력" ng-model="search_text" ng-keyup="cli('!')" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-info btn-lg" type="button">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
 
         <br>
+        <hr>
+        <br>
+
+        <h4>
+            전체 <!--{{ (list | filter: search_text).length }}-->&nbsp; 3 건
+            <div class="col-md-2 pull-right">
+                <button class="btn btn-gn-blue btn-block btn-lg" onclick="location.href='supportWrite.html'">질문하기</button>
+            </div>
+        </h4>
+
+        <h4>
+            검색결과 총 <!--{{ (list | filter: search_text).length }}-->&nbsp; 20 건
+            <div class="col-md-2 pull-right">
+                <button class="btn btn-gn-blue btn-block btn-lg" onclick="location.href='supportWrite.html'">질문하기</button>
+            </div>
+        </h4>
+
+        <div class="gn-margin-bott10"></div>
+
+        <div class="table-responsive gn-table-responsive">
+            <table class="table gn-board-table table-hover">
+                <thead>
+                    <tr>
+                        <th class="col-sm-1">&num;</th>
+                        <th class="col-md-7 col-sm-6">제목</th>
+                        <th class="col-md-2 col-sm-2 hidden-xs">작성자</th>
+                        <th class="col-sm-2">등록일</th>
+                    </tr>
+                </thead>
+                <tbody class="gn-tdody">
+                    <tr>
+                        <td>20</td>
+                        <td class="second-td-name">
+                            <a href="">어떻게 지앤클라우드를 설치하나요?</a>
+                            <span class="badge">2</span>
+                        </td>
+                        <td >홍길동</td>
+                        <td class="hidden-xs">2017-03-03  10:45</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td class="second-td-name">
+                            <a href="">어떻게 팀원을 추가하나요?</a>
+                            <span class="badge">1</span>
+                        </td>
+                        <td >홍길동</td>
+                        <td class="hidden-xs">2017-03-03  10:45</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td class="second-td-name">
+                            <a href="">어떻게 팀원을 추가하나요?</a>
+                            <span class="badge"></span>
+                        </td>
+                        <td >홍길동</td>
+                        <td class="hidden-xs">2017-03-03  10:45</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td class="second-td-name">
+                            <a href="">인스턴스 삭제방법.</a>
+                            <span class="badge">9</span>
+                        </td>
+                        <td >홍길동</td>
+                        <td class="hidden-xs">2017-03-03  10:45</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><!--table-->
+
+        <input type="button" class="btn btn-default" ng-click="cli('-')" value="이전" ng-show="currentPage != 0">
+        <input type="button" class="btn btn-default" ng-click="cli('+')" value="다음" ng-show="currentPage != last_page">
+
     </div><!--class="container"-->
 
     <!--FOOTER-->

@@ -743,11 +743,14 @@ li.nav-link.active>a:hover,
     list-style: url("../gn_images/list-style-bullet.png");
 }
 
-.main-container button.btn-gn-primary{padding: 65px 0;}
 
 /* 지원 > 메인 */
-#support .row{}
+#support button.btn-gn-primary{padding: 65px 0;}
+
 /* 지원 > 질문하기 */
+#supportWrite span.error-message{margin: 5px 0; display: block;}
+#supportWrite button.btn-gn-blue{margin: 10px 0;}
+
 /* 지원 > 검색결과 */
 /* 지원 > 전체목록 */
 /* 지원 > 글 읽기 페이지 */

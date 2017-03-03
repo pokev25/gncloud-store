@@ -3,13 +3,15 @@
 /*나눔바른고딕 폰트*/
 @import url(nanumbarungothic.css);
 /* ========== gncloud 공통 STYLE ========== */
-body{
+html{ height:100%; margin:0; padding:0;}
+body {
     margin: 0;
     padding: 0;
     border: 0;
     overflow-y: scroll;
     font-family: 'Nanum Barun Gothic', sans-serif;
     color: #6f6f6f;
+    height: 100%;
 }
 
 h1{
@@ -52,7 +54,7 @@ a:focus {
 }
 
 li{
-    list-style: none;
+    /*list-style: none;*/
 }
 
 .gn-box{
@@ -61,7 +63,11 @@ li{
 }
 
 .container{
-    padding-bottom: 150px;
+
+    /*padding-bottom: 150px;*/
+    min-height: 100%;
+    height: auto !important;
+    margin:  0 auto -206px;
 }
 
 .gn-container{
@@ -197,6 +203,15 @@ textarea.gn-form-control{
 
 .gn-control-label{text-align: left !important;}
 
+/*뱃지 스타일*/
+.gn-badge{
+    margin-left: 10px;
+    background-color: rgba(88, 196, 198,.8);
+    font-weight: 400;
+    padding: 5px 8px;
+    border-radius: 15px;
+}
+
 
 /* ============================= gncloud BUTTON STYLE ============================= */
 
@@ -296,7 +311,7 @@ textarea.gn-form-control{
 /* ==================== gncloud HEADER STYLE ==================== */
 .gn-header{
     position: relative;
-    height: 100px;
+    height: 70px;
     margin-bottom: 10px;
     z-index: 100;
 }
@@ -615,10 +630,11 @@ li.nav-link.active>a:hover,
 
 /* footer */
 .footer{
-    position: absolute;
-    bottom: 0;
-    width:100%;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
     background-color: #646464;
+    color: #ffffff;
     overflow: hidden;}
 
 .footer > .container{
@@ -630,13 +646,12 @@ li.nav-link.active>a:hover,
     position: absolute;
     bottom: -83px;
     left: -92px;
-    z-index: 100;
 }
-.footer .container .row{padding-bottom: 40px;}
 .footer .address{border-left: 1px solid #ffffff;}
 .footer address{font-size: 14px; font-weight: 200; margin: 0;}
 .footer a{color: #ffffff;}
 .footer p{font-size: 13px; font-weight: 200; margin-bottom: 0;}
+.footer>p{padding: 20px;}
 .footer span{display: block;}
 
 -------------------------------------------------------------------------------------------------------------
@@ -645,7 +660,46 @@ li.nav-link.active>a:hover,
 
 
 /* 지원 공통 */
+/*검색바*/
+#custom-search-input{
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+}
 
+#custom-search-input input{
+    border: 0;
+    box-shadow: none;
+    background-color: rgba(215,215,215,0.5);
+    height: 70px;
+}
+
+#custom-search-input button{
+    margin: 2px 15px 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    /*border-left: solid 1px #ccc;*/
+}
+
+/*#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}*/
+
+#custom-search-input .glyphicon-search{
+    font-size: 23px;
+}
+
+.input-group-btn{
+    background-color: rgba(215,215,215,0.5);
+    border-radius: 0px 6px 6px 0;
+    z-index: 2;
+}
 
 /* 지원 > 메인 */
 /* 지원 > 질문하기 */

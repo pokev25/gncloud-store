@@ -10,3 +10,6 @@
 
 3. 지원 > 질문하기 목록 페이지(검색결과/전체목록) 
  * https://gncloud.github.io/gncloud-store/Publish/html/supportList.html
+
+4. 지원 > 목록 상세 페이지
+ * https://gncloud.github.io/gncloud-store/Publish/html/supportDetail.html

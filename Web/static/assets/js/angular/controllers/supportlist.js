@@ -17,6 +17,7 @@ angular
                         }
                         $scope.list = data.list.list;
                         $scope.reply = data.list.support_count;
+                        $scope.total = data.list.total_page;
                         $scope.total_page=data.list.total_page - (page-1)*10;
                         $scope.page_hist =data.list.page+1;
                         $scope.page_total =data.list.total+1;

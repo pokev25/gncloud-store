@@ -42,7 +42,7 @@ def supportchange(id,text,sql_session): #게시판 상세페이지 내용 수정
     sql_session.commit()
 
 def supportreplycreate(id,text,sql_session):
-    reply_info= GnSupport(text=text, author_id='shjoo', author_name='주성훈', parent_id=id, write_date=datetime.datetime.now().strftime('%Y%m%d%H%M%S'))
+    reply_info= GnSupport(text=text, author_id='shjoo', author_name='주성훈', parent_id=id,count=0 ,write_date=datetime.datetime.now().strftime('%Y%m%d%H%M%S'))
     sql_session.add(reply_info)
     sql_session.commit()
 
@@ -59,3 +59,11 @@ def supportwrite(title, text, sql_session):
     post = GnSupport(title= title, text=text, author_id='shjoo', author_name='주성훈',count=0,write_date=datetime.datetime.now().strftime('%Y%m%d%H%M%S'))
     sql_session.add(post)
     sql_session.commit()
+
+def supportfamous(sql_session):
+    latest = sql_session.query(GnSupport).order_by(GnSupport.write_date.asc()).limit('5').all()
+    famous = sql_session.query(GnSupport).order_by(GnSupport.count.desc()).limit('5').all()
+    famous_reply=[]
+    for f in latest:
+        famous_reply.append(len(sql_session.query(GnSupport).filter(GnSupport.parent_id == f.id).all()))
+    return {"latest":latest, "famous":famous, "reply":famous_reply}

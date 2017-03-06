@@ -919,6 +919,11 @@ li.nav-link.active>a:hover,
 
 
 /* 회원가입 */
+/* --- 이메일 입력 페이지 */
+/* --- 이메일 발송확인 페이지 */
+#joinVerify img{margin: 0 auto;  display: block;}
+/* --- 회원정보 입력 페이지 */
+/* --- 가입완료 페이지 */
 
 
 /* 스토어 */

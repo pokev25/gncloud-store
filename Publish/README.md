@@ -16,3 +16,9 @@
  
 5. 로그인 페이지
   * https://gncloud.github.io/gncloud-store/Publish/html/login.html
+  
+6. 회원가입 > 이메일 입력 페이지
+  * https://gncloud.github.io/gncloud-store/Publish/html/joinEmail.html  
+  
+7. 회원가입 > 이메일 발송 확인 페이지
+  * https://gncloud.github.io/gncloud-store/Publish/html/joinVerify.html    

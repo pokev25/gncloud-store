@@ -15,16 +15,28 @@ from Manager.util.config import config
 from Manager.util.hash import random_string, convertToHashValue, convertsize
 
 #지원 게시판 부분
-def supportlist(sql_session):
+def supportlist(page ,text ,sql_session):
     total_count=[]
-    list = sql_session.query(GnSupport).filter(GnSupport.parent_id == None).order_by(GnSupport.write_date.desc()).all()
-    total_page= sql_session.query(func.count(GnSupport.id).label("count"))\
-        .filter(GnSupport.parent_id == None).one()
-    for e in list:
-        e.write_date = e.write_date.strftime('%Y-%m-%d %H:%M')
-        total_count.append(len(sql_session.query(GnSupport).filter(GnSupport.parent_id == e.id).all()))
-    total=int(total_page.count)/10
-    return {"list":list,"total":total,"support_count":total_count,"total_page":total_page.count}
+    page_size = 10
+    low = sql_session.query(GnSupport).filter(GnSupport.parent_id == None).order_by(GnSupport.write_date.desc())
+    if text == "":
+        page=int(page)-1
+        list = low.limit(page_size).offset(page*page_size).all()
+        total_page= sql_session.query(func.count(GnSupport.id).label("count"))\
+            .filter(GnSupport.parent_id == None).one()
+        for e in list:
+            e.write_date = e.write_date.strftime('%Y-%m-%d %H:%M')
+            total_count.append(len(sql_session.query(GnSupport).filter(GnSupport.parent_id == e.id).all()))
+        total=int(total_page.count)/10
+    else:
+        list = low.filter(or_(GnSupport.title.like('%'+text+'%'),GnSupport.text.like('%'+text+'%'),GnSupport.author_id.like('%'+text+'%'),GnSupport.author_name.like('%'+text+'%'))).all()
+        total_page = sql_session.query(func.count(GnSupport.id).label("count")) \
+            .filter(GnSupport.title.like("%"+text+"%")).one()
+        for e in list:
+            e.write_date = e.write_date.strftime('%Y-%m-%d %H:%M')
+            total_count.append(len(sql_session.query(GnSupport).filter(GnSupport.parent_id == e.id).all()))
+        total=int(total_page.count)/10
+    return {"list":list,"total":total,"support_count":total_count,"total_page":total_page.count,"page":page}
 
 def supportinfo(id, sql_session): #게시판 상세페이지
     post_info = sql_session.query(GnSupport).filter(GnSupport.id == id).filter(GnSupport.parent_id ==None).one()

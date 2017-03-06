@@ -79,15 +79,15 @@
 
         <div ng-repeat="reply in reply" class="comment">
             <blockquote class="gn_blockqu">
-            <small>
-                <strong>김철수</strong><!--{{ reply.author_name }}-->
-                &nbsp;&nbsp;|&nbsp;&nbsp;
-                2017-03-01 18:02<!--{{ reply.write_date }}-->
-                <a class="glyphicon glyphicon-trash pull-right" ng-click="reply_del(reply.id)"></a>
-                <a class="glyphicon glyphicon-pencil pull-right" ng-show="replyData =='nomal'" ng-click="reply_data('change')"></a>
-            </small>
+                <small>
+                    <strong>김철수</strong><!--{{ reply.author_name }}-->
+                    &nbsp;&nbsp;|&nbsp;&nbsp;
+                    2017-03-01 18:02<!--{{ reply.write_date }}-->
+                    <a class="glyphicon glyphicon-trash pull-right" ng-click="reply_del(reply.id)"></a>
+                    <a class="glyphicon glyphicon-pencil pull-right" ng-show="replyData =='nomal'" ng-click="reply_data('change')"></a>
+                </small>
 
-            <pre ng-show="replyData=='nomal'" class="gn-write">
+                <pre ng-show="replyData=='nomal'" class="gn-write">
                     저도 궁금합니다
                     설명해주는 동영상이 있으면 좋을 것 같네요 : )<!--{{reply.text}}-->
                 </pre>

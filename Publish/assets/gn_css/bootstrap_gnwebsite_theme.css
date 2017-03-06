@@ -386,6 +386,22 @@ blockquote small:before{  content: '';}
     background-image: none;
 }
 
+/* 웹사이트 로그인 버튼 */
+.btn-gn-login-web {
+    color: #58c4c6;
+    background-color: #ffffff;
+    /*border-color: #58c4c6;*/
+    border-radius: 5px;
+}
+.btn-gn-login-web:hover,
+.btn-gn-login-web:focus,
+.btn-gn-login-web.focus,
+.btn-gn-login-web:active,
+.btn-gn-login-web.active{
+    color: #ffffff;
+    background-color: #58c4c6;
+    /*border-color: #58c4c6;*/
+}
 
 
 /* ==================== gncloud HEADER STYLE ==================== */
@@ -836,6 +852,14 @@ li.nav-link.active>a:hover,
     /* -webkit-user-select: none;
       user-select: none; */
 }
+
+/* 지앤클라우드 로그인 체크박스 스타일 */
+.btn-id{position:relative; text-align:left; cursor:pointer; overflow:hidden; margin-bottom: 10px;}
+.btn-id input.form-inputPop {position:absolute; top:0; left:0; opacity:0; z-index:5;}
+.btn-id i {float:left; width: 15px; height: 15px; background:url(../gn_images/checkbox_arrow.png)no-repeat; border-radius: 3px;}
+.btn-id label {margin-left:10px; cursor:pointer; font-weight: 400;  color: #ffffff;}
+.btn-id input.form-inputPop:checked+i {background-position:left bottom;}
+.btn-id input.form-inputPop:checked+i+label {color:#58c4c6;}
 
 
 

@@ -1,33 +1,51 @@
-<h1>{{post.title}}</h1>
-<p class="gn-write modal-header">{{post.author_name}} | {{post.write_date}}</p>
-<pre ng-show="showData == 'nomal'" class="gn-write">
-    {{ post.text }}
-</pre>
-<textarea id="post_text" ng-model="post.text" class="gn-write gn-form-control form-control" ng-show="showData == 'change'"></textarea>
-<div class="modal-footer"></div>
-<div ng-repeat="reply in reply">
-    <span>
-        <span class="gn-write">{{ reply.author_name }} | {{ reply.write_date }}</span>
-        <pre class="gn-write" ng-show="replyData=='nomal'">{{reply.text}}</pre>
-        <textarea class="gn-write" ng-show="replyData =='change'" ng-model="reply.text"></textarea>
-    </span>
-    <span>
-        <button class="btn btn-delete pull-right" ng-click="reply_del(reply.id)">삭제</button>
-        <button class="btn btn-default pull-right" ng-show="replyData =='nomal'" ng-click="reply_data('change')">수정</button>
-        <button class="btn btn-default pull-right" ng-show="replyData =='change'" ng-click="reply_data('nomal');replychange(post.id)">저장</button>
-    </span>
-    <div class="modal-footer"></div>
-</div>
+<div id="supportDetail">
+    <h1>{{post.title}}</h1>
 
-<p class="gn-write">답변</p>
-<div>
-    <textarea class="gn-write gn-form-control form-control col-sm-10" ng-model="data.reply_text"></textarea>
-    <button class="btn btn-default" ng-click="replycreate(post.id)">등록</button>
+    <div>
+            <span class="gn-lead">
+                <strong>{{ post.author_name }}</strong>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                {{post.write_date}}
+            </span>
+        <div class="modif-icon pull-right"><!-- 작성된 내용에 대한 수정,삭제,저장-->
+            <a class="glyphicon glyphicon-pencil" ng-show="showData =='nomal'" ng-click="click('change')"></a>
+            <a class="glyphicon glyphicon-trash" ng-click="del(post.id)"></a>
+        </div>
 
-</div>
-<div style="margin: 10px">
-    <button class="btn btn-default pull-right" onclick="location.href='#/supportlist'">목록</button>
-    <button ng-show="showData =='nomal'" class="btn btn-gn-primary pull-right" ng-click="click('change')">수정</button>
+        <pre ng-show="showData == 'nomal'" class="gn-lead">
+            {{ post.text }}
+            </pre>
+
+    </div>
+
+    <textarea id="post_text" ng-model="post.text" class="gn-write gn-form-control form-control" ng-show="showData == 'change'"></textarea>
     <button ng-show="showData =='change'" class="btn btn-gn-primary pull-right" ng-click="click('nomal');change(post.id,post.text)">저장</button>
-    <button class="btn btn-delete pull-left" ng-click="del(post.id)">삭제</button>
+    <div class="comment" ng-repeat="reply in reply">
+        <blockquote class="gn_blockqu">
+            <small>
+                <strong>{{ reply.author_name }}</strong>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                {{ reply.write_date }}
+                <a class="glyphicon glyphicon-trash pull-right" ng-click="reply_del(reply.id)"></a>
+                <a class="glyphicon glyphicon-pencil pull-right" ng-show="replyData =='nomal'" ng-click="reply_data('change')"></a>
+            </small>
+
+            <pre ng-show="replyData=='nomal'" class="gn-write">
+                    {{reply.text}}
+                </pre>
+
+            <textarea class="gn-write gn-form-control form-control" row="5" ng-show="replyData =='change'" ng-model="reply.text"></textarea>
+            <button class="btn btn-default pull-right" ng-show="replyData =='change'" ng-click="reply_data('nomal');replychange(post.id)">저장</button>
+        </blockquote>
+    </div>
 </div>
+
+
+        <h4>답변</h4>
+        <div>
+            <textarea class="gn-write gn-form-control form-control" ng-model="data.reply_text" rows="5"></textarea>
+            <br>
+            <button class="btn btn-default pull-left" onclick="location.href='#/supportlist'">목록</button>
+            <button class="btn btn-gn-blue col-lg-2 pull-right" ng-click="replycreate(post.id)">등록</button>
+        </div>
+

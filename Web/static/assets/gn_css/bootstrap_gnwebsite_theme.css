@@ -39,11 +39,11 @@ h3{
 
 img{border: 0;}
 a{color: #6f6f6f; cursor: pointer;
-    -webkit-transition: all .3s ease;
+    /*-webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
     -o-transition: all .3s ease;
-    transition: all .3s ease;}
+    transition: all .3s ease;*/}
 a:hover,
 a:focus {
     outline: 0;
@@ -68,8 +68,8 @@ li{
 
 .main-container{
     min-height: 100%;
-    height: auto !important;
-    margin:  0 auto -206px;}
+    /*height: auto !important;
+    margin:  0 auto -206px;*/}
 
 .gn-container{
     margin-bottom: 50px;
@@ -239,6 +239,37 @@ form.signupForm label.error, label.error{
     color :rgba(255, 0, 0, 0.75);
 }
 
+/* 지앤클라우드 웹사이트에 pre style */
+pre.gn-lead{
+    padding: 20px 0 100px 0 !important;
+    border-top: 1px solid rgba(215,215,215,0.5) !important;
+    border-bottom: 1px solid rgba(215,215,215,0.5) !important;
+    border-left: none ;
+    border-right: none;
+    border-radius: 0;
+    white-space: pre-line;
+    font-size: 14px;
+    background-color: transparent;
+}
+
+pre.gn-write{
+    padding: 20px 0 10px 0;
+    /*border-left: none ;
+    border-right: none;*/
+    border: none;
+    border-radius: 0;
+    white-space: pre-line;
+    font-size: 14px;
+    background-color: transparent;
+}
+
+/* blockquote style */
+blockquote.gn_blockqu{
+    border-left: 3px solid #58c4c6;
+    margin: 20px 0;}
+
+blockquote small:before{  content: '';}
+
 /* ============================= gncloud BUTTON STYLE ============================= */
 
 .btn-gn-primary {
@@ -356,6 +387,22 @@ form.signupForm label.error, label.error{
     background-image: none;
 }
 
+/* 웹사이트 로그인 버튼 */
+.btn-gn-login-web {
+    color: #58c4c6;
+    background-color: #ffffff;
+    /*border-color: #58c4c6;*/
+    border-radius: 5px;
+}
+.btn-gn-login-web:hover,
+.btn-gn-login-web:focus,
+.btn-gn-login-web.focus,
+.btn-gn-login-web:active,
+.btn-gn-login-web.active{
+    color: #ffffff;
+    background-color: #58c4c6;
+    /*border-color: #58c4c6;*/
+}
 
 
 /* ==================== gncloud HEADER STYLE ==================== */
@@ -675,20 +722,18 @@ li.nav-link.active>a:hover,
     width: 100%;
     background-color: #646464;
     color: #ffffff;
-    overflow: hidden;}
+    overflow: hidden;
+}
 
 .footer > .container{
-    position: relative;
-    bottom: 0px;
+    /*position: relative;
+    bottom: 0px;*/
     padding: 30px 0 20px 0;
     margin: 0 auto;
-    color: #ffffff;}
-
-.footer>.container > img{
-    position: absolute;
-    bottom: -164px;
-    left: -243px;
+    color: #ffffff;
 }
+
+
 .footer .address{border-left: 1px solid #ffffff;}
 .footer address{font-size: 14px; font-weight: 200; margin: 0;}
 .footer a{color: #ffffff;}
@@ -696,7 +741,131 @@ li.nav-link.active>a:hover,
 .footer>p{padding: 20px;}
 .footer span{display: block;}
 
+.footer-img{
+    background-image: url("../gn_images/footer_gncloud_img.png");
+    background-repeat: no-repeat;
+    background-position: left -100px center;
+    z-index: 10;
+    width: 656px;
+    height: 315px;
+    display: block;
+}
+
 -------------------------------------------------------------------------------------------------------------
+
+    /* 로그인 */
+
+    /****** LOGIN MODAL ******/
+.loginmodal-container {
+    padding: 30px;
+    max-width: 350px;
+    width: 100% !important;
+    /*background-color: #F7F7F7;*/
+    margin: 0 auto;
+    /*border-radius: 2px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);*/
+    overflow: hidden;
+    margin-top: 150px;
+    display: block;
+}
+
+.loginmodal-container .login-logo{
+    background-image: url("../gn_images/login_gncloud_logo.png");
+    width: 108px;
+    height: 73px;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+
+.loginmodal-container h1 {
+    text-align: center;
+    font-size: 1.8em;
+    color: #ffffff;
+}
+
+.loginmodal-container .form-box{
+    background-color: rgba(255,255,255,03);
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.loginmodal-container .form-box .glyphicon-user{
+    position: absolute;
+    top:20px;
+    left:20px;
+}
+
+.loginmodal-container .form-box .glyphicon-lock{
+    position: absolute;
+    top:75px;
+    left:20px;
+}
+
+.middle-line{
+    border: 0.5px solid rgba(215,215,215,0.2);
+    width:100px;
+    margin: 0 auto;
+}
+
+.loginmodal-container input[type=submit] {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.loginmodal-container input[type=text], input[type=password] {
+    height: 44px;
+    font-size: 16px;
+    width: 100%;
+    margin: 5px 0;
+    -webkit-appearance: none;
+    background: transparent;
+    border: none;
+    /*border-top: 1px solid #c0c0c0;
+    border-radius: 3px;*/
+    padding: 0 8px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    text-indent: 50px;
+}
+
+/*.loginmodal-container input[type=text]:hover, input[type=password]:hover {
+    border: 1px solid #b9b9b9;
+    border-top: 1px solid #a0a0a0;
+    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    border-radius: 3px;
+}*/
+
+.loginmodal {
+    text-align: center;
+    font-size: 14px;
+    /*font-family: 'Arial', sans-serif;*/
+    font-weight: 700;
+    height: 36px;
+    padding: 0 8px;
+    /* border-radius: 3px; */
+    /* -webkit-user-select: none;
+      user-select: none; */
+}
+
+/* 지앤클라우드 로그인 체크박스 스타일 */
+.btn-id{position:relative; text-align:left; cursor:pointer; overflow:hidden; margin-bottom: 10px;}
+.btn-id input.form-inputPop {position:absolute; top:0; left:0; opacity:0; z-index:5;}
+.btn-id i {float:left; width: 15px; height: 15px; background:url(../gn_images/checkbox_arrow.png)no-repeat; border-radius: 3px;}
+.btn-id label {margin-left:10px; cursor:pointer; font-weight: 400;  color: #ffffff;}
+.btn-id input.form-inputPop:checked+i {background-position:left bottom;}
+.btn-id input.form-inputPop:checked+i+label {color:#58c4c6;}
+
+
+
+/* 회원가입 */
+
 
 /* 스토어 */
 
@@ -751,10 +920,16 @@ li.nav-link.active>a:hover,
 #supportWrite span.error-message{margin: 5px 0; display: block;}
 #supportWrite button.btn-gn-blue{margin: 10px 0;}
 
-/* 지원 > 검색결과 */
-/* 지원 > 전체목록 */
-/* 지원 > 글 읽기 페이지 */
+/* 지원 > 검색결과 & 지원 > 전체목록 */
+#supportList h4{line-height: 46px; margin-top: 0px;}
 
+/* 지원 > 글 읽기 페이지 */
+#supportDetail pre.gn-lead{margin-top: 10px;}
+#supportDetail div.comment{border-bottom: 1px solid rgba(215,215,215,0.5) !important;  }
+#supportDetail .modif-icon a{  margin: 0px 5px;}
+#supportDetail h4{margin: 25px 0 10px 0;  color: #7d7d7d;}
+#supportDetail blockquote.gn_blockqu{  padding-right: 0;}
+#supportDetail blockquote.gn_blockqu a{margin: 0px 6px;}
 
 /* 소개 */
 

@@ -48,6 +48,11 @@ def internal_error(error):
 def index():
     return jsonify(status=True, message='Logged in as %s'% escape(session['user_id']))
 
+@app.route('/vm/logincheck',methods=['GET'])
+def logoincheck():
+    user_info = {"name":session['userName'],"user_id": session['userId']}
+    return jsonify(status= True, info=user_info)
+
 @app.route('/supportlist',methods=['GET']) #지원게시판
 def Supportlist():
     text = ""

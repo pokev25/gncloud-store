@@ -270,6 +270,60 @@ blockquote.gn_blockqu{
 
 blockquote small:before{  content: '';}
 
+
+/* 모달창 공통 */
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgba(39, 39, 39, 0.6);
+}
+
+.modal {
+    position: fixed;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    display: none;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+}
+
+.modal-backdrop{background-color: transparent;}
+
+.click{
+    font-weight: 400 !important;
+    cursor: pointer;
+}
+
+.label-click{
+    font-weight: 400 !important;
+    cursor: pointer;
+}
+
+.pointer{cursor: pointer;}
+
+.click:hover{
+    color: #58c4c6 !important;
+    font-weight: normal;
+}
+
+.gn-modal-header{
+    border-bottom: none;
+    /*padding-bottom: 0;*/
+}
+
+.gn-modal-body{
+    padding: 0px 15px;
+}
+
+.gn-modal-footer{
+    border-top: none;
+}
+
+/*-----모달 공통 end-----*/
+
 /* ============================= gncloud BUTTON STYLE ============================= */
 
 .btn-gn-primary {
@@ -874,7 +928,7 @@ li.nav-link.active>a:hover,
 /*검색바*/
 #custom-search-input{
     padding: 3px;
-    border: solid 1px #E4E4E4;
+    /*border: solid 1px #E4E4E4;*/
     border-radius: 6px;
     background-color: #fff;
 }

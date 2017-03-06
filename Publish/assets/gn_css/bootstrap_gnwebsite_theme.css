@@ -39,11 +39,11 @@ h3{
 
 img{border: 0;}
 a{color: #6f6f6f; cursor: pointer;
-    -webkit-transition: all .3s ease;
+    /*-webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
     -o-transition: all .3s ease;
-    transition: all .3s ease;}
+    transition: all .3s ease;*/}
 a:hover,
 a:focus {
     outline: 0;
@@ -238,6 +238,36 @@ input.error{
 form.signupForm label.error, label.error{
     color :rgba(255, 0, 0, 0.75);
 }
+
+/* 지앤클라우드 웹사이트에 pre style */
+pre.gn-lead{
+    padding: 20px 0 100px 0 !important;
+    border-top: 1px solid rgba(215,215,215,0.5) !important;
+    border-bottom: 1px solid rgba(215,215,215,0.5) !important;
+    border-left: none ;
+    border-right: none;
+    border-radius: 0;
+    white-space: pre-line;
+    font-size: 14px;
+    background-color: transparent;
+}
+
+pre.gn-write{
+    padding: 20px 0 10px 0;
+    border-left: none ;
+    border-right: none;
+    border-radius: 0;
+    white-space: pre-line;
+    font-size: 14px;
+    background-color: transparent;
+}
+
+/* blockquote style */
+blockquote.gn_blockqu{
+    border-left: 3px solid #58c4c6;
+    margin: 20px 0;}
+
+blockquote small:before{  content: '';}
 
 /* ============================= gncloud BUTTON STYLE ============================= */
 
@@ -763,7 +793,12 @@ li.nav-link.active>a:hover,
 #supportList h4{line-height: 46px; margin-top: 0px;}
 
 /* 지원 > 글 읽기 페이지 */
-
+#supportDetail pre.gn-lead{margin-top: 10px;}
+#supportDetail div.comment{border-bottom: 1px solid rgba(215,215,215,0.5) !important;  }
+#supportDetail .modif-icon a{  margin: 0px 5px;}
+#supportDetail h4{margin: 25px 0 10px 0;  color: #7d7d7d;}
+#supportDetail blockquote.gn_blockqu{  padding-right: 0;}
+#supportDetail blockquote.gn_blockqu a{margin: 0px 6px;}
 
 /* 소개 */
 

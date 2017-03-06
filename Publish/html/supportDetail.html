@@ -55,72 +55,57 @@
     </nav> <!--class="navbar navbar-default navbar-fixed-top"-->
     <!--HEADER END-->
 
-    <div id="support" class="container main-container">
-        <h1>지원</h1>
-        <!--검색바-->
-        <div class="row">
-            <div class="col-md-12">
-                <div id="custom-search-input">
-                    <div class="input-group col-md-12">
-                        <input type="search" class="form-control input-lg" placeholder="검색어 입력" />
-                        <span class="input-group-btn">
-                            <button class="btn btn-info btn-lg" type="button">
-                                <i class="glyphicon glyphicon-search"></i>
-                            </button>
-                        </span>
-                    </div>
-                </div>
+    <div id="supportDetail" class="container main-container">
+
+        <h1>어떻게 지앤클라우드 설치하나요?</h1>
+
+        <div>
+            <span class="gn-lead">
+                <strong>홍길동</strong><!--{{post.author_name}}-->
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                2017-02-28 10:25<!--{{post.write_date}}-->
+            </span>
+            <div class="modif-icon pull-right"><!-- 작성된 내용에 대한 수정,삭제,저장-->
+                <a class="glyphicon glyphicon-pencil" ng-show="showData =='nomal'" ng-click="click('change')"></a>
+                <a class="glyphicon glyphicon-trash" ng-click="del(post.id)"></a>
             </div>
+
+            <pre ng-show="showData == 'nomal'" class="gn-lead">
+                    처음이라..지앤클라우드 설치하는 법이 조금 어렵네요.
+                    설치방법에 대한 설명이나 메뉴얼이 있나요?<!--{{ post.text }}-->
+            </pre>
+
         </div>
 
-        <br>
-        <hr>
-        <br>
+        <div ng-repeat="reply in reply" class="comment">
+            <blockquote class="gn_blockqu">
+            <small>
+                <strong>김철수</strong><!--{{ reply.author_name }}-->
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                2017-03-01 18:02<!--{{ reply.write_date }}-->
+                <a class="glyphicon glyphicon-trash pull-right" ng-click="reply_del(reply.id)"></a>
+                <a class="glyphicon glyphicon-pencil pull-right" ng-show="replyData =='nomal'" ng-click="reply_data('change')"></a>
+            </small>
 
-        <!--인기주제 | 최신글-->
-        <div class="row gn-container">
-            <div class="col-lg-6">
-                <h2>인기주제</h2>
-                <ul>
-                    <li><a>지앤클라우드 설치방법</a></li>
-                    <li><a>팀원 추가방법</a></li>
-                    <li><a>클러스터 생성방법</a></li>
-                    <li><a>팀별 리소스 할당하기</a></li>
-                </ul>
-            </div>
+            <pre ng-show="replyData=='nomal'" class="gn-write">
+                    저도 궁금합니다
+                    설명해주는 동영상이 있으면 좋을 것 같네요 : )<!--{{reply.text}}-->
+                </pre>
+            <!--<textarea class="gn-write" ng-show="replyData =='change'" ng-model="reply.text"></textarea>-->
+            <!--<button class="btn btn-default pull-right" ng-show="replyData =='change'" ng-click="reply_data('nomal');replychange(post.id)">저장</button>-->
+            </blockquote>
+        </div><!--class="comment"-->
 
-            <div class="col-lg-6">
-                <h2>최신글
-                    <button type="button" class="btn btn-default pull-right" onclick="location.href='supportList.html'">더보기</button>
-                </h2>
-
-                <ul>
-                    <li><a>어떻게 지앤클라우드를 설치하나요.<span class="badge gn-badge">2</span></a></li>
-                    <li><a>팀원 추가하는 방법이 어떻게 되나요.<span class="badge gn-badge">1</span></a></li>
-                    <li><a>어떻게 클러스터 생성하나요?<span class="badge gn-badge">568</span></a></li>
-                    <li><a>삭제하는 방법 알려주세요.</a></li>
-                </ul>
-            </div>
+        <h4>답변</h4>
+        <div>
+            <textarea class="gn-write gn-form-control form-control" ng-model="data.reply_text" rows="5"></textarea>
+            <br>
+            <button class="btn btn-default pull-left" onclick="location.href='#/supportlist'">목록</button>
+            <button class="btn btn-gn-blue col-lg-2 pull-right" ng-click="replycreate(post.id)">등록</button>
         </div>
-
-        <!--추천 | 질문하기 버튼-->
-        <div class="row gn-container">
-            <div class="col-lg-6">
-                <h2>추천</h2>
-                <ul>
-                    <li><a>어떻게 지앤클라우드를 설치하나요</a></li>
-                    <li><a>팀원 추가하는 방법이 어떻게 되나요</a></li>
-                    <li><a>어떻게 클러스터 생성하나요?</a></li>
-                    <li><a>삭제하는 방법 알려주세요.</a></li>
-                </ul>
-            </div>
-
-            <div class="col-lg-2 pull-right">
-                <button type="button" class="btn btn-gn-primary btn-lg btn-block" onclick="location.href='supportWrite.html'">질문하기</button>
-            </div>
-       </div>
-
     </div><!--class="container"-->
+
+
     <!--<div class="footer-img"></div>-->
     <!--FOOTER-->
     <div class="footer">

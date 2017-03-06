@@ -13,3 +13,6 @@
 
 4. 지원 > 목록 상세 페이지
  * https://gncloud.github.io/gncloud-store/Publish/html/supportDetail.html
+ 
+5. 로그인 페이지
+  * https://gncloud.github.io/gncloud-store/Publish/html/login.html

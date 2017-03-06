@@ -84,6 +84,10 @@ def SupportDetailWrtie():
         return jsonify(status=False, message='text')
     return jsonify(status=True, message='success', list=supportwrite(title,text,db_session))
 
+@app.route('/supportmain',methods=['GET'])
+def SupportMain():
+    return jsonify(status=True,message='success', list=supportfamous(db_session))
+
 #### rest end ####
 
 

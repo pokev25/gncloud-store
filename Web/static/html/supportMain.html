@@ -1,5 +1,4 @@
-        <h1>지원</h1>
-        <!--검색바-->
+ <!--검색바-->
         <div class="row">
             <div class="col-md-12">
                 <div id="custom-search-input">
@@ -23,11 +22,8 @@
         <div class="row gn-container">
             <div class="col-lg-6">
                 <h2>인기주제</h2>
-                <ul>
-                    <li><a>지앤클라우드 설치방법</a></li>
-                    <li><a>팀원 추가방법</a></li>
-                    <li><a>클러스터 생성방법</a></li>
-                    <li><a>팀별 리소스 할당하기</a></li>
+                <ul ng-repeat="famous in famous">
+                    <li><a href="#/supportdetail?id={{ famous.id }}">{{ famous.title }}</a></li>
                 </ul>
             </div>
 
@@ -36,11 +32,8 @@
                     <button type="button" class="btn btn-default pull-right" onclick="location.href='#/supportlist'">더보기</button>
                 </h2>
 
-                <ul>
-                    <li><a>어떻게 지앤클라우드를 설치하나요.<span class="badge gn-badge">2</span></a></li>
-                    <li><a>팀원 추가하는 방법이 어떻게 되나요.<span class="badge gn-badge">1</span></a></li>
-                    <li><a>어떻게 클러스터 생성하나요?<span class="badge gn-badge">568</span></a></li>
-                    <li><a>삭제하는 방법 알려주세요.</a></li>
+                <ul ng-repeat="latest in latest">
+                    <li><a href="#/supportdetail?id={{ latest.id }}">{{ latest.title }}<span class="badge gn-badge" ng-show="latest.recount >0">{{ latest.recount }}</span></a></li>
                 </ul>
             </div>
         </div>
@@ -58,7 +51,7 @@
             </div>
 
             <div class="col-lg-2 pull-right">
-                <a href="supportWrite.html">
+                <a href="#/supportwrite">
                     <button type="button" class="btn btn-gn-primary btn-block">질문하기</button>
                 </a>
             </div>

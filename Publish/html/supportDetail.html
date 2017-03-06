@@ -44,9 +44,9 @@
 
                 <!--오른쪽 메뉴-->
                 <div class="consol-btn pull-right">
-                    <span><a>로그인</a></span>
+                    <span><a data-toggle="modal" data-target="#loginModal">로그인</a></span>
                     |
-                    <span><a>회원가입</a></span>
+                    <span><a href="join.html">회원가입</a></span>
                     <button type="submit" value="submit" class="btn btn-default">클라우드 콘솔실행</button>
                 </div>
 
@@ -131,6 +131,37 @@
 
     </div>
 
+
+
+
+    <!--로그인 모달창-->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-sm">
+            <div class="loginmodal-container">
+                <div class="login-logo"></div>
+                <h1>로그인</h1>
+                <br>
+                <form>
+                    <div class="form-box">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input type="text" name="user" placeholder="Username">
+                        <p class="middle-line"></p>
+                        <i class="glyphicon glyphicon-lock"></i>
+                        <input type="password" name="pass" placeholder="Password">
+                    </div>
+
+                    <!--체크박스-->
+                    <div class="btn-id">
+                        <input class="form-inputPop" type="checkbox" id="checkbox-id"/>
+                        <i></i>
+                        <label for="checkbox-id" class="label-id">아이디 저장</label>
+                    </div>
+
+                    <input type="button" class="btn btn-lg btn-block btn-gn-login" value="로그인" id="login_btn"><!--로그인--></input>
+                </form>
+            </div>
+        </div>
+    </div><!--login-modal-->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

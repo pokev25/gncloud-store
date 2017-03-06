@@ -927,7 +927,8 @@ li.nav-link.active>a:hover,
 /* 지원 공통 */
 /*검색바*/
 #custom-search-input{
-    padding: 3px;
+    /*padding: 3px;*/
+    margin-top: 40px;
     /*border: solid 1px #E4E4E4;*/
     border-radius: 6px;
     background-color: #fff;
@@ -938,6 +939,10 @@ li.nav-link.active>a:hover,
     box-shadow: none;
     background-color: rgba(215,215,215,0.5);
     height: 70px;
+    font-size: 25px;
+    font-weight: 200;
+    color: #00afb4;
+    letter-spacing: 1px;
 }
 
 #custom-search-input button{

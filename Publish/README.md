@@ -21,4 +21,10 @@
   * https://gncloud.github.io/gncloud-store/Publish/html/joinEmail.html  
   
 7. 회원가입 > 이메일 발송 확인 페이지
-  * https://gncloud.github.io/gncloud-store/Publish/html/joinVerify.html    
+  * https://gncloud.github.io/gncloud-store/Publish/html/joinVerify.html  
+    
+8. 회원가입 > 회원정보입력 페이지
+  * https://gncloud.github.io/gncloud-store/Publish/html/joinForm.html    
+  
+9. 회원가입 > 회원가입완료 페이지
+  * https://gncloud.github.io/gncloud-store/Publish/html/joinComplte.html

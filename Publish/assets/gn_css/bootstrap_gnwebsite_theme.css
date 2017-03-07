@@ -1032,7 +1032,7 @@ li.nav-link.active>a:hover,
 
 
 /* 개인설정 */
-/*.pull-modal-container input[type=email]{
+.pull-modal-container input[type=email]{
     height: 44px;
     font-size: 16px;
     width: 100%;
@@ -1041,7 +1041,7 @@ li.nav-link.active>a:hover,
     background: transparent;
     border: none;
     !*border-top: 1px solid #c0c0c0;
-    border-radius: 3px;*!
+    border-radius: 3px;
     padding: 0 10px 0 50px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -1059,7 +1059,7 @@ li.nav-link.active>a:hover,
     position: absolute;
     top:20px;
     left:20px;
-}*/
+}
 
 
 

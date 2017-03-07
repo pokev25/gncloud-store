@@ -1,6 +1,6 @@
 angular
     .module('gncloud')
-    .controller('supportdetailCtrl', function ($scope, $http, notification,$routeParams) {
+    .controller('supportdetailCtrl', function ($scope, $http, notification,$routeParams,$rootScope) {
         $scope.showData='nomal';
         $scope.replyData='nomal';
         $scope.data={};
@@ -112,6 +112,10 @@ angular
                     });
             }
         }
-        $scope.supportinfo();
 
+        $scope.supportinfo();
+        $scope.user_info = $rootScope.user_info;
+        $rootScope.$on('init', function () {
+            $scope.user_info = $rootScope.user_info;
+        });
     });

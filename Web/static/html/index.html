@@ -56,7 +56,7 @@
 </head>
 
 <body>
-
+<div class="blur">
 <nav class="navbar navbar-default gn-header">
     <div class="container">
         <!--지앤클라우드 로고-->
@@ -94,34 +94,8 @@
     </div> <!--class="container"-->
 </nav> <!--class="navbar navbar-default navbar-fixed-top"-->
 <!--HEADER END-->
-<!--HEADER END-->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog modal-sm">
-        <div class="loginmodal-container">
-            <div class="login-logo"></div>
-            <h1>로그인</h1>
-            <br>
-            <form>
-                <div class="form-box">
-                    <i class="glyphicon glyphicon-user"></i>
-                    <input type="text" name="user" placeholder="Username" id="login_id">
-                    <p class="middle-line"></p>
-                    <i class="glyphicon glyphicon-lock"></i>
-                    <input type="password" name="pass" placeholder="Password" id="login_pw">
-                </div>
 
-                <!--체크박스-->
-                <div class="btn-id">
-                    <input class="form-inputPop" type="checkbox" id="checkbox-id"/>
-                    <i></i>
-                    <label for="checkbox-id" class="label-id" >아이디 저장</label>
-                </div>
 
-                <input type="button" class="btn btn-lg btn-block btn-gn-login" data-dismiss="modal" value="로그인" id="login_btn"><!--로그인--></input>
-            </form>
-        </div>
-    </div>
-</div>
 <div class="container main-container">
     <ng-view></ng-view>
     <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
@@ -156,6 +130,7 @@
                     success:function(data) {
                         if (data.status == true) {
                             if (data.check == 'yes') {
+                                location.reload();
                                 login();
                             }
                             else if(data.check =='no') {
@@ -199,7 +174,7 @@
                     }
                 })
             }
-            logout();
+            login();
 
             function logout()
             {
@@ -208,7 +183,7 @@
                     url: '/api/manager/vm/guestLogout',
                     headers: {'Content-Type': 'application/json; charset=utf-8'},
                     success: function () {
-                        location.href="#/store";
+                        location.reload();
                         $('#login').show();
                         $('#signup').show();
                         $('#logout').hide();
@@ -218,7 +193,35 @@
         });
     </script>
 </div>
-    <div class="footer">
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-sm">
+        <div class="loginmodal-container">
+            <div class="login-logo"></div>
+            <h1>로그인</h1>
+            <br>
+            <form>
+                <div class="form-box">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <input type="text" name="user" placeholder="Username" id="login_id">
+                    <p class="middle-line"></p>
+                    <i class="glyphicon glyphicon-lock"></i>
+                    <input type="password" name="pass" placeholder="Password" id="login_pw">
+                </div>
+
+                <!--체크박스-->
+                <div class="btn-id">
+                    <input class="form-inputPop" type="checkbox" id="checkbox-id"/>
+                    <i></i>
+                    <label for="checkbox-id" class="label-id" >아이디 저장</label>
+                </div>
+
+                <input type="button" class="btn btn-lg btn-block btn-gn-login" data-dismiss="modal" value="로그인" id="login_btn"><!--로그인--></input>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="footer">
         <div class="container">
             <img src="/gn_images/footer_gncloud_img.png" alt="footer background logo">
             <div class="col-lg-2"><img src="/gn_images/gncloud_footer_logo.png" alt="footer logo"></div>
@@ -237,7 +240,8 @@
             </div>
         </div>
         <p class="col-lg-12 text-center">&copy; COPYRIGHT  지앤클라우드   ALL  RIGHT  RESERVED.</p>
-    </div>
+</div>
+
 </body>
 </html>
 

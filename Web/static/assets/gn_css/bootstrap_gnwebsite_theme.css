@@ -275,8 +275,14 @@ blockquote small:before{  content: '';}
 .modal-open .modal {
     overflow-x: hidden;
     overflow-y: auto;
-    background-color: rgba(39, 39, 39, 0.6);
+    /*background-color: rgba(39, 39, 39, 0.6);*/
+    background-color: rgba(55,55,55,0.8);
+
+
 }
+.modal-open .modal:after{filter: blur(50px);}
+
+
 
 .modal {
     position: fixed;
@@ -323,6 +329,29 @@ blockquote small:before{  content: '';}
 }
 
 /*-----모달 공통 end-----*/
+
+/* modal blur style */
+/*body.modal-open .blur{
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+    filter: url("https://gist.githubusercontent.com/amitabhaghosh197/b7865b409e835b5a43b5/raw/1a255b551091924971e7dee8935fd38a7fdf7311/blur".svg#blur);
+    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
+}*/
+
+body.modal-open .blur{
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+    filter: url("https://gist.githubusercontent.com/amitabhaghosh197/b7865b409e835b5a43b5/raw/1a255b551091924971e7dee8935fd38a7fdf7311/blur".svg#blur);
+    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
+}
+
+
 
 /* ============================= gncloud BUTTON STYLE ============================= */
 
@@ -809,6 +838,7 @@ li.nav-link.active>a:hover,
 
     /* 로그인 */
 
+
     /****** LOGIN MODAL ******/
 .loginmodal-container {
     padding: 30px;
@@ -871,7 +901,8 @@ li.nav-link.active>a:hover,
     background-color: #ffffff;
 }
 
-.loginmodal-container input[type=text], input[type=password] {
+.loginmodal-container input[type=text],
+.loginmodal-container input[type=password] {
     height: 44px;
     font-size: 16px;
     width: 100%;
@@ -886,15 +917,6 @@ li.nav-link.active>a:hover,
     -moz-box-sizing: border-box;
     text-indent: 50px;
 }
-
-/*.loginmodal-container input[type=text]:hover, input[type=password]:hover {
-    border: 1px solid #b9b9b9;
-    border-top: 1px solid #a0a0a0;
-    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-    border-radius: 3px;
-}*/
 
 .loginmodal {
     text-align: center;
@@ -919,6 +941,11 @@ li.nav-link.active>a:hover,
 
 
 /* 회원가입 */
+/* --- 이메일 입력 페이지 */
+/* --- 이메일 발송확인 페이지 */
+#joinVerify img{margin: 0 auto;  display: block;}
+/* --- 회원정보 입력 페이지 */
+/* --- 가입완료 페이지 */
 
 
 /* 스토어 */
@@ -927,7 +954,8 @@ li.nav-link.active>a:hover,
 /* 지원 공통 */
 /*검색바*/
 #custom-search-input{
-    padding: 3px;
+    /*padding: 3px;*/
+    margin-top: 40px;
     /*border: solid 1px #E4E4E4;*/
     border-radius: 6px;
     background-color: #fff;
@@ -938,6 +966,10 @@ li.nav-link.active>a:hover,
     box-shadow: none;
     background-color: rgba(215,215,215,0.5);
     height: 70px;
+    font-size: 25px;
+    font-weight: 200;
+    color: #00afb4;
+    letter-spacing: 1px;
 }
 
 #custom-search-input button{
@@ -1010,9 +1042,6 @@ li.nav-link.active>a:hover,
 
 /* 가로 방향 전화기 이하 */
 @media (max-width: 480px) {  }
-
-
-
 
 
 

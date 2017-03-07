@@ -1,4 +1,4 @@
-# publish_private
+# gncloud_website
 지앤클라우드 웹사이트
 
 
@@ -16,3 +16,15 @@
  
 5. 로그인 페이지
   * https://gncloud.github.io/gncloud-store/Publish/html/login.html
+  
+6. 회원가입 > 이메일 입력 페이지
+  * https://gncloud.github.io/gncloud-store/Publish/html/joinEmail.html  
+  
+7. 회원가입 > 이메일 발송 확인 페이지
+  * https://gncloud.github.io/gncloud-store/Publish/html/joinVerify.html  
+    
+8. 회원가입 > 회원정보입력 페이지
+  * https://gncloud.github.io/gncloud-store/Publish/html/joinForm.html    
+  
+9. 회원가입 > 회원가입완료 페이지
+  * https://gncloud.github.io/gncloud-store/Publish/html/joinComplete.html

@@ -275,8 +275,14 @@ blockquote small:before{  content: '';}
 .modal-open .modal {
     overflow-x: hidden;
     overflow-y: auto;
-    background-color: rgba(39, 39, 39, 0.6);
+    /*background-color: rgba(39, 39, 39, 0.6);*/
+    background-color: rgba(55,55,55,0.8);
+
+
 }
+.modal-open .modal:after{filter: blur(50px);}
+
+
 
 .modal {
     position: fixed;
@@ -809,6 +815,7 @@ li.nav-link.active>a:hover,
 
 /* 로그인 */
 
+
     /****** LOGIN MODAL ******/
 .loginmodal-container {
     padding: 30px;
@@ -871,7 +878,7 @@ li.nav-link.active>a:hover,
     background-color: #ffffff;
 }
 
-.loginmodal-container input[type=text], input[type=password] {
+.loginmodal-container input[type=text],.loginmodal-containere input[type=password] {
     height: 44px;
     font-size: 16px;
     width: 100%;
@@ -919,6 +926,11 @@ li.nav-link.active>a:hover,
 
 
 /* 회원가입 */
+/* --- 이메일 입력 페이지 */
+/* --- 이메일 발송확인 페이지 */
+#joinVerify img{margin: 0 auto;  display: block;}
+/* --- 회원정보 입력 페이지 */
+/* --- 가입완료 페이지 */
 
 
 /* 스토어 */
@@ -927,7 +939,8 @@ li.nav-link.active>a:hover,
 /* 지원 공통 */
 /*검색바*/
 #custom-search-input{
-    padding: 3px;
+    /*padding: 3px;*/
+    margin-top: 40px;
     /*border: solid 1px #E4E4E4;*/
     border-radius: 6px;
     background-color: #fff;
@@ -938,6 +951,10 @@ li.nav-link.active>a:hover,
     box-shadow: none;
     background-color: rgba(215,215,215,0.5);
     height: 70px;
+    font-size: 25px;
+    font-weight: 200;
+    color: #00afb4;
+    letter-spacing: 1px;
 }
 
 #custom-search-input button{

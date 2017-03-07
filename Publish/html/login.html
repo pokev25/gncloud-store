@@ -18,43 +18,46 @@
 </head>
 
 <body>
-<!-- HEADER -->
-<nav class="navbar navbar-default gn-header">
-    <div class="container">
-        <!--지앤클라우드 로고-->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="storeMain.html">
-                <img src="../assets/gn_images/gncloud_header_logo.png" alt="지앤클라우드 프라이빗 홈">
-            </a>
-        </div> <!--class="navbar-header"-->
-        <div id="navbar" class="navbar-collapse collapse gn-header-collapsed">
-            <!--왼쪽 메뉴-->
-            <ul class="nav navbar-nav">
-                <li class="nav-link"><a href="storeMain.html">스토어</a></li>
-                <li class="nav-link active"><a href="supportMain.html">지원</a></li>
-                <li class="nav-link"><a href=" introMain.html">소개</a></li>
 
-            </ul><!--class="nav navbar-nav"-->
+    <!-- HEADER -->
+    <nav class="navbar navbar-default gn-header">
+        <div class="container">
+            <!--지앤클라우드 로고-->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="storeMain.html">
+                    <img src="../assets/gn_images/gncloud_header_logo.png" alt="지앤클라우드 프라이빗 홈">
+                </a>
+            </div> <!--class="navbar-header"-->
+            <div id="navbar" class="navbar-collapse collapse gn-header-collapsed">
+                <!--왼쪽 메뉴-->
+                <ul class="nav navbar-nav">
+                    <li class="nav-link"><a href="storeMain.html">스토어</a></li>
+                    <li class="nav-link active"><a href="supportMain.html">지원</a></li>
+                    <li class="nav-link"><a href=" introMain.html">소개</a></li>
 
-            <!--오른쪽 메뉴-->
-            <div class="consol-btn pull-right">
-                <span><a data-toggle="modal" data-target="#loginModal">로그인</a></span>
-                |
-                <span><a>회원가입</a></span>
-                <button type="submit" value="submit" class="btn btn-default">클라우드 콘솔실행</button>
-            </div>
+                </ul><!--class="nav navbar-nav"-->
 
-        </div><!--/.nav-collapse -->
-    </div> <!--class="container"-->
-</nav> <!--class="navbar navbar-default navbar-fixed-top"-->
-<!--HEADER END-->
+                <!--오른쪽 메뉴-->
+                <div class="consol-btn pull-right">
+                    <span><a data-toggle="modal" data-target="#loginModal">로그인</a></span>
+                    |
+                    <span><a href="joinEmail.html">회원가입</a></span>
+                    <button type="submit" value="submit" class="btn btn-default">클라우드 콘솔실행</button>
+                </div>
+
+            </div><!--/.nav-collapse -->
+        </div> <!--class="container"-->
+    </nav> <!--class="navbar navbar-default navbar-fixed-top"-->
+    <!--HEADER END-->
+
+
 
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-sm">
@@ -86,7 +89,9 @@
 
 
 
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+
+<!--로그인 모달창-->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
     <div class="modal-dialog modal-sm">
         <div class="loginmodal-container">
             <div class="login-logo"></div>
@@ -112,9 +117,7 @@
             </form>
         </div>
     </div>
-</div>
-
-
+</div><!--login-modal-->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

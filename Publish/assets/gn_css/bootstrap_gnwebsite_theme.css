@@ -3,7 +3,11 @@
 /*나눔바른고딕 폰트*/
 @import url(nanumbarungothic.css);
 /* ========== gncloud 공통 STYLE ========== */
-html{ height:100%; margin:0; padding:0;}
+html{margin:0;
+    padding:0;
+    position: relative;
+    min-height: 100%;}
+
 body {
     margin: 0;
     padding: 0;
@@ -11,7 +15,7 @@ body {
     overflow-y: scroll;
     font-family: 'Nanum Barun Gothic', sans-serif;
     color: #6f6f6f;
-    height: 100%;
+    margin-bottom: 229px;
 }
 
 h1{
@@ -67,7 +71,7 @@ li{
 }
 
 .main-container{
-    min-height: 100%;
+    /*min-height: 100%;*/
     /*height: auto !important;
     margin:  0 auto -206px;*/}
 
@@ -803,19 +807,22 @@ li.nav-link.active>a:hover,
 
 
 /* footer */
-.footer{
+.footer {
+    position: absolute;
+    bottom: 0;
     width: 100%;
+    /* Set the fixed height of the footer here */
+    /*height: 60px;*/
     background-color: #646464;
     color: #ffffff;
     overflow: hidden;
-    }
+}
 
 .footer > .container{
-    /*position: relative;
-    bottom: 0px;*/
     padding: 30px 0 20px 0;
     margin: 0 auto;
     color: #ffffff;
+    position: relative;
 }
 
 
@@ -829,12 +836,14 @@ li.nav-link.active>a:hover,
 .footer-img{
     background-image: url("../gn_images/footer_gncloud_img.png");
     background-repeat: no-repeat;
-    background-position: left -100px center;
+    /*background-position: left -100px center;*/
     z-index: 10;
     width: 656px;
     height: 315px;
     display: block;
-}
+    position: absolute;
+    bottom:0;
+    left: -246px;  }
 
 -------------------------------------------------------------------------------------------------------------
 
@@ -960,6 +969,27 @@ li.nav-link.active>a:hover,
 
 
 /* 스토어 */
+#storeMain ul{
+    padding-left: 0;
+    display: inline-block;
+    padding: 25px 0;
+}
+
+#storeMain ul > li{
+    padding-right: 20px;
+    list-style: none;
+    float: left;
+    cursor: pointer;
+}
+
+#storeMain ul > li:hover{
+    color: #58c4c6;}
+
+#storeMain ul > li>span{
+    padding-left: 5px;
+    color: #00AFB4;
+}
+
 
 
 /* 지원 공통 */

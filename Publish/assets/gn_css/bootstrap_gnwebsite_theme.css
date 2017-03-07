@@ -275,8 +275,14 @@ blockquote small:before{  content: '';}
 .modal-open .modal {
     overflow-x: hidden;
     overflow-y: auto;
-    background-color: rgba(39, 39, 39, 0.6);
+    /*background-color: rgba(39, 39, 39, 0.6);*/
+    background-color: rgba(55,55,55,0.8);
+
+
 }
+.modal-open .modal:after{filter: blur(50px);}
+
+
 
 .modal {
     position: fixed;
@@ -809,6 +815,7 @@ li.nav-link.active>a:hover,
 
 /* 로그인 */
 
+
     /****** LOGIN MODAL ******/
 .loginmodal-container {
     padding: 30px;
@@ -871,7 +878,7 @@ li.nav-link.active>a:hover,
     background-color: #ffffff;
 }
 
-.loginmodal-container input[type=text], input[type=password] {
+.loginmodal-container input[type=text],.loginmodal-container input[type=password] {
     height: 44px;
     font-size: 16px;
     width: 100%;

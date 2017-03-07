@@ -57,14 +57,32 @@
 <!--HEADER END-->
 
 
-<div id="joinVerify" class="container main-container">
+<div id="joinForm" class="container main-container">
 
-    <img src="../assets/gn_images/mail-send.png" alt="해당 메일주소로 메일일 발송되었습니다.">
+    <h1 class="text-center">회원가입</h1>
 
-    <h1 class="text-center">
-        <span>usermail@email.com</span>
-        <small>로 <br> 확인메일이 발송되었습니다 메일을 확인하여주세요</small>
-    </h1>
+    <form class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6">
+        <div class="form-group row">
+            <label class="col-sm-3 control-label">닉네임</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control gn-form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 control-label">비밀번호</label>
+            <div class="col-sm-9">
+                <input type="password" class="form-control gn-form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 control-label">비밀번호 확인</label>
+            <div class="col-sm-9">
+                <input type="password" class="form-control gn-form-control">
+            </div>
+        </div>
+
+        <input type="button" class="btn btn-gn-blue col-sm-2 btn-block btn-lg" value="가입하기" onclick="location.href='joincomplete.html'">
+    </form>
 
 </div>
 

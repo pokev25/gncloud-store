@@ -17,8 +17,11 @@
     <link rel="stylesheet" href="../assets/gn_css/bootstrap_gnwebsite_theme.css">
 </head>
 <body>
+
+<div class="blur">
+
     <!-- HEADER -->
-    <nav class="navbar navbar-default gn-header">
+    <nav class="navbar navbar-default gn-header blur">
         <div class="container">
             <!--지앤클라우드 로고-->
             <div class="navbar-header">
@@ -56,19 +59,21 @@
     <!--HEADER END-->
 
     <div class="container main-container">
-        <div id="supportWrite" >
+        <div id="supportWrite">
             <h1>질문하기</h1>
 
             <hr>
             <br>
 
             <h4>제목</h4>
-            <input type="text" id="title" ng-model="data.title" name="title" class="gn-form-control form-control gn-write">
+            <input type="text" id="title" ng-model="data.title" name="title"
+                   class="gn-form-control form-control gn-write">
 
             <br>
 
             <h4>내용</h4>
-            <textarea type="text" name="text" ng-model="data.text" class="gn-form-control form-control gn-write" rows="15"></textarea>
+            <textarea type="text" name="text" ng-model="data.text" class="gn-form-control form-control gn-write"
+                      rows="15"></textarea>
             <!--<span class="error-message" id="error"> 내용을 입력하세요</span>-->
 
             <div class="row">
@@ -100,11 +105,10 @@
                 <p><a href="">약관</a></p>
                 <p><a href="">개인정보보호</a></p>
             </div>
-            <p class="col-lg-12 text-center">&copy; COPYRIGHT  지앤클라우드   ALL  RIGHT  RESERVED.</p>
+            <p class="col-lg-12 text-center">&copy; COPYRIGHT 지앤클라우드 ALL RIGHT RESERVED.</p>
         </div>
     </div>
-
-
+</div><!--blur-->
 
 
 

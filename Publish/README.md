@@ -1,4 +1,4 @@
-# publish_private
+# publish_website
 지앤클라우드 웹사이트
 
 

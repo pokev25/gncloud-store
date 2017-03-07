@@ -9,6 +9,7 @@ from Manager.db.database import db_session
 from Manager.service.service import *
 from Manager.util.config import config
 from Manager.util.json_encoder import AlchemyEncoder
+from Manager.service.loginservice import *
 
 app = Flask(__name__)
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=60)
@@ -50,8 +51,13 @@ def index():
 
 @app.route('/vm/logincheck',methods=['GET'])
 def logoincheck():
-    user_info = {"name":session['userName'],"user_id": session['userId']}
-    return jsonify(status= True, info=user_info)
+    info_check = session.get('userName','No')
+    if info_check != 'No':
+        user_info = {"name":session['userName'],"user_id": session['userId']}
+        return jsonify(status=True, check='yes',info=user_info)
+    else:
+        user_info = {"name":"","user_id": ""}
+        return jsonify(status=True, check='no',info=user_info)
 
 @app.route('/supportlist',methods=['GET']) #지원게시판
 def Supportlist():
@@ -99,6 +105,24 @@ def SupportDetailWrtie():
 def SupportMain():
     return jsonify(status=True,message='success', list=supportfamous(db_session))
 
+###################################################################################################################
+
+@app.route('/vm/account', methods=['POST'])
+def login():
+    user_id = request.json['login_id']
+    password = request.json['login_pw']
+    user_info = login_list(user_id, password, db_session)
+    if user_info != None:
+        session['userId'] = user_info.user_id
+        session['userName'] = user_info.user_name
+        return jsonify(status=True, check='yes')
+    else:
+        return jsonify(status=True, check='no')
+
+@app.route('/vm/guestLogout', methods=['GET'])
+def logout():
+    session.clear()
+    return jsonify(status=True, message="success")
 #### rest end ####
 
 

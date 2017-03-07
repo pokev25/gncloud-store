@@ -8,6 +8,7 @@ var serviceAddModules = [
 (function () {
 
     var app = angular.module('gncloud', serviceAddModules);
+
     app.run(function($rootScope,$http){
         $http({
             method: 'GET',

@@ -27,4 +27,4 @@
   * https://gncloud.github.io/gncloud-store/Publish/html/joinForm.html    
   
 9. 회원가입 > 회원가입완료 페이지
-  * https://gncloud.github.io/gncloud-store/Publish/html/joinComplte.html
+  * https://gncloud.github.io/gncloud-store/Publish/html/joinComplete.html

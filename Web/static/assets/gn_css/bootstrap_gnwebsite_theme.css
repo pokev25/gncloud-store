@@ -3,7 +3,11 @@
 /*나눔바른고딕 폰트*/
 @import url(nanumbarungothic.css);
 /* ========== gncloud 공통 STYLE ========== */
-html{ height:100%; margin:0; padding:0;}
+html{margin:0;
+    padding:0;
+    position: relative;
+    min-height: 100%;}
+
 body {
     margin: 0;
     padding: 0;
@@ -11,7 +15,7 @@ body {
     overflow-y: scroll;
     font-family: 'Nanum Barun Gothic', sans-serif;
     color: #6f6f6f;
-    height: 100%;
+    margin-bottom: 210px;
 }
 
 h1{
@@ -54,10 +58,10 @@ a:focus {
 }
 
 li{
-    /*list-style: none;*/
-}
+    /*list-style: none;*/}
 
 .gn-box{
+
     border-radius: 3px;
     border: 2px solid rgba(215,215,215,.5);
 }
@@ -66,10 +70,7 @@ li{
     padding-bottom: 0px;
 }
 
-.main-container{
-    min-height: 100%;
-    /*height: auto !important;
-    margin:  0 auto -206px;*/}
+.main-container{}
 
 .gn-container{
     margin-bottom: 50px;
@@ -89,6 +90,8 @@ textarea{resize: vertical;}
 .logo h1{
     display: none;
 }
+
+input{outline-style:none;}
 
 .gn-input{
     height: 40px;
@@ -276,7 +279,7 @@ blockquote small:before{  content: '';}
     overflow-x: hidden;
     overflow-y: auto;
     /*background-color: rgba(39, 39, 39, 0.6);*/
-    background-color: rgba(55,55,55,0.8);
+    background-color: rgba(100,100,100,0.7);
 
 
 }
@@ -796,51 +799,84 @@ li.nav-link.active>a:hover,
     display: block;
 }
 
+/* 테이블 */
+.gn-table-responsive > .gn-board-table thead tr th{
+    text-align: center;
+    font-size: 14px;
+    /*border: none;*/
+    border-bottom: 2px solid rgba(215,215,215,.5);
+}
+.gn-table-responsive > .gn-board-table tbody tr td{
+    text-align: center;
+    font-size: 14px;
+    height: 45px;
+    border-bottom: 1px solid rgba(215,215,215,.5);
+    vertical-align: middle;
+}
+
+.gn-table-responsive > .gn-board-table tbody tr td.second-td-name,
+.gn-table-responsive > .gn-board-table thead tr th.second-td-name{text-align: left;}
+
+#modal-board p{border-bottom: 1px solid rgba(215,215,215,0.5); padding-bottom: 10px;}
+
+.gn-board-table .badge{
+    margin-left: 5px;
+    background-color: rgba(88, 196, 198,.8);
+    font-weight: 400;
+    padding: 5px 8px;
+    border-radius: 15px;
+}
+
+
 /*-----gn table style end-----*/
 
 
 
 /* footer */
-.footer{
+.footer {
+    position: absolute;
+    bottom: 0;
     width: 100%;
+    /* Set the fixed height of the footer here */
+    /*height: 60px;*/
     background-color: #646464;
     color: #ffffff;
     overflow: hidden;
-    }
-
-.footer > .container{
-    /*position: relative;
-    bottom: 0px;*/
-    padding: 30px 0 20px 0;
-    margin: 0 auto;
-    color: #ffffff;
 }
 
+.footer > .container{
+    padding: 30px 0 20px 0;
+    margin: 0 auto;
+    color: #a2a2a2;
+    position: relative;
+    letter-spacing: 0.5px;
+}
 
-.footer .address{border-left: 1px solid #ffffff;}
-.footer address{font-size: 14px; font-weight: 200; margin: 0;}
-.footer a{color: #ffffff;}
+.footer .address{border-left: 1px solid rgba(255,255,255,0.2);}
+.footer address{font-size: 13px; font-weight: 200; margin: 0;}
+.footer a{color: #a2a2a2;}
 .footer p{font-size: 13px; font-weight: 200; margin-bottom: 0;}
 .footer>p{padding: 20px;}
 .footer span{display: block;}
+.footer .gn-copyright{margin-top: 30px;}
 
 .footer-img{
     background-image: url("../gn_images/footer_gncloud_img.png");
     background-repeat: no-repeat;
-    background-position: left -100px center;
-    z-index: 10;
+    z-index: 1;
     width: 656px;
     height: 315px;
     display: block;
-}
+    position: absolute;
+    bottom:0;
+    left: -246px;  }
 
 -------------------------------------------------------------------------------------------------------------
 
 /* 로그인 */
 
-
     /****** LOGIN MODAL ******/
-.loginmodal-container {
+.pull-modal-container {
     padding: 30px;
     max-width: 350px;
     width: 100% !important;
@@ -853,7 +889,7 @@ li.nav-link.active>a:hover,
     display: block;
 }
 
-.loginmodal-container .login-logo{
+.pull-modal-container .login-logo{
     background-image: url("../gn_images/login_gncloud_logo.png");
     width: 108px;
     height: 73px;
@@ -861,38 +897,40 @@ li.nav-link.active>a:hover,
     margin-top: 150px;
 }
 
-.loginmodal-container h1 {
+.pull-modal-container h1 {
     text-align: center;
     font-size: 1.8em;
     color: #ffffff;
 }
 
-.loginmodal-container .form-box{
-    background-color: rgba(255,255,255,03);
+.pull-modal-container .form-box{
+    background-color: rgba(255,255,255,0.3);
+    border: 0.5px solid rgba(255,255,255,0.6);
+    color: #ffffff;
     border-radius: 5px;
     position: relative;
     margin-bottom: 10px;
 }
 
-.loginmodal-container .form-box .glyphicon-user{
+.pull-modal-container .form-box .glyphicon-user{
     position: absolute;
     top:20px;
     left:20px;
 }
 
-.loginmodal-container .form-box .glyphicon-lock{
+.pull-modal-container .form-box .glyphicon-lock{
     position: absolute;
     top:75px;
     left:20px;
 }
 
 .middle-line{
-    border: 0.5px solid rgba(215,215,215,0.2);
-    width:100px;
+    border: thin solid rgba(255,255,255,0.2);
+    /*width:150px;*/
     margin: 0 auto;
 }
 
-.loginmodal-container input[type=submit] {
+.pull-modal-container input[type=submit] {
     width: 100%;
     display: block;
     margin-bottom: 10px;
@@ -901,10 +939,11 @@ li.nav-link.active>a:hover,
     background-color: #ffffff;
 }
 
-.loginmodal-container input[type=text],
-.loginmodal-container input[type=password] {
+.pull-modal-container input[type=text],
+.pull-modal-container input[type=password] {
     height: 44px;
     font-size: 16px;
+    font-weight: 400;
     width: 100%;
     margin: 5px 0;
     -webkit-appearance: none;
@@ -912,10 +951,12 @@ li.nav-link.active>a:hover,
     border: none;
     /*border-top: 1px solid #c0c0c0;
     border-radius: 3px;*/
-    padding: 0 8px;
+    padding: 0 10px 0 50px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-    text-indent: 50px;
+    text-indent: 2px;
+    letter-spacing: 1px;
+    overflow: hidden;
 }
 
 .loginmodal {
@@ -929,6 +970,11 @@ li.nav-link.active>a:hover,
     /* -webkit-user-select: none;
       user-select: none; */
 }
+
+#loginModal ::-webkit-input-placeholder,#settingModal ::-webkit-input-placeholder{  color: #ffffff;  opacity: 0.8;  }
+#loginModal :-ms-input-placeholder,#settingModal :-ms-input-placeholder {  color: #ffffff;  opacity: 0.8;  }
+#loginModal ::-moz-placeholder,#settingModal ::-moz-placeholder {  color: #ffffff;  opacity: 0.8;  }
+#loginModal :-moz-placeholder,#settingModal :-moz-placeholder {  color: #ffffff;  opacity: 0.8;  }
 
 /* 지앤클라우드 로그인 체크박스 스타일 */
 .btn-id{position:relative; text-align:left; cursor:pointer; overflow:hidden; margin-bottom: 10px;}
@@ -949,6 +995,30 @@ li.nav-link.active>a:hover,
 
 
 /* 스토어 */
+#storeMain ul{
+    padding-left: 0;
+    display: inline-block;
+    padding: 25px 0;
+}
+
+#storeMain ul > li{
+    padding-right: 20px;
+    list-style: none;
+    float: left;
+    cursor: pointer;
+}
+
+#storeMain ul > li:hover{
+    color: #58c4c6;}
+
+#storeMain ul > li>span{
+    padding-left: 5px;
+    color: #00AFB4;
+}
+
+#storeMain h4{  margin:0; padding: 10px 0;}
+
+.app-group > div{margin: 10px 0;}
 
 
 /* 지원 공통 */
@@ -1017,11 +1087,100 @@ li.nav-link.active>a:hover,
 #supportDetail blockquote.gn_blockqu{  padding-right: 0;}
 #supportDetail blockquote.gn_blockqu a{margin: 0px 6px;}
 
+
+
+
 /* 소개 */
+.jumbotron.gn-banner{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#58c4c6+0,65a3eb+100 */
+    background: rgba(88,196,198,0.6); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(88,196,198,0.7) 0%, rgba(101,163,235,0.7) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(88,196,198,0.7) 0%,rgba(101,163,235,0.7) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(88,196,198,0.7) 0%,rgba(101,163,235,0.6) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#58c4c6', endColorstr='#65a3eb',GradientType=0 ); /* IE6-9 */
+}
+.gn-banner{margin: 0; text-align: center;}
+.gn-banner h1{
+    font-size: 36px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 200;
+}
+.gn-banner a{display: inline-block;  color: #ffffff; padding-top: 50px;}
+.gn-banner i.glyphicon-download-alt{ color: #ffffff; display: block; margin: 10px 0; font-size: 20px;}
+
+.landing-intro{position: relative;  z-index: 10;  }
+.landing-intro h2{position: absolute;  top: 40px;  }
+.landing-intro h3{margin-top: 180px;}
+.landing-intro .row a{color: #58c4c6; display: block; text-align: right; margin-top: 30px; font-size: 13px;}
+.landing-intro .row span{font-weight: 300;}
+.landing-intro .row hr{
+    width: 50px;
+    height: 2px;
+    margin: 5px 0;
+    color: #58c4c6;}
+
+.landing-intro .row.application{  position: absolute;  top: 100px;}
+.landing-intro .row.dashboard{  position: absolute;  top: 700px;  color: #ffffff;}
+.landing-intro .row.instance-sett{  position: absolute;  top: 1300px;  color: #ffffff;}
+.landing-intro .row.instance-info{  position: absolute;  top: 1900px;}
+.landing-intro .row.instance-new{  position: absolute;  top: 2500px;}
+.landing-intro .row.servi-sett{  position: absolute;  top: 3100px;}
+.landing-intro .row.servi-log{  position: absolute;  top: 3700px;}
+.landing-intro .row.image{  position: absolute;  top: 4300px;}
+.landing-intro .row.team{  position: absolute;  top: 4900px;}
+
+.landing-intro .row{  }
+.landing-intro .row .right-text{  }
+
+.landing-intro .row .left-intro{
+    width: 1000px;
+    height: 500px;
+    background-color: #ffffff;
+    /*border: 1px solid #aaaaaa;*/
+    border-radius: 10px;
+    box-shadow: 0 3px 25px 0 rgba(22,22,22,.15);  }
+
+.landing-intro .row .right-intro{
+    width: 1000px;
+    height: 500px;
+    background-color: #ffffff;
+    margin-left: -265px;
+    /*border: 1px solid #aaaaaa;*/
+    border-radius: 10px;
+    box-shadow: 0 3px 25px 0 rgba(22,22,22,.15);  }
 
 
 
+/* 개인설정 */
+.pull-modal-container input[type=email]{
+    height: 44px;
+    font-size: 16px;
+    width: 100%;
+    margin: 5px 0;
+    -webkit-appearance: none;
+    background: transparent;
+    border: none;
+    !*border-top: 1px solid #c0c0c0;
+    border-radius: 3px;
+    padding: 0 10px 0 50px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    text-indent: 2px;
+    letter-spacing: 1px;
+    overflow: hidden;
+}
 
+.pull-modal-container.gn-userSetting .form-box .glyphicon-envelope{
+    position: absolute;
+    top:20px;
+    left:20px;
+}
+.pull-modal-container.gn-userSetting .form-box .glyphicon-lock{
+    position: absolute;
+    top:20px;
+    left:20px;
+}
 
 
 
@@ -1032,6 +1191,11 @@ li.nav-link.active>a:hover,
 
 
 /* ================================================= 반응형 ================================================= */
+@media (min-width: 1200px) {
+    .container{
+        width: 1000px;}
+}
+
 /* 세로 방향 타블렛부터 가로 방향 타블렛과 데스크탑까지 */
 @media (min-width: 768px) and (max-width: 992px) {  }
 

@@ -1058,7 +1058,50 @@ li.nav-link.active>a:hover,
 #supportDetail blockquote.gn_blockqu{  padding-right: 0;}
 #supportDetail blockquote.gn_blockqu a{margin: 0px 6px;}
 
+
+
+
 /* 소개 */
+.jumbotron.gn-banner{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#58c4c6+0,65a3eb+100 */
+    background: rgba(88,196,198,0.6); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(88,196,198,0.7) 0%, rgba(101,163,235,0.7) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(88,196,198,0.7) 0%,rgba(101,163,235,0.7) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(88,196,198,0.7) 0%,rgba(101,163,235,0.6) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#58c4c6', endColorstr='#65a3eb',GradientType=0 ); /* IE6-9 */
+}
+
+.gn-banner h1{
+    font-size: 36px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 200;
+}
+
+.landing-intro{
+    /*position: relative;*/
+    z-index: 10;
+}
+
+.container .right-text{
+
+}
+
+.container .left-intro{
+    width: 1000px;
+    height: 500px;
+    background-color: #aaaaaa;
+}
+
+.container .right-intro{
+    width: 1000px;
+    height: 500px;
+    background-color: #aaaaaa;
+/*    position: absolute;
+    right:0;*/
+    margin-left: -265px;
+}
+
 
 
 /* 개인설정 */

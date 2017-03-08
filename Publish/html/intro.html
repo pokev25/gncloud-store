@@ -13,8 +13,7 @@
 
     <!-- 합쳐지고 최소화된 최신 CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <!--기존 솔루션 css, 아래 css정리되면 삭제-->
-    <!--<link rel="stylesheet" href="../assets/gn_css/bootstrap_gn_theme.css">-->
+    <link rel="stylesheet" href="../assets/gn_css/bootstrap_gn_theme.css"> <!--기존 솔루션 css, 아래 css정리되면 삭제-->
     <link rel="stylesheet" href="../assets/gn_css/bootstrap_gnwebsite_theme.css">
 </head>
 
@@ -57,81 +56,50 @@
 
             </div><!--/.nav-collapse -->
         </div> <!--class="container"-->
-    </nav> <!--header-->
-    <!--HEADER END-->
+    </nav> <!--HEADER END-->
 
-    <div id="support" class="container main-container">
-        <!--<h1>지원</h1>-->
-        <!--검색바-->
+    <div class="jumbotron gn-banner">
+        <div class="container">
+            <h1>클라우드의 시작은 <strong>지앤클라우드</strong>와 함께</h1>
+            <a href="" class="">download</a>ddw
+        </div>
+    </div> <!--jumbotron-->
+
+    <div class="container landing-intro">
+        <h2>소개</h2>
+
         <div class="row">
-            <div class="col-md-12">
-                <div id="custom-search-input">
-                    <div class="input-group col-md-12">
-                        <input type="search" class="form-control input-lg" placeholder="검색어 입력"/>
-                        <span class="input-group-btn">
-                            <button class="btn btn-info btn-lg" type="button">
-                                <i class="glyphicon glyphicon-search"></i>
-                            </button>
-                        </span>
-                    </div>
-                </div>
+            <div class="col-sm-3 right-text">
+                <h3>어플리케이션 실행</h3>
+                <span>스토어에서 무료로 제공하는 100여가지의 어플리케이션들을 지금 즉시 새용해보세요.</span>
+                <a href="">다른 어플리케이션 보</a>
+            </div>
+            <div class="col-sm-9">
+                <div class="left-intro"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="right-intro"></div>
+            </div>
+            <div class="col-sm-3 left-text">
+                <h3>어플리케이션 실행</h3>
+                <span>스토어에서 무료로 제공하는 100여가지의 어플리케이션들을 지금 즉시 새용해보세요.</span>
+                <a href="">다른 어플리케이션 보</a>
             </div>
         </div>
 
-        <br>
-        <hr>
-        <br>
+    </div><!--class="container"-->
 
-        <!--인기주제 | 최신글-->
-        <div class="row gn-container">
-            <div class="col-lg-6 col-sm-6">
-                <h2>인기주제</h2>
-                <ul>
-                    <li><a>지앤클라우드 설치방법</a></li>
-                    <li><a>팀원 추가방법</a></li>
-                    <li><a>클러스터 생성방법</a></li>
-                    <li><a>팀별 리소스 할당하기</a></li>
-                </ul>
-            </div>
+    <div class="landing-bg">
+        <div style="background-color: rgba(215,215,215,.2); height: 800px; z-index: 1;"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 
-            <div class="col-lg-6 col-sm-6">
-                <h2>최신글
-                    <button type="button" class="btn btn-default pull-right" onclick="location.href='supportList.html'">
-                        더보기
-                    </button>
-                </h2>
 
-                <ul>
-                    <li><a>어떻게 지앤클라우드를 설치하나요.<span class="badge gn-badge">2</span></a></li>
-                    <li><a>팀원 추가하는 방법이 어떻게 되나요.<span class="badge gn-badge">1</span></a></li>
-                    <li><a>어떻게 클러스터 생성하나요?<span class="badge gn-badge">568</span></a></li>
-                    <li><a>삭제하는 방법 알려주세요.</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <!--추천 | 질문하기 버튼-->
-        <div class="row gn-container">
-            <div class="col-lg-6 col-sm-6">
-                <h2>추천</h2>
-                <ul>
-                    <li><a>어떻게 지앤클라우드를 설치하나요</a></li>
-                    <li><a>팀원 추가하는 방법이 어떻게 되나요</a></li>
-                    <li><a>어떻게 클러스터 생성하나요?</a></li>
-                    <li><a>삭제하는 방법 알려주세요.</a></li>
-                </ul>
-            </div>
-
-            <div class="col-sm-2 col-xs-12 pull-right">
-                <button type="button" class="btn btn-gn-primary btn-lg btn-block"
-                        onclick="location.href='supportWrite.html'">질문하기
-                </button>
-            </div>
-        </div>
-
-    </div><!--#support-->
-
-    <!--FOOTER-->
     <footer class="footer">
         <div class="container">
 
@@ -149,12 +117,12 @@
                 <p><a href="">약관</a></p>
                 <p><a href="">개인정보보호</a></p>
             </div>
-            <p class="col-lg-12 text-center gn-copyright">&copy; COPYRIGHT 지앤클라우드 ALL RIGHT RESERVED.</p>
+            <p class="col-lg-12 text-center">&copy; COPYRIGHT 지앤클라우드 ALL RIGHT RESERVED.</p>
             <div class="footer-img"></div>
         </div>
     </footer>
 
-</div><!--class="blur"-->
+</div><!--blur-->
 
 
 <!--로그인 모달창-->
@@ -188,9 +156,9 @@
 </div><!--login-modal-->
 
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../assets/gn_js/bootstrap.min.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../assets/gn_js/bootstrap.min.js"></script>
 </body>
 </html>

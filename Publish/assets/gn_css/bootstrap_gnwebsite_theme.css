@@ -1106,8 +1106,8 @@ li.nav-link.active>a:hover,
     color: #ffffff;
     font-weight: 200;
 }
-
-.gn-banner a{   display: inline-block;  color: #ffffff; padding-top: 50px;}
+.gn-banner a{display: inline-block;  color: #ffffff; padding-top: 50px;}
+.gn-banner i.glyphicon-download-alt{ color: #ffffff; display: block; margin: 10px 0; font-size: 20px;}
 
 .landing-intro{position: relative;  z-index: 10;  }
 .landing-intro h2{position: absolute;  top: 40px;  }

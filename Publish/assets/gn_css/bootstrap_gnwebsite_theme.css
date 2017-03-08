@@ -799,6 +799,35 @@ li.nav-link.active>a:hover,
     display: block;
 }
 
+/* 테이블 */
+.gn-table-responsive > .gn-board-table thead tr th{
+    text-align: center;
+    font-size: 14px;
+    /*border: none;*/
+    border-bottom: 2px solid rgba(215,215,215,.5);
+}
+.gn-table-responsive > .gn-board-table tbody tr td{
+    text-align: center;
+    font-size: 14px;
+    height: 45px;
+    border-bottom: 1px solid rgba(215,215,215,.5);
+    vertical-align: middle;
+}
+
+.gn-table-responsive > .gn-board-table tbody tr td.second-td-name,
+.gn-table-responsive > .gn-board-table thead tr th.second-td-name{text-align: left;}
+
+#modal-board p{border-bottom: 1px solid rgba(215,215,215,0.5); padding-bottom: 10px;}
+
+.gn-board-table .badge{
+    margin-left: 5px;
+    background-color: rgba(88, 196, 198,.8);
+    font-weight: 400;
+    padding: 5px 8px;
+    border-radius: 15px;
+}
+
+
 /*-----gn table style end-----*/
 
 

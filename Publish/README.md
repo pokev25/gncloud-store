@@ -37,4 +37,6 @@
     
 12. 스토어 메인 페이지
   * https://gncloud.github.io/gncloud-store/Publish/html/storeMain.html    
-    
+
+13. 소개 페이지
+  * https://gncloud.github.io/gncloud-store/Publish/html/intro.html 

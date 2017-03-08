@@ -806,7 +806,7 @@ li.nav-link.active>a:hover,
     background-color: #646464;
     color: #ffffff;
     overflow: hidden;
-}
+    }
 
 .footer > .container{
     /*position: relative;
@@ -836,7 +836,7 @@ li.nav-link.active>a:hover,
 
 -------------------------------------------------------------------------------------------------------------
 
-    /* 로그인 */
+/* 로그인 */
 
 
     /****** LOGIN MODAL ******/

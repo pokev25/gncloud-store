@@ -10,6 +10,7 @@ from Manager.service.service import *
 from Manager.util.config import config
 from Manager.util.json_encoder import AlchemyEncoder
 from Manager.service.loginservice import *
+from Manager.service.emailservice import *
 
 app = Flask(__name__)
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=60)
@@ -123,7 +124,24 @@ def login():
 def logout():
     session.clear()
     return jsonify(status=True, message="success")
+
+
+#########################################################################################################
+@app.route('/vm/emailcheck',methods=['POST'])
+def emailCheck():
+    email = request.json['email']
+    emailtoken(email,db_session)
+    return jsonify(status=True, message="success")
+
+@app.route('/checkurl/<url>',methods=['GET'])
+def checkUrl(url):
+    checking = check_url(url,db_session)
+    if checking == True:
+        return jsonify(status=True,message='success')
+    else:
+        return jsonify(status=False, message='False')
 #### rest end ####
+
 
 
 if __name__ == '__main__':

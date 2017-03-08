@@ -15,8 +15,9 @@ class GnUser(Base):
     user_name = Column(String(20), primary_key= False, nullable= False)
     email= Column(String(30), primary_key= False, nullable= False)
     start_date = Column(DateTime, default=datetime.datetime.now())
+    token = Column(nullable=False)
 
-    def __init__(self, user_id = user_id, password= None, team_code=None, user_name=None, tel=None, email=None, start_date=None):
+    def __init__(self, user_id = user_id, password= None, team_code=None, user_name=None, tel=None, email=None, start_date=None, token=None):
 
         self.user_id = user_id
         self.password= password
@@ -25,10 +26,11 @@ class GnUser(Base):
         self.tel = tel
         self.email = email
         self.start_date = start_date
+        self.token = token
 
     def __repr__(self):
-        return '< ID %r / Password %r / User_name %r / Tel %r / Start_date %r />' \
-               % (self.user_id, self.password, self.user_name, self.email, self.start_date)
+        return '< ID %r / Password %r / User_name %r / Tel %r / Start_date %r / Token %r />' \
+               % (self.user_id, self.password, self.user_name, self.email, self.start_date, self.token)
 
     def __json__(self):
         return ['user_id', 'password', 'user_name', 'email', 'start_date']

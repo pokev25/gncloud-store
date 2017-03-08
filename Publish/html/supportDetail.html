@@ -13,7 +13,7 @@
 
     <!-- 합쳐지고 최소화된 최신 CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/gn_css/bootstrap_gn_theme.css"><!--기존 솔루션 css, 아래 css정리되면 삭제-->
+    <!--<link rel="stylesheet" href="../assets/gn_css/bootstrap_gn_theme.css">--><!--기존 솔루션 css, 아래 css정리되면 삭제-->
     <link rel="stylesheet" href="../assets/gn_css/bootstrap_gnwebsite_theme.css">
 </head>
 <body>
@@ -25,8 +25,7 @@
         <div class="container">
             <!--지앤클라우드 로고-->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-controls="navbar">
+                <button type="button" class="navbar-toggle collapsed"  data-toggle="modal" data-target="#menuModal">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -163,6 +162,26 @@
         </div><!--class="pull-modal-container"-->
     </div><!--class="modal-dialog modal-sm"-->
 </div><!--login-modal-->
+
+<!-- max-width: 767px 에서 동작하는 header menu 모달창-->
+<div class="modal fade" id="menuModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+    <div class="modal-dialog modal-sm">
+        <div class="pull-modal-container">
+            <!--<div class="login-logo"></div>-->
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            <ul class="list-group">
+                <li><a href="storeMain.html">스토어</a></li>
+                <li><a href="supportMain.html">지원</a></li>
+                <li><a href="">소개</a></li>
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="joinEmail.html">회원가입</a></li>
+            </ul>
+            <button type="submit" value="submit" class="btn btn-default">클라우드 콘솔실행</button>
+
+        </div><!--class="pull-modal-container"-->
+    </div><!--class="modal-dialog modal-sm"-->
+</div><!--모바일 menu-modal-->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

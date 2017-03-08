@@ -19,8 +19,6 @@
 
 <body>
 
-<div class="blur">
-
     <!-- HEADER -->
     <nav class="navbar navbar-default gn-header">
         <div class="container">
@@ -48,9 +46,20 @@
 
                 <!--오른쪽 메뉴-->
                 <div class="consol-btn pull-right">
-                    <span><a data-toggle="modal" data-target="#loginModal">로그인</a></span>
-                    |
-                    <span><a href="joinEmail.html">회원가입</a></span>
+
+                    <!-- Single button -->
+                    <div class="btn-group">
+                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            닉네임
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="userSetting.html">개인설정</a></li>
+                            <li class="divider"></li>
+                            <li><a>로그아웃</a></li>
+                        </ul>
+                    </div>
+
+
                     <button type="submit" value="submit" class="btn btn-default">클라우드 콘솔실행</button>
                 </div>
 
@@ -60,15 +69,21 @@
     <!--HEADER END-->
 
 
-    <div id="joinForm" class="container main-container">
+    <div id="userSettingform" class="container main-container">
 
-        <h1 class="text-center">회원가입</h1>
+        <h1 class="text-center">개인설정</h1>
 
         <form class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6">
             <div class="form-group row">
                 <label class="col-sm-3 control-label">닉네임</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control gn-form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 control-label">이메일</label>
+                <div class="col-sm-9">
+                    <input type="email" class="form-control gn-form-control">
                 </div>
             </div>
             <div class="form-group row">
@@ -84,10 +99,10 @@
                 </div>
             </div>
 
-            <input type="button" class="btn btn-gn-blue col-sm-2 btn-block btn-lg" value="가입하기" onclick="location.href='joincomplete.html'">
+            <button type="button" class="btn btn-gn-blue col-sm-2 btn-block btn-lg" data-dismiss="modal">저장</button>
         </form>
 
-    </div>
+    </div><!--id="userSettingform"-->
 
     <!--FOOTER-->
     <footer class="footer">
@@ -111,42 +126,6 @@
             <div class="footer-img"></div>
         </div>
     </footer>
-
-
-</div><!--blur-->
-
-
-
-
-<!--로그인 모달창-->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-    <div class="modal-dialog modal-sm">
-        <div class="pull-modal-container">
-            <div class="login-logo"></div>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h1>로그인</h1>
-            <br>
-            <form>
-                <div class="form-box">
-                    <i class="glyphicon glyphicon-user"></i>
-                    <input type="text" name="user" placeholder="Username">
-                    <p class="middle-line"></p>
-                    <i class="glyphicon glyphicon-lock"></i>
-                    <input type="password" name="pass" placeholder="Password">
-                </div>
-
-                <!--체크박스-->
-                <div class="btn-id">
-                    <input class="form-inputPop" type="checkbox" id="checkbox-id"/>
-                    <i></i>
-                    <label for="checkbox-id" class="label-id">아이디 저장</label>
-                </div>
-
-                <input type="button" class="btn btn-lg btn-block btn-gn-login" value="로그인" id="login_btn"><!--로그인--></input>
-            </form>
-        </div><!--class="pull-modal-container"-->
-    </div><!--class="modal-dialog modal-sm"-->
-</div><!--login-modal-->
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

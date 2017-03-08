@@ -28,3 +28,13 @@
   
 9. 회원가입 > 회원가입완료 페이지
   * https://gncloud.github.io/gncloud-store/Publish/html/joinComplete.html
+  
+10. 개인설정 페이지(url 페이지)
+  * https://gncloud.github.io/gncloud-store/Publish/html/userSetting.html
+  
+11. 개인설정 페이지(전체모달)
+  * https://gncloud.github.io/gncloud-store/Publish/html/userSetting-modal.html  
+    
+12. 스토어 메인 페이지
+  * https://gncloud.github.io/gncloud-store/Publish/html/storeMain.html    
+    

@@ -157,9 +157,9 @@
     </div><!--class="container"-->
 
     <!--FOOTER-->
-    <div class="footer">
+    <footer class="footer">
         <div class="container">
-            <!--<img src="../assets/gn_images/footer_gncloud_img.png" alt="footer background logo">-->
+
             <div class="col-lg-2"><img src="../assets/gn_images/gncloud_footer_logo.png" alt="footer logo"></div>
             <div class="col-lg-offset-1 col-lg-5 address">
                 <address>주소 : 서울시 강남구 테헤란로 332, 현정빌딩 2층 (06212)</address>
@@ -175,41 +175,43 @@
                 <p><a href="">개인정보보호</a></p>
             </div>
             <p class="col-lg-12 text-center">&copy; COPYRIGHT 지앤클라우드 ALL RIGHT RESERVED.</p>
+            <div class="footer-img"></div>
         </div>
-    </div>
+    </footer>
 </div><!--blur-->
 
 
 
 
-    <!--로그인 모달창-->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog modal-sm">
-            <div class="loginmodal-container">
-                <div class="login-logo"></div>
-                <h1>로그인</h1>
-                <br>
-                <form>
-                    <div class="form-box">
-                        <i class="glyphicon glyphicon-user"></i>
-                        <input type="text" name="user" placeholder="Username">
-                        <p class="middle-line"></p>
-                        <i class="glyphicon glyphicon-lock"></i>
-                        <input type="password" name="pass" placeholder="Password">
-                    </div>
+<!--로그인 모달창-->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+    <div class="modal-dialog modal-sm">
+        <div class="pull-modal-container">
+            <div class="login-logo"></div>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h1>로그인</h1>
+            <br>
+            <form>
+                <div class="form-box">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <input type="text" name="user" placeholder="Username">
+                    <p class="middle-line"></p>
+                    <i class="glyphicon glyphicon-lock"></i>
+                    <input type="password" name="pass" placeholder="Password">
+                </div>
 
-                    <!--체크박스-->
-                    <div class="btn-id">
-                        <input class="form-inputPop" type="checkbox" id="checkbox-id"/>
-                        <i></i>
-                        <label for="checkbox-id" class="label-id">아이디 저장</label>
-                    </div>
+                <!--체크박스-->
+                <div class="btn-id">
+                    <input class="form-inputPop" type="checkbox" id="checkbox-id"/>
+                    <i></i>
+                    <label for="checkbox-id" class="label-id">아이디 저장</label>
+                </div>
 
-                    <input type="button" class="btn btn-lg btn-block btn-gn-login" value="로그인" id="login_btn"><!--로그인--></input>
-                </form>
-            </div>
-        </div>
-    </div><!--login-modal-->
+                <input type="button" class="btn btn-lg btn-block btn-gn-login" value="로그인" id="login_btn"><!--로그인--></input>
+            </form>
+        </div><!--class="pull-modal-container"-->
+    </div><!--class="modal-dialog modal-sm"-->
+</div><!--login-modal-->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

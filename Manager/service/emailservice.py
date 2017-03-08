@@ -39,7 +39,6 @@ def emailtoken(email, sql_session):
     user_info = GnUser(user_id = email, token=encoded, start_date=datetime.datetime.now().strftime('%Y%m%d%H%M%S'))
     sql_session.add(user_info)
     sql_session.commit()
-    send_ses(email,sql_session)
     return True
 
 def send_ses(email,emailcheck, sql_session):
@@ -48,7 +47,7 @@ def send_ses(email,emailcheck, sql_session):
     msg["Subject"] = "지앤클라우드 이메일 확인"
     msg['From'] = me
     msg['To'] = you
-    msg = MIMEText("http://127.0.0.1/checkurl/"+emailcheck)
+    msg = MIMEText("http://127.0.0.1/#/checkurl/"+emailcheck)
 
     s = smtplib.SMTP(EMAIL_HOST, EMAIL_PORT)
     s.starttls()

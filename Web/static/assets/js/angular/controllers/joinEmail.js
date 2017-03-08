@@ -10,7 +10,9 @@ angular
             })
                 .success(function (data, status, headers, config) {
                     if (data.status == true) {
+                        window.location = "#/joinverify?email="+$scope.data.email
                         notification.sendMessage("success",data.message);
+
                     }
                     else {
                         notification.sendMessage("error",data.message);

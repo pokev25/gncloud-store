@@ -137,9 +137,9 @@ def emailCheck():
 def checkUrl(url):
     checking = check_url(url,db_session)
     if checking == True:
-        return jsonify(status=True,message='success')
+        return jsonify(status=True,message='success', che='ok')
     else:
-        return jsonify(status=False, message='False')
+        return jsonify(status=True, message='False', che='false')
 #### rest end ####
 
 

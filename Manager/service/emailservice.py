@@ -30,6 +30,7 @@ EMAIL_HOST_PASSWORD = 'Arlqg8RnJosHLdDpJVEDrJ0dGNP10Xp422lzPDy/25rn'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 me = 'shjoo@gnclouds.com'
+title = "지앤클라우드 인증 메일입니다."
 
 def emailtoken(email, sql_session):
     email_json = {"email" : email}
@@ -44,10 +45,10 @@ def emailtoken(email, sql_session):
 def send_ses(email,emailcheck, sql_session):
     you = email
     msg = MIMEMultipart("alternative")
-    msg["Subject"] = "지앤클라우드 이메일 확인"
+    msg['Subject'] = Header(s=title, charset="utf-8")
     msg['From'] = me
     msg['To'] = you
-    msg = MIMEText("http://127.0.0.1/#/checkurl/"+emailcheck)
+    msg = MIMEText("http://127.0.0.1/#/checkurl?url="+emailcheck)
 
     s = smtplib.SMTP(EMAIL_HOST, EMAIL_PORT)
     s.starttls()

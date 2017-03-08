@@ -8,6 +8,7 @@ var serviceConfig = function ($routeProvider, $httpProvider) {
         .when('/supportmain', {templateUrl: '/supportMain.html', controller: 'supportMainCtrl'})
         .when('/joinemail', {templateUrl: '/joinEmail.html', controller: 'joinEmailCtrl'})
         .when('/joinverify', {templateUrl: '/joinVerify.html', controller: 'joinVerifyCtrl'})
+        .when('/checkurl', {templateUrl: '/checkUrl.html', controller: 'checkUrlCtrl'})
     $httpProvider.interceptors.push('serviceLogger');
 }
 

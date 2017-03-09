@@ -25,3 +25,12 @@ def login_list(id , password, sql_session):
     else:
         return False
 
+def signup(user_name, password, passowrd_re, token, sql_session):
+    info = sql_session.query(GnUser).filter(GnUser.token == token).one()
+    if password == passowrd_re:
+        info.password = convertToHashValue(password)
+        info.user_name = user_name
+        sql_session.commit()
+        return True
+    else:
+        return False

@@ -8,8 +8,8 @@
                 {{post.write_date}}
             </span>
         <div class="modif-icon pull-right"><!-- 작성된 내용에 대한 수정,삭제,저장-->
-            <a class="glyphicon glyphicon-pencil" ng-show="showData =='nomal'" ng-click="click('change')"></a>
-            <a class="glyphicon glyphicon-trash" ng-click="del(post.id)"></a>
+            <a class="glyphicon glyphicon-pencil" ng-show="showData =='nomal' && user_info.name !='' && user_info.user_id == post.author_id" ng-click="click('change')"></a>
+            <a class="glyphicon glyphicon-trash" ng-show="user_info.name != '' && user_info.user_id == post.author_id" ng-click="del(post.id)"></a>
         </div>
 
         <pre ng-show="showData == 'nomal'" class="gn-lead">
@@ -26,8 +26,8 @@
                 <strong>{{ reply.author_name }}</strong>
                 &nbsp;&nbsp;|&nbsp;&nbsp;
                 {{ reply.write_date }}
-                <a class="glyphicon glyphicon-trash pull-right" ng-click="reply_del(reply.id)"></a>
-                <a class="glyphicon glyphicon-pencil pull-right" ng-show="replyData =='nomal'" ng-click="reply_data('change')"></a>
+                <a class="glyphicon glyphicon-trash pull-right" ng-show="user_info.name !=''&& user_info.user_id == post.author_id" ng-click="reply_del(reply.id)"></a>
+                <a class="glyphicon glyphicon-pencil pull-right" ng-show="replyData =='nomal'&& user_info.name !=''&& user_info.user_id == post.author_id" ng-click="reply_data('change')"></a>
             </small>
 
             <pre ng-show="replyData=='nomal'" class="gn-write">

@@ -53,8 +53,8 @@ def supportchange(id,text,sql_session): #게시판 상세페이지 내용 수정
     post_info.text = text
     sql_session.commit()
 
-def supportreplycreate(id,text,sql_session):
-    reply_info= GnSupport(text=text, author_id='shjoo', author_name='주성훈', parent_id=id,count=0 ,write_date=datetime.datetime.now().strftime('%Y%m%d%H%M%S'))
+def supportreplycreate(user_id,user_name,id,text,sql_session):
+    reply_info= GnSupport(text=text, author_id=user_id, author_name=user_name, parent_id=id,count=0 ,write_date=datetime.datetime.now().strftime('%Y%m%d%H%M%S'))
     sql_session.add(reply_info)
     sql_session.commit()
 
@@ -67,8 +67,8 @@ def supportdel(id, sql_session):
         sql_session.query(GnSupport).filter(GnSupport.id ==id).delete()
     sql_session.commit()
 
-def supportwrite(title, text, sql_session):
-    post = GnSupport(title= title, text=text, author_id='shjoo', author_name='주성훈',count=0,write_date=datetime.datetime.now().strftime('%Y%m%d%H%M%S'))
+def supportwrite(user_id,user_name,title, text, sql_session):
+    post = GnSupport(title= title, text=text, author_id=user_id, author_name=user_name,count=0,write_date=datetime.datetime.now().strftime('%Y%m%d%H%M%S'))
     sql_session.add(post)
     sql_session.commit()
 

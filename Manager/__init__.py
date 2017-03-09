@@ -82,7 +82,9 @@ def SupportDetailChange(id):
 @app.route('/supportdetail/reply/<id>',methods=['POST']) # 지원게시판 댓글 작성
 def SupportDetailReply(id):
     text = request.json['reply_text']
-    return jsonify(status=True, message='success', list=supportreplycreate(id,text,db_session))
+    user_name = session['userName']
+    user_id = session['userId']
+    return jsonify(status=True, message='success', list=supportreplycreate(user_id,user_name,id,text,db_session))
 
 @app.route('/supportdetail/<id>', methods=['DELETE']) # 지원게시판 내용 / 댓글 삭제
 def SupportDetaildel(id):
@@ -90,6 +92,10 @@ def SupportDetaildel(id):
 
 @app.route('/supportwrite', methods=['POST']) # 지원게시판 작성
 def SupportDetailWrtie():
+    if session.get('userId')==None:
+        return jsonify(status=True, message='login')
+    user_name = session['userName']
+    user_id = session['userId']
     title=""
     text=""
     if 'title' in request.json:
@@ -100,7 +106,7 @@ def SupportDetailWrtie():
         return jsonify(status=False, message='title')
     elif text == "":
         return jsonify(status=False, message='text')
-    return jsonify(status=True, message='success', list=supportwrite(title,text,db_session))
+    return jsonify(status=True, message='success', list=supportwrite(user_id,user_name,title,text,db_session))
 
 @app.route('/supportmain',methods=['GET'])
 def SupportMain():
@@ -140,6 +146,15 @@ def checkUrl(url):
         return jsonify(status=True,message='success', che='ok')
     else:
         return jsonify(status=True, message='False', che='false')
+
+@app.route('/join',methods=['POST'])
+def signUp():
+    user_name =request.json['user_name']
+    password = request.json['password']
+    password_re = request.json['password_re']
+    token= request.json['token']
+    signup(user_name, password, password_re, token, db_session)
+    return jsonify(status=True, message='success')
 #### rest end ####
 
 

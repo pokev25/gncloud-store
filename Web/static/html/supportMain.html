@@ -61,7 +61,7 @@
 </div> <!--검색바-->
 <div id="search">
  <h4 class="gn-write">전체 {{total }} 건</h4>
- <button class="btn btn-gn-primary col-sm-1" onclick="location.href='#/supportwrite'">질문하기</button>
+ <button class="btn btn-gn-primary col-sm-1" onclick="location.href='#/supportwrite'" ng-show="user_info.name !=''">질문하기</button>
  <div class="gn-margin-bott10"></div>
 
  <div class="table-responsive gn-table-responsive">
@@ -71,7 +71,6 @@
              <th class="col-sm-1">&num;</th>
              <th class="col-md-4 col-sm-4">제목</th>
              <th class="col-md-2 col-sm-2 hidden-xs">작성자</th>
-             <th class="col-sm-2">조회수</th>
              <th class="col-sm-2">등록일</th>
          </tr>
          </thead>
@@ -83,7 +82,6 @@
                  <span class="badge" ng-show="list.recount > 0">{{list.recount}}</span>
              </td>
              <td class="hidden-xs">{{list.author_name}}</td>
-             <td>{{list.count}}</td>
              <td>{{list.write_date}}</td>
          </tr>
 

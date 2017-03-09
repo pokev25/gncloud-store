@@ -1121,12 +1121,12 @@ li.nav-link.active>a:hover,
     color: #58c4c6;}
 
 .landing-intro .row.application{  position: absolute;  top: 100px;}
-.landing-intro .row.dashboard{  position: absolute;  top: 700px;  color: #ffffff;}
-.landing-intro .row.instance-sett{  position: absolute;  top: 1300px;  color: #ffffff;}
+.landing-intro .row.dashboard{  position: absolute;  top: 700px;}
+.landing-intro .row.instance-sett{  position: absolute;  top: 1300px;}
 .landing-intro .row.instance-info{  position: absolute;  top: 1900px;}
 .landing-intro .row.instance-new{  position: absolute;  top: 2500px;}
 .landing-intro .row.servi-sett{  position: absolute;  top: 3100px;}
-.landing-intro .row.servi-log{  position: absolute;  top: 3700px;}
+.landing-intro .row.servi-log{  position: absolute;  top: 3700px}
 .landing-intro .row.image{  position: absolute;  top: 4300px;}
 .landing-intro .row.team{  position: absolute;  top: 4900px;}
 
@@ -1134,23 +1134,24 @@ li.nav-link.active>a:hover,
 .landing-intro .row .right-text{  }
 
 .landing-intro .row .left-intro{
-    width: 1000px;
-    height: 500px;
-    background-color: #ffffff;
-    /*border: 1px solid #aaaaaa;*/
-    border-radius: 10px;
-    box-shadow: 0 3px 25px 0 rgba(22,22,22,.15);  }
+    width: 100%;
+    max-width: 1000px;
+    height: 100%;
+    max-height: 500px;
+    border-radius: 100px;}
 
 .landing-intro .row .right-intro{
-    width: 1000px;
-    height: 500px;
-    background-color: #ffffff;
+    width: 100%;
+    max-width: 1000px;
+    height: 100%;
+    max-height: 500px;
     margin-left: -265px;
-    /*border: 1px solid #aaaaaa;*/
-    border-radius: 10px;
-    box-shadow: 0 3px 25px 0 rgba(22,22,22,.15);  }
+    border-radius: 100px;}
 
-
+.landing-intro .row .left-intro img,.landing-intro .row .right-intro img{
+    /*background-color: #ffffff;*/
+    box-shadow: 0 3px 25px 0 rgba(22,22,22,.15);
+}
 
 /* 개인설정 */
 .pull-modal-container input[type=email]{
@@ -1192,16 +1193,53 @@ li.nav-link.active>a:hover,
 
 /* ================================================= 반응형 ================================================= */
 @media (min-width: 1200px) {
-    .container{
-        width: 1000px;}
+    .container{  width: 1000px;}
 }
 
 /* 세로 방향 타블렛부터 가로 방향 타블렛과 데스크탑까지 */
-@media (min-width: 768px) and (max-width: 992px) {  }
+@media (min-width: 768px) and (max-width: 992px) {
+    /* 홈 */
+
+    /* 스토어 */
+
+    /* 지원 */
+
+    /* 소개 */
+
+    /* 로그인 */
+
+    /* 회원가입 */
+
+}
 
 
 /* 가로 방향 전화기부터 세로 방향 타블렛까지 */
-@media (max-width: 767px) {  }
+@media (max-width: 767px) {
+
+    /* 홈 */
+
+    /* 스토어 */
+
+    /* 지원 */
+
+    /* 소개 */
+    .landing-intro h3{margin-top: 0px;}
+
+    .landing-intro .row .left-intro img,.landing-intro .row .right-intro img{  width: 100%;}
+    .landing-intro .row .right-intro{margin-left: 0;}
+
+
+
+
+
+
+
+
+    /* 로그인 */
+
+    /* 회원가입 */
+
+}
 
 
 /* 가로 방향 전화기 이하 */

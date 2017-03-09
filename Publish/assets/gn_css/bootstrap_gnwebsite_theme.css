@@ -1104,12 +1104,34 @@ li.nav-link.active>a:hover,
     font-size: 36px;
     text-align: center;
     color: #ffffff;
-    font-weight: 200;
-}
+    font-weight: 200;  }
+
 .gn-banner a{display: inline-block;  color: #ffffff; padding-top: 50px;}
 .gn-banner i.glyphicon-download-alt{ color: #ffffff; display: block; margin: 10px 0; font-size: 20px;}
 
-.landing-intro{position: relative;  z-index: 10;  }
+/* ----- 메인 랜딩페이지 ----- */
+#landing-intro .container{margin: 0 auto; padding: 30px 0; border: 1px solid #ff9600;}
+
+#landing-intro .application h2{padding: 30px 0;}
+#landing-intro .left-intro img,
+#landing-intro .right-intro img{  box-shadow: 0 3px 25px 0 rgba(22,22,22,.15);}
+
+#landing-intro .dashboard .right-intro img,
+#landing-intro .instance-info .right-intro img,
+#landing-intro .servi-sett .right-intro img,
+#landing-intro .image .right-intro img{  margin-left: -289px;  }
+
+#landing-intro .left-intro,#landing-intro .right-intro{
+    width: 100%;
+    max-width: 1000px;
+    height: 100%;
+    max-height: 500px;
+    border-radius: 100px;}
+
+#landing-intro .team span{margin-bottom: 20px; display: inline-block;}
+
+
+/*.landing-intro{position: relative;  z-index: 10;  }
 .landing-intro h2{position: absolute;  top: 40px;  }
 .landing-intro h3{margin-top: 180px;}
 .landing-intro .row a{color: #58c4c6; display: block; text-align: right; margin-top: 30px; font-size: 13px;}
@@ -1120,40 +1142,15 @@ li.nav-link.active>a:hover,
     margin: 5px 0;
     color: #58c4c6;}
 
-.landing-intro .row.application{  position: absolute;  top: 100px;}
-.landing-intro .row.dashboard{  position: absolute;  top: 700px;}
-.landing-intro .row.instance-sett{  position: absolute;  top: 1300px;}
-.landing-intro .row.instance-info{  position: absolute;  top: 1900px;}
-.landing-intro .row.instance-new{  position: absolute;  top: 2500px;}
-.landing-intro .row.servi-sett{  position: absolute;  top: 3100px;}
-.landing-intro .row.servi-log{  position: absolute;  top: 3700px}
-.landing-intro .row.image{  position: absolute;  top: 4300px;}
-.landing-intro .row.team{  position: absolute;  top: 4700px;}
-
 .landing-intro .row.team .text-center span{margin-bottom: 20px; display: inline-block;}
 
 .landing-intro .row{  }
 .landing-intro .row .right-text{  }
 
-.landing-intro .row .left-intro{
-    width: 100%;
-    max-width: 1000px;
-    height: 100%;
-    max-height: 500px;
-    border-radius: 100px;}
+*/
 
-.landing-intro .row .right-intro{
-    width: 100%;
-    max-width: 1000px;
-    height: 100%;
-    max-height: 500px;
-    margin-left: -265px;
-    border-radius: 100px;}
 
-.landing-intro .row .left-intro img,.landing-intro .row .right-intro img{
-    /*background-color: #ffffff;*/
-    box-shadow: 0 3px 25px 0 rgba(22,22,22,.15);
-}
+
 
 /* 개인설정 */
 .pull-modal-container input[type=email]{
@@ -1207,21 +1204,12 @@ li.nav-link.active>a:hover,
     /* 지원 */
 
     /* 소개 */
-    .landing-intro .row.application{  position: absolute;  top: 100px;}
-    .landing-intro .row.dashboard{  position: absolute;  top: 500px;}
-    .landing-intro .row.instance-sett{  position: absolute;  top: 900px;}
-    .landing-intro .row.instance-info{  position: absolute;  top: 1300px;}
-    .landing-intro .row.instance-new{  position: absolute;  top: 1700px;}
-    .landing-intro .row.servi-sett{  position: absolute;  top: 2100px;}
-    .landing-intro .row.servi-log{  position: absolute;  top: 2500px}
-    .landing-intro .row.image{  position: absolute;  top: 2900px;}
-    .landing-intro .row.team{  position: absolute;  top: 3300px;}
+    #landing-intro .left-intro img,#landing-intro .right-intro img{  width: 100%;}
 
-    .landing-intro h3{margin-top: 50px;}
-    .landing-intro .row .left-intro img,.landing-intro .row .right-intro img{  width: 100%;}
-    .landing-intro .row .right-intro{margin-left: 0;}
-    .landing-intro .row.application a{margin: 10px 0!important;}
-
+    #landing-intro .dashboard .right-intro img,
+    #landing-intro .instance-info .right-intro img,
+    #landing-intro .servi-sett .right-intro img,
+    #landing-intro .image .right-intro img{  margin-left: 0px;  }
 
     /* 로그인 */
 
@@ -1240,25 +1228,12 @@ li.nav-link.active>a:hover,
     /* 지원 */
 
     /* 소개 */
-    .landing-intro .row.application{  position: absolute;  top: 100px;}
-    .landing-intro .row.dashboard{  position: absolute;  top: 600px;}
-    .landing-intro .row.instance-sett{  position: absolute;  top: 1300px;}
-    .landing-intro .row.instance-info{  position: absolute;  top: 1900px;}
-    .landing-intro .row.instance-new{  position: absolute;  top: 2500px;}
-    .landing-intro .row.servi-sett{  position: absolute;  top: 3100px;}
-    .landing-intro .row.servi-log{  position: absolute;  top: 3700px}
-    .landing-intro .row.image{  position: absolute;  top: 4300px;}
-    .landing-intro .row.team{  position: absolute;  top: 4700px;}
+    #landing-intro .left-intro img,#landing-intro .right-intro img{  width: 100%;}
 
-    .landing-intro h3{margin-top: 0px;}
-
-    .landing-intro .row .left-intro img,.landing-intro .row .right-intro img{  width: 100%;}
-    .landing-intro .row .right-intro{margin-left: 0;}
-
-
-
-
-
+    #landing-intro .dashboard .right-intro img,
+    #landing-intro .instance-info .right-intro img,
+    #landing-intro .servi-sett .right-intro img,
+    #landing-intro .image .right-intro img{  margin-left: 0px;  }
 
 
 

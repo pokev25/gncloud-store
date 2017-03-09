@@ -73,8 +73,8 @@ def supportwrite(user_id,user_name,title, text, sql_session):
     sql_session.commit()
 
 def supportfamous(sql_session):
-    latest = sql_session.query(GnSupport).order_by(GnSupport.write_date.asc()).limit('5').all()
-    famous = sql_session.query(GnSupport).order_by(GnSupport.count.desc()).limit('5').all()
+    latest = sql_session.query(GnSupport).filter(GnSupport.parent_id == None).order_by(GnSupport.write_date.asc()).limit('5').all()
+    famous = sql_session.query(GnSupport).filter(GnSupport.parent_id == None).order_by(GnSupport.count.desc()).limit('5').all()
     famous_reply=[]
     for f in latest:
         famous_reply.append(len(sql_session.query(GnSupport).filter(GnSupport.parent_id == f.id).all()))

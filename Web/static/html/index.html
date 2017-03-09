@@ -44,6 +44,7 @@
     <script type="text/javascript" src="/js/angular/controllers/checkUrl.js"></script>
     <script type="text/javascript" src="/js/angular/controllers/joinForm.js"></script>
     <script type="text/javascript" src="/js/angular/controllers/joincomplete.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/userSetting.js"></script>
     <script language="javascript">
         function logout()
         {
@@ -52,16 +53,18 @@
                 url: '/api/manager/vm/guestLogout',
                 headers: {'Content-Type': 'application/json; charset=utf-8'},
                 success: function () {
-                    location.href="/";
+                    location.reload();
+                    $('#login').show();
+                    $('#signup').show();
+                    $('#logout').hide();
+                    $('#log-name').hide();
                 }
             })
         }
-
     </script>
 </head>
 
 <body>
-<div class="blur">
 <nav class="navbar navbar-default gn-header">
     <div class="container">
         <!--지앤클라우드 로고-->
@@ -89,7 +92,7 @@
             <!--오른쪽 메뉴-->
             <div id="id" class="consol-btn pull-right">
                 <span id ="login"><a data-toggle="modal" data-target="#loginModal">로그인</a></span>
-                <span><a id ="log-name" data-toggle="modal" data-target="#loginModal"><span id="name"></span></a></span>
+                <span id ="log-name"><a href="#/usersetting"><span id="name"></span></a></span>
                 |
                 <span id="signup"><a href="#/joinemail">회원가입</a></span>
                 <span id="logout"><a href="javascript:logout();">로그아웃</a></span>
@@ -99,7 +102,6 @@
     </div> <!--class="container"-->
 </nav> <!--class="navbar navbar-default navbar-fixed-top"-->
 <!--HEADER END-->
-
 
 <div class="container main-container">
     <ng-view></ng-view>
@@ -125,6 +127,7 @@
         });
         $(document).ready(function() {
             $('#logout').hide();
+            $('#log-name').hide();
             $('#login_btn').click(function() {
                 var formData = '{"login_id":"'+$("#login_id").val()+'","login_pw":"'+$("#login_pw").val()+'"}';
                 $.ajax({
@@ -163,6 +166,7 @@
                                 $('#login').show();
                                 $('#signup').show();
                                 $('#logout').hide();
+                                $('#log-name').hide();
                             }
                         }else{
                             alert(data.message);
@@ -171,33 +175,21 @@
                             $('#login').hide();
                             $('#signup').hide();
                             $('#logout').show();
+                            $('#log-name').show();
                         }else{
                             $('#login').show();
                             $('#signup').show();
                             $('#logout').hide();
+                            $('#log-name').hide();
                         }
                     }
                 })
             }
             login();
 
-            function logout()
-            {
-                $.ajax({
-                    type: "GET",
-                    url: '/api/manager/vm/guestLogout',
-                    headers: {'Content-Type': 'application/json; charset=utf-8'},
-                    success: function () {
-                        location.reload();
-                        $('#login').show();
-                        $('#signup').show();
-                        $('#logout').hide();
-                    }
-                })
-            }
+
         });
     </script>
-</div>
 </div>
 
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >

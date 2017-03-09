@@ -14,6 +14,7 @@ class GnUser(Base):
     password = Column(String(50), primary_key= False, nullable= False)
     user_name = Column(String(20), primary_key= False, nullable= False)
     email= Column(String(30), primary_key= False, nullable= False)
+    tel= Column(String(20), primary_key= False, nullable= False)
     start_date = Column(DateTime, default=datetime.datetime.now())
     token = Column(nullable=False)
 
@@ -33,7 +34,7 @@ class GnUser(Base):
                % (self.user_id, self.password, self.user_name, self.email, self.start_date, self.token)
 
     def __json__(self):
-        return ['user_id', 'password', 'user_name', 'email', 'start_date']
+        return ['user_id', 'password', 'user_name', 'email', 'start_date','tel']
 
 
 class GnSupport(Base):

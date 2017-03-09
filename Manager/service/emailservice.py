@@ -37,7 +37,7 @@ def emailtoken(email, sql_session):
     encoded = jwt.encode(email_json,'secret','HS256')
     send_ses(email,encoded,sql_session)
     print encoded
-    user_info = GnUser(user_id = email, token=encoded, start_date=datetime.datetime.now().strftime('%Y%m%d%H%M%S'))
+    user_info = GnUser(user_id = email, token=encoded,email=email, start_date=datetime.datetime.now().strftime('%Y%m%d%H%M%S'))
     sql_session.add(user_info)
     sql_session.commit()
     return True

@@ -140,6 +140,15 @@ def checkUrl(url):
         return jsonify(status=True,message='success', che='ok')
     else:
         return jsonify(status=True, message='False', che='false')
+
+@app.route('/join',methods=['POST'])
+def signUp():
+    user_name =request.json['user_name']
+    password = request.json['password']
+    password_re = request.json['password_re']
+    token= request.json['token']
+    signup(user_name, password, password_re, token, db_session)
+    return jsonify(status=True, message='success')
 #### rest end ####
 
 

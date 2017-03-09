@@ -1,0 +1,96 @@
+<div id="support">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                        <input type="text" class="form-control input-lg" ng-model="data.text" placeholder="검색어 입력" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-info btn-lg" type="button" ng-click="supportlist()">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <hr>
+        <br>
+
+        <!--인기주제 | 최신글-->
+ <div id="famous">
+        <div class="row gn-container">
+            <div class="col-lg-6">
+                <h2>인기주제</h2>
+                <ul ng-repeat="famous in famous">
+                    <li><a href="#/supportdetail?id={{ famous.id }}">{{ famous.title }}</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-6">
+                <h2>최신글
+                    <button type="button" class="btn btn-default pull-right" onclick="location.href='#/supportlist'">더보기</button>
+                </h2>
+
+                <ul ng-repeat="latest in latest">
+                    <li><a href="#/supportdetail?id={{ latest.id }}">{{ latest.title }}<span class="badge gn-badge" ng-show="latest.recount >0">{{ latest.recount }}</span></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--추천 | 질문하기 버튼-->
+        <div class="row gn-container">
+            <div class="col-lg-6">
+                <h2>추천</h2>
+                <ul>
+                    <li><a>어떻게 지앤클라우드를 설치하나요</a></li>
+                    <li><a>팀원 추가하는 방법이 어떻게 되나요</a></li>
+                    <li><a>어떻게 클러스터 생성하나요?</a></li>
+                    <li><a>삭제하는 방법 알려주세요.</a></li>
+                </ul>
+            </div>
+
+            <div class="col-sm-2 col-xs-12 pull-right">
+                    <button type="button" class="btn btn-gn-primary btn-lg btn-block"
+                            onclick="location.href='#/supportwrite'">질문하기
+                    </button>
+            </div>
+       </div>
+ </div>
+</div> <!--검색바-->
+<div id="search">
+ <h4 class="gn-write">전체 {{total }} 건</h4>
+ <button class="btn btn-gn-primary col-sm-1" onclick="location.href='#/supportwrite'">질문하기</button>
+ <div class="gn-margin-bott10"></div>
+
+ <div class="table-responsive gn-table-responsive">
+     <table class="table gn-board-table table-hover">
+         <thead>
+         <tr>
+             <th class="col-sm-1">&num;</th>
+             <th class="col-md-4 col-sm-4">제목</th>
+             <th class="col-md-2 col-sm-2 hidden-xs">작성자</th>
+             <th class="col-sm-2">조회수</th>
+             <th class="col-sm-2">등록일</th>
+         </tr>
+         </thead>
+         <tbody class="gn-tdody">
+         <tr class="" ng-repeat="list in list">
+             <td>{{$index+1+((page_hist-1)*10)}}</td>
+             <td class="second-td-name">
+                 <a href="#/supportdetail?id={{list.id}}" class="gn-table-ellip"> {{ list.title }} </a>
+                 <span class="badge" ng-show="list.recount > 0">{{list.recount}}</span>
+             </td>
+             <td class="hidden-xs">{{list.author_name}}</td>
+             <td>{{list.count}}</td>
+             <td>{{list.write_date}}</td>
+         </tr>
+
+         </tbody>
+     </table>
+ </div><!--table-->
+
+ <input type="button" class="btn btn-default" ng-click="supportlist(prev_page)" value="이전" ng-show="prev_page > 0">
+ <input type="button" class="btn btn-default" ng-click="supportlist(next_page)" value="다음" ng-show="next_page != page">
+</div>

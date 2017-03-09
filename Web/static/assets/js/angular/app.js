@@ -8,6 +8,7 @@ var serviceAddModules = [
 (function () {
 
     var app = angular.module('gncloud', serviceAddModules);
+
     app.run(function($rootScope,$http){
         $http({
             method: 'GET',
@@ -35,7 +36,15 @@ var serviceAddModules = [
             },
         };
     });
-
+    app.filter('startFrom', function () {
+        return function (input, start) {
+            if (input) {
+                start = +start;
+                return input.slice(start);
+            }
+            return [];
+        }
+        });
     app.service('dateModifyService', function()
     {
         this.modifyDate = function(date)

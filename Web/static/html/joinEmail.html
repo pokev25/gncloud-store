@@ -1,0 +1,17 @@
+<div id="joinEmail">
+
+        <h1 class="text-center">Email</h1>
+        <h2 ng-show="emailForm.email.$invalid && !emailForm.email.$pristine" class="text-center gn-lead">가입을 하기위해 올바른 이메일 확인이 필요합니다.</h2>
+
+        <form name="emailForm" ng-submit="submitForm(emailForm.$valid)" class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6" novalidate>
+            <input type="text" name="email" class="gn-form-control gn-write col-sm-10 col-xs-12" ng-model="data.email" placeholder="E-mail" required ng-pattern="/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/">
+            <input type="button" class="btn btn-gn-blue col-sm-2 col-xs-12" value="확인" ng-click="emailcheck()" >
+        </form>
+
+    </div>
+
+</div><!--blur-->
+
+
+
+

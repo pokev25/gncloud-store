@@ -1,0 +1,29 @@
+
+    <div id="joinForm">
+
+        <h1 class="text-center">회원가입</h1>
+
+        <form class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6">
+            <div class="form-group row">
+                <label class="col-sm-3 control-label">닉네임</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control gn-form-control" ng-model="data.user_name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 control-label">비밀번호</label>
+                <div class="col-sm-9">
+                    <input type="password" class="form-control gn-form-control" ng-model="data.password">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 control-label">비밀번호 확인</label>
+                <div class="col-sm-9">
+                    <input type="password" class="form-control gn-form-control" ng-model="data.password_re">
+                </div>
+            </div>
+
+            <input type="button" class="btn btn-gn-blue col-sm-2 btn-block btn-lg" value="가입하기" ng-click="signup()">
+        </form>
+
+    </div>

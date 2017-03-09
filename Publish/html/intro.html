@@ -344,7 +344,7 @@
 <script src="../assets/gn_js/bootstrap.min.js"></script>
 <script language="javascript">
     $(document).ready(function() {
-        $('#myModal').on('hidden.bs.modal', function () {
+        $('#myModal').on('modal.fade', function () {
             $('#YourIFrameID')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
         })
     });

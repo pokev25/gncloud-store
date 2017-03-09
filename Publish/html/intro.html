@@ -279,7 +279,7 @@
     <div class="modal-dialog modal-lg">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" width="1920" height="1080" src="https://www.youtube.com/embed/W2FV38dbHzU?&autoplay=1" frameborder="0" allowfullscreen></iframe>
+            <iframe id="YourIFrameID" class="embed-responsive-item" width="1920" height="1080" src="https://www.youtube.com/embed/W2FV38dbHzU?&autoplay=1" frameborder="0" allowfullscreen></iframe>
         </div>
 
 
@@ -342,5 +342,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../assets/gn_js/bootstrap.min.js"></script>
+<script language="javascript">
+    var url = $('#YourIFrameID').attr('src');
+
+    //Then assign the src to null, this then stops the video been playing
+    $('#YourIFrameID').attr('src', '');
+
+    // Finally you reasign the URL back to your iframe, so when you hide and load it again you still have the link
+    $('#YourIFrameID').attr('src', url);
+</script>
 </body>
 </html>

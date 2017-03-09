@@ -155,6 +155,37 @@ def signUp():
     token= request.json['token']
     signup(user_name, password, password_re, token, db_session)
     return jsonify(status=True, message='success')
+
+@app.route('/user',methods=['POST'])
+def userChange():
+    password =""
+    password_re =""
+    password_new =""
+    tel = ""
+    email=""
+    user_name=""
+    user_id = session['userId']
+    if 'password' in request.json:
+        password = request.json['password']
+        password_re = request.json['password_re']
+        password_new = request.json['password_new']
+    if 'email' in request.json:
+        email = request.json['email']
+    if 'tel' in request.json:
+        tel = request.json['tel']
+    if 'user_name' in request.json:
+        user_name = request.json['user_name']
+    list = userchangeinfo(user_id,user_name,password , password_new, password_re, tel, email,db_session)
+    if list == 'ok':
+        session['userName']=user_name
+        return jsonify(status=True)
+    else:
+        return jsonify(status=False)
+
+@app.route('/user',methods=['GET'])
+def userInfo():
+    user_id = session['userId']
+    return jsonify(status=True,message='success',list=userinfo(user_id,db_session))
 #### rest end ####
 
 

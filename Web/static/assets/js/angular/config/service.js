@@ -11,6 +11,7 @@ var serviceConfig = function ($routeProvider, $httpProvider) {
         .when('/checkurl', {templateUrl: '/checkUrl.html', controller: 'checkUrlCtrl'})
         .when('/joinform', {templateUrl: '/joinForm.html', controller: 'joinFormCtrl'})
         .when('/joincomplete', {templateUrl: '/joincomplete.html', controller: 'joincompleteCtrl'})
+        .when('/usersetting', {templateUrl: '/userSetting.html', controller: 'userSettingCtrl'})
     $httpProvider.interceptors.push('serviceLogger');
 }
 

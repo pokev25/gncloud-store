@@ -44,6 +44,7 @@
     <script type="text/javascript" src="/js/angular/controllers/checkUrl.js"></script>
     <script type="text/javascript" src="/js/angular/controllers/joinForm.js"></script>
     <script type="text/javascript" src="/js/angular/controllers/joincomplete.js"></script>
+    <script type="text/javascript" src="/js/angular/controllers/userSetting.js"></script>
     <script language="javascript">
         function logout()
         {
@@ -52,16 +53,18 @@
                 url: '/api/manager/vm/guestLogout',
                 headers: {'Content-Type': 'application/json; charset=utf-8'},
                 success: function () {
-                    location.href="/";
+                    location.reload();
+                    $('#login').show();
+                    $('#signup').show();
+                    $('#logout').hide();
+                    $('#log-name').hide();
                 }
             })
         }
-
     </script>
 </head>
 
 <body>
-<div class="blur">
 <nav class="navbar navbar-default gn-header">
     <div class="container">
         <!--지앤클라우드 로고-->
@@ -89,7 +92,7 @@
             <!--오른쪽 메뉴-->
             <div id="id" class="consol-btn pull-right">
                 <span id ="login"><a data-toggle="modal" data-target="#loginModal">로그인</a></span>
-                <span><a id ="log-name" data-toggle="modal" data-target="#loginModal"><span id="name"></span></a></span>
+                <span id ="log-name"><a href="#/usersetting"><span id="name"></span></a></span>
                 |
                 <span id="signup"><a href="#/joinemail">회원가입</a></span>
                 <span id="logout"><a href="javascript:logout();">로그아웃</a></span>
@@ -99,7 +102,6 @@
     </div> <!--class="container"-->
 </nav> <!--class="navbar navbar-default navbar-fixed-top"-->
 <!--HEADER END-->
-
 
 <div class="container main-container">
     <ng-view></ng-view>
@@ -114,90 +116,7 @@
     <script src="/js/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/js/ie10-viewport-bug-workaround.js"></script>
-    <script language="javascript">
-        $(function() {
-            $("li").click(function() {
-                // remove classes from all
-                $("li").removeClass("active");
-                // add class to the one we clicked
-                $(this).addClass("active");
-            });
-        });
-        $(document).ready(function() {
-            $('#logout').hide();
-            $('#login_btn').click(function() {
-                var formData = '{"login_id":"'+$("#login_id").val()+'","login_pw":"'+$("#login_pw").val()+'"}';
-                $.ajax({
-                    type: "POST",
-                    data: formData,
-                    url: '/api/manager/vm/account',
-                    headers: {'Content-Type': 'application/json; charset=utf-8'},
-                    success:function(data) {
-                        if (data.status == true) {
-                            if (data.check == 'yes') {
-                                location.reload();
-                                login();
-                            }
-                            else if(data.check =='no') {
-                                $('#error').show();
-                            }
-                        }else{
-                            alert(data.message);
-                        }
-                    }
-                })
-            });
-            var namecheck =null;
-            function login(){
-                $.ajax({
-                    type: "GET",
-                    url: '/api/manager/vm/logincheck',
-                    headers: {'Content-Type': 'application/json; charset=utf-8'},
-                    success:function(data) {
-                        if (data.status == true) {
-                            if (data.check == 'yes') {
-                                namecheck = data.info.name;
-                                $('#name').html(data.info.name);
-                            }else if(data.check == 'no'){
-                                namecheck = data.info.name;
-                                $('#login').show();
-                                $('#signup').show();
-                                $('#logout').hide();
-                            }
-                        }else{
-                            alert(data.message);
-                        }
-                        if( namecheck != ""){
-                            $('#login').hide();
-                            $('#signup').hide();
-                            $('#logout').show();
-                        }else{
-                            $('#login').show();
-                            $('#signup').show();
-                            $('#logout').hide();
-                        }
-                    }
-                })
-            }
-            login();
 
-            function logout()
-            {
-                $.ajax({
-                    type: "GET",
-                    url: '/api/manager/vm/guestLogout',
-                    headers: {'Content-Type': 'application/json; charset=utf-8'},
-                    success: function () {
-                        location.reload();
-                        $('#login').show();
-                        $('#signup').show();
-                        $('#logout').hide();
-                    }
-                })
-            }
-        });
-    </script>
-</div>
 </div>
 
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
@@ -218,13 +137,14 @@
 
                 <!--체크박스-->
                 <div class="btn-id">
-                    <input class="form-inputPop" type="checkbox" id="checkbox-id"/>
+                    <input class="form-inputPop" type="checkbox" id="idSaveCheck" name="idSaveCheck"/>
                     <i></i>
-                    <label for="checkbox-id" class="label-id">아이디 저장</label>
+                    <label for="idSaveCheck" class="label-id">아이디 저장</label>
                 </div>
 
                 <input type="button" class="btn btn-lg btn-block btn-gn-login" value="로그인" id="login_btn"><!--로그인--></input>
             </form>
+
         </div><!--class="pull-modal-container"-->
     </div><!--class="modal-dialog modal-sm"-->
 </div><!--login-modal-->
@@ -250,7 +170,135 @@
         <div class="footer-img"></div>
     </div>
 </footer>
+<script language="javascript">
+    $(function() {
+        $("li").click(function() {
+            // remove classes from all
+            $("li").removeClass("active");
+            // add class to the one we clicked
+            $(this).addClass("active");
+        });
+    });
+    $(document).ready(function() {
+        getLogin();
+        $('#logout').hide();
+        $('#log-name').hide();
+        $('#login_btn').click(function() {
+            var formData = '{"login_id":"'+$("#login_id").val()+'","login_pw":"'+$("#login_pw").val()+'"}';
+            $.ajax({
+                type: "POST",
+                data: formData,
+                url: '/api/manager/vm/account',
+                headers: {'Content-Type': 'application/json; charset=utf-8'},
+                success:function(data) {
+                    if (data.status == true) {
+                        if (data.check == 'yes') {
+                            location.reload();
+                            login();
+                        }
+                        else if(data.check =='no') {
+                            $('#error').show();
+                        }
+                    }else{
+                        alert(data.message);
+                    }
+                }
+            })
+        });
+        var namecheck =null;
+        function login(){
+            $.ajax({
+                type: "GET",
+                url: '/api/manager/vm/logincheck',
+                headers: {'Content-Type': 'application/json; charset=utf-8'},
+                success:function(data) {
+                    if (data.status == true) {
+                        if (data.check == 'yes') {
+                            saveId();
+                            namecheck = data.info.name;
+                            $('#name').html(data.info.name);
+                        }else if(data.check == 'no'){
+                            namecheck = data.info.name;
+                            $('#login').show();
+                            $('#signup').show();
+                            $('#logout').hide();
+                            $('#log-name').hide();
+                        }
+                    }else{
+                        alert(data.message);
+                    }
+                    if( namecheck != ""){
+                        $('#login').hide();
+                        $('#signup').hide();
+                        $('#logout').show();
+                        $('#log-name').show();
+                    }else{
+                        $('#login').show();
+                        $('#signup').show();
+                        $('#logout').hide();
+                        $('#log-name').hide();
+                    }
+                }
+            })
+        }
+        login();
 
+
+    });
+    function onKeyDown() {
+        if (event.keyCode == '13') {
+            $('#login_btn').click();
+        }
+    }
+    // 쿠키에 id를 저장.
+    function setsave(name, value, expiredays) {
+        var today = new Date();
+        today.setDate(today.getDate() + expiredays);
+        document.cookie = name + "=" + escape(value) + "; path=/; expires="+ today.toGMTString() + ";";
+    }
+
+    // 버튼 클릭시 실행 function
+    function saveId(){
+        if (document.getElementById("idSaveCheck").checked) {
+            saveLogin(document.getElementById("login_id").value);
+        } else {
+            saveLogin("");
+        }
+    }
+
+    // id를 받아와 쿠키에 저장할지 쿠키에서 삭제할지 결정.
+    function saveLogin(id) {
+        if (id != "") {
+            // userid 쿠키에 id 값을 7일간 저장
+            setsave("login_id", id, 7);
+        } else {
+            // userid 쿠키 삭제
+            setsave("login_id", id, -1);
+        }
+    }
+
+    // 화면 로드시 아이디
+    function getLogin() {
+
+        // userid 쿠키에서 id 값을 가져온다.
+        var cook = document.cookie + ";";
+        var idx = cook.indexOf("login_id", 0);
+        var val = "";
+
+        if (idx != -1) {
+            cook = cook.substring(idx, cook.length);
+            begin = cook.indexOf("=", 0) + 1;
+            end = cook.indexOf(";", begin);
+            val = unescape(cook.substring(begin, end));
+        }
+
+// 가져온 쿠키값이 있으면
+        if (val != "") {
+            document.getElementById("login_id").value = val;
+            document.getElementById("idSaveCheck").checked = true;
+        }
+    }
+</script>
 </body>
 </html>
 

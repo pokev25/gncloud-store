@@ -34,3 +34,24 @@ def signup(user_name, password, passowrd_re, token, sql_session):
         return True
     else:
         return False
+
+def userchangeinfo(user_id,user_name,password, password_new, password_re, tel, email, sql_session):
+    user_info=sql_session.query(GnUser).filter(GnUser.user_id ==user_id).one()
+    if password != "" and convertToHashValue(password) == user_info.password:
+        if password_new == password_re:
+            user_info.password = convertToHashValue(password_new)
+            return 'ok'
+        else:
+            return 'password'
+    if email !="":
+        user_info.email = email
+
+    if tel !="":
+        user_info.tel = tel
+    if user_name !="":
+        user_info.user_name = user_name
+    sql_session.commit()
+    return 'ok'
+
+def userinfo(user_id, sql_session):
+    return sql_session.query(GnUser).filter(GnUser.user_id==user_id).one()

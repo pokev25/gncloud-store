@@ -24,8 +24,6 @@ angular
                         $scope.prev_page = page - 1;
                         $scope.next_page = page + 1;
                         $scope.page = Math.ceil(data.list.total_page / 10) +1;
-                        console.log($scope.page);
-                        console.log($scope.next_page);
                     }else {
                         if (data.message != null) {
                             notification.sendMessage("error",data.message);

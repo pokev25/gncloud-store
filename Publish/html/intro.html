@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <!--<link rel="stylesheet" href="../assets/gn_css/bootstrap_gn_theme.css">--> <!--기존 솔루션 css, 아래 css정리되면 삭제-->
     <link rel="stylesheet" href="../assets/gn_css/bootstrap_gnwebsite_theme.css">
+
+
 </head>
 
 <body>
@@ -72,131 +74,160 @@
         <div class="container">
             <h1>클라우드의 시작은 <strong>지앤클라우드</strong>와 함께</h1>
 
-            <a href="" class=""><i class="glyphicon glyphicon-download-alt"></i>Download</a>
+            <a href="" class="" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-expand"></i></a>
+
         </div>
     </div> <!--jumbotron-->
 
-    <div class="container landing-intro">
-        <h2>소개</h2>
+
+
+
+    <div id="landing-intro">
 
         <!--어플리케이션 실행-->
-        <div class="row application">
-            <div class="col-xs-12 col-sm-3 right-text">
-                <h3>어플리케이션 실행</h3>
-                <p class="under"></p>
-                <span>스토어에서 무료로 제공하는 100여가지의 어플리케이션들을 지금 즉시 새용해보세요.</span>
-                <a href=""><!--다른 어플리케이션 보기-->Coming soon</a>
-            </div>
-            <div class="col-xs-12 col-sm-9">
-                <div class="left-intro">
-                    <img src="../assets/gn_images/intro01.png" alt="어플리케이션 실행">
+        <div class="application">
+            <div class="container row">
+                <h2>소개</h2>
+
+                <div class="col-xs-12 col-sm-3">
+                    <h3>어플리케이션 실행</h3>
+                    <p class="under"></p>
+                    <span>스토어에서 무료로 제공하는 100여가지의 어플리케이션들을 지금 즉시 새용해보세요.</span>
+                    <a href=""><!--다른 어플리케이션 보기-->Coming soon</a>
+                </div>
+                <div class="col-xs-12 col-sm-9">
+                    <div class="left-intro">
+                        <img src="../assets/gn_images/intro01.png" alt="어플리케이션 실행">
+                    </div>
                 </div>
             </div>
-        </div>
+        </div><!--class="application"-->
+
 
         <!--명료한 대시보드-->
-        <div class="row dashboard">
-            <div class="col-xs-12 col-sm-9">
-                <div class="right-intro">
-                    <img src="../assets/gn_images/intro02.png" alt="명료한 대시보드">
+        <div class="dashboard">
+            <div class="container row">
+                <div class="col-xs-12 col-sm-9">
+                    <div class="right-intro">
+                        <img src="../assets/gn_images/intro02.png" alt="명료한 대시보드">
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-sm-3 left-text">
-                <h3>명료한 대시보드</h3>
-                <span>각종 리소스 사용 현황을 깔끔하게 한눈에 제공함으로써 관리자의 업무효율이 대폭 향상됩니다.</span>
+                <div class="col-xs-12 col-sm-3 left-text">
+                    <h3>명료한 대시보드</h3>
+                    <span>각종 리소스 사용 현황을 깔끔하게 한눈에 제공함으로써 관리자의 업무효율이 대폭 향상됩니다.</span>
+                </div>
             </div>
         </div>
 
         <!--인스턴스 관리-->
-        <div class="row instance-sett">
-            <div class="col-sm-3 right-text">
-                <h3>인스턴스 관리</h3>
-                <span>KVM,HyperV 어떤 종류의 가상머신도 즉시 만ㄷㄹ고 실행하세요. 이 기종의 여러 하이퍼바이저들을 지원하며 모두 한곳에서 표준화하여 관리할 수 있습니다.</span>
-            </div>
-            <div class="col-sm-9">
-                <div class="left-intro">
-                    <img src="../assets/gn_images/intro03.png" alt="인스턴스 관리">
+        <div class="instance-sett">
+            <div class="container row">
+                <div class="col-sm-3">
+                    <h3>인스턴스 관리</h3>
+                    <span>KVM,HyperV 어떤 종류의 가상머신도 즉시 만ㄷㄹ고 실행하세요.
+                        이 기종의 여러 하이퍼바이저들을 지원하며 모두 한곳에서 표준화하여 관리할 수 있습니다.
+                    </span>
+                </div>
+                <div class="col-sm-9">
+                    <div class="left-intro">
+                        <img src="../assets/gn_images/intro03.png" alt="인스턴스 관리">
+                    </div>
                 </div>
             </div>
         </div>
 
         <!--인스턴스 정보-->
-        <div class="row instance-info">
-            <div class="col-sm-9">
-                <div class="right-intro">
-                    <img src="../assets/gn_images/intro04.png" alt="인스턴스 정보">
+        <div class="instance-info">
+            <div class="container row">
+                <div class="col-sm-9">
+                    <div class="right-intro">
+                        <img src="../assets/gn_images/intro04.png" alt="인스턴스 정보">
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-3 left-text">
-                <h3>인스턴스 정보</h3>
-                <span>생성된 가상머신 인스턴스의 상세정보를 확인합니다.
-                      또한 상태 모니터링을 할 수 있도록 자원 사용량을 그래프로 제공합니다</span>
+                <div class="col-sm-3 left-text">
+                    <h3>인스턴스 정보</h3>
+                    <span>생성된 가상머신 인스턴스의 상세정보를 확인합니다.
+                          또한 상태 모니터링을 할 수 있도록 자원 사용량을 그래프로 제공합니다
+                    </span>
+                </div>
             </div>
         </div>
 
         <!--인스턴스 생성-->
-        <div class="row instance-new">
-            <div class="col-sm-3 right-text">
-                <h3>인스턴스 생성</h3>
-                <span>이미지와 사이즈를 몇번 클릭해서 원하는 인스턴스를 즉시 생성합니다.
-                      KVM, HyperV 기반의 가상머신을 생성할 수 있습니다.</span>
-            </div>
-            <div class="col-sm-9">
-                <div class="left-intro">
-                    <img src="../assets/gn_images/intro05.png" alt="인스턴스 생성">
+        <div class="instance-new">
+            <div class="container row">
+                <div class="col-sm-3">
+                    <h3>인스턴스 생성</h3>
+                    <span>이미지와 사이즈를 몇번 클릭해서 원하는 인스턴스를 즉시 생성합니다.
+                          KVM, HyperV 기반의 가상머신을 생성할 수 있습니다.
+                    </span>
+                </div>
+                <div class="col-sm-9">
+                    <div class="left-intro">
+                        <img src="../assets/gn_images/intro05.png" alt="인스턴스 생성">
+                    </div>
                 </div>
             </div>
         </div>
 
         <!--서비스 관리-->
-        <div class="row servi-sett">
-            <div class="col-sm-9">
-                <div class="right-intro">
-                    <img src="../assets/gn_images/intro06.png" alt="서비스 관리">
+        <div class="servi-sett">
+            <div class="container row">
+                <div class="col-sm-9">
+                    <div class="right-intro">
+                        <img src="../assets/gn_images/intro06.png" alt="서비스 관리">
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-3 left-text">
-                <h3>서비스 관리</h3>
-                <span>경량 컨테이너 기반으로 준비돤 클러스터내에서 어플리케이션을 실행하므로 수초내에 서비스가 시작됩니다.
-                      또한 인스턴스의 정적인 자원할당과 달리 자원사용 효율성이 매우 높습니다.</span>
+                <div class="col-sm-3 left-text">
+                    <h3>서비스 관리</h3>
+                    <span>경량 컨테이너 기반으로 준비돤 클러스터내에서 어플리케이션을 실행하므로 수초내에 서비스가 시작됩니다.
+                          또한 인스턴스의 정적인 자원할당과 달리 자원사용 효율성이 매우 높습니다.
+                    </span>
+                </div>
             </div>
         </div>
 
         <!--서비스 로그-->
-        <div class="row servi-log">
-            <div class="col-sm-3 right-text">
-                <h3>서비스 로그</h3>
-                <span>이미지로 패키징된 컨테이너의 내부 로그들을 관리자가 언제든지 쉽게 확인할 수 있습니다.</span>
-            </div>
-            <div class="col-sm-9">
-                <div class="left-intro">
-                    <img src="../assets/gn_images/intro07.png" alt="서비스 로그">
+        <div class="servi-log">
+            <div class="container row">
+                <div class="col-sm-3">
+                    <h3>서비스 로그</h3>
+                    <span>이미지로 패키징된 컨테이너의 내부 로그들을 관리자가 언제든지 쉽게 확인할 수 있습니다.</span>
+                </div>
+                <div class="col-sm-9">
+                    <div class="left-intro">
+                        <img src="../assets/gn_images/intro07.png" alt="서비스 로그">
+                    </div>
                 </div>
             </div>
         </div>
 
         <!--이미지 스냅샷-->
-        <div class="row image">
-            <div class="col-sm-9">
-                <div class="right-intro">
-                    <img src="../assets/gn_images/intro08.png" alt="이미지 스냅샷">
+        <div class="image">
+            <div class="container row">
+                <div class="col-sm-9">
+                    <div class="right-intro">
+                        <img src="../assets/gn_images/intro08.png" alt="이미지 스냅샷">
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-3 left-text">
-                <h3>이미지 스냅샷</h3>
-                <span>기본이미지의 어플리케이션을 설치하여 스냡샷을 생성하고 팀원들과 공유할 수 있습니다.</span>
+                <div class="col-sm-3 left-text">
+                    <h3>이미지 스냅샷</h3>
+                    <span>기본이미지의 어플리케이션을 설치하여 스냡샷을 생성하고 팀원들과 공유할 수 있습니다.</span>
+                </div>
             </div>
         </div>
 
         <!--팀 협업-->
-        <div class="row team">
-            <div class="col-sm-12 text-center">
-                <h3>팀 협업</h3>
-                <span>팀별로 리소스가 할당되며, 동일한 팀 내에서는 모든 리소스가 공유됩니다.
-                      매니저는 팀원을 승인 및 삭제할 수 있습니다.
-                </span>
-                <div class="left-intro">
-                    <img src="../assets/gn_images/intro09.png" alt="팀 협업">
+        <div class="team">
+            <div class="container row">
+                <div class="col-sm-12 text-center">
+                    <h3>팀 협업</h3>
+                    <span>팀별로 리소스가 할당되며, 동일한 팀 내에서는 모든 리소스가 공유됩니다.
+                          매니저는 팀원을 승인 및 삭제할 수 있습니다.
+                    </span>
+                    <div class="left-intro">
+                        <img src="../assets/gn_images/intro09.png" alt="팀 협업">
+                    </div>
                 </div>
             </div>
         </div>
@@ -204,11 +235,11 @@
     </div><!--class="container"-->
 
     <div>
-        <div style="background-color: rgba(215,215,215,.2); height: 800px; z-index: 1;"></div>
-        <div style="background-color: rgba(111,111,111,.8); height: 1200px; z-index: 1;"></div>
-        <div style="background-color: rgba(215,215,215,.2); height: 800px; z-index: 1;"></div>
-        <div style="background-color: rgba(255,255,255,1); height: 1800px; z-index: 1;"></div>
-        <div style="background-color: rgba(101,163,235,.7); height: 900px; z-index: 1;"></div>
+        <div style="background-color: rgba(215,215,215,.2); height: 15%; z-index: 1;"></div>
+        <div style="background-color: rgba(111,111,111,.8); height: 25%; z-index: 1;"></div>
+        <div style="background-color: rgba(215,215,215,.2); height: 15%; z-index: 1;"></div>
+        <div style="background-color: rgba(255,255,255,1); height: 30%; z-index: 1;"></div>
+        <div style="background-color: rgba(101,163,235,.7); height: 15%; z-index: 1;"></div>
     </div>
 
 
@@ -236,6 +267,19 @@
     </footer>
 
 </div><!--blur-->
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" width="1920" height="1080" src="https://www.youtube.com/embed/W2FV38dbHzU" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+
+    </div>
+</div>
 
 
 <!--로그인 모달창-->

@@ -344,7 +344,10 @@
 <script src="../assets/gn_js/bootstrap.min.js"></script>
 <script language="javascript">
     $(document).ready(function() {
-        alert("test");
+        if($('#myModal').data('bs.modal').isShown == true){
+            console.log("Modal is open");
+            alert("test");
+        }
         $('#myModal').on('modal.fade', function () {
             $('#YourIFrameID')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
         })

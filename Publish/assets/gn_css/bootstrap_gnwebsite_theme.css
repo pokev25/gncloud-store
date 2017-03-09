@@ -1128,7 +1128,9 @@ li.nav-link.active>a:hover,
 .landing-intro .row.servi-sett{  position: absolute;  top: 3100px;}
 .landing-intro .row.servi-log{  position: absolute;  top: 3700px}
 .landing-intro .row.image{  position: absolute;  top: 4300px;}
-.landing-intro .row.team{  position: absolute;  top: 4900px;}
+.landing-intro .row.team{  position: absolute;  top: 4700px;}
+
+.landing-intro .row.team .text-center span{margin-bottom: 20px; display: inline-block;}
 
 .landing-intro .row{  }
 .landing-intro .row .right-text{  }
@@ -1205,6 +1207,21 @@ li.nav-link.active>a:hover,
     /* 지원 */
 
     /* 소개 */
+    .landing-intro .row.application{  position: absolute;  top: 100px;}
+    .landing-intro .row.dashboard{  position: absolute;  top: 500px;}
+    .landing-intro .row.instance-sett{  position: absolute;  top: 900px;}
+    .landing-intro .row.instance-info{  position: absolute;  top: 1300px;}
+    .landing-intro .row.instance-new{  position: absolute;  top: 1700px;}
+    .landing-intro .row.servi-sett{  position: absolute;  top: 2100px;}
+    .landing-intro .row.servi-log{  position: absolute;  top: 2500px}
+    .landing-intro .row.image{  position: absolute;  top: 2900px;}
+    .landing-intro .row.team{  position: absolute;  top: 3300px;}
+
+    .landing-intro h3{margin-top: 50px;}
+    .landing-intro .row .left-intro img,.landing-intro .row .right-intro img{  width: 100%;}
+    .landing-intro .row .right-intro{margin-left: 0;}
+    .landing-intro .row.application a{margin: 10px 0!important;}
+
 
     /* 로그인 */
 
@@ -1223,6 +1240,16 @@ li.nav-link.active>a:hover,
     /* 지원 */
 
     /* 소개 */
+    .landing-intro .row.application{  position: absolute;  top: 100px;}
+    .landing-intro .row.dashboard{  position: absolute;  top: 600px;}
+    .landing-intro .row.instance-sett{  position: absolute;  top: 1300px;}
+    .landing-intro .row.instance-info{  position: absolute;  top: 1900px;}
+    .landing-intro .row.instance-new{  position: absolute;  top: 2500px;}
+    .landing-intro .row.servi-sett{  position: absolute;  top: 3100px;}
+    .landing-intro .row.servi-log{  position: absolute;  top: 3700px}
+    .landing-intro .row.image{  position: absolute;  top: 4300px;}
+    .landing-intro .row.team{  position: absolute;  top: 4700px;}
+
     .landing-intro h3{margin-top: 0px;}
 
     .landing-intro .row .left-intro img,.landing-intro .row .right-intro img{  width: 100%;}

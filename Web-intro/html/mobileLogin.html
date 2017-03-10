@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="지앤클라우드,클라우드,솔루션,gncloud">
+    <meta name="description" content="지앤클라우드에 오신것을 환영합니다">
+    <!--FAVICON-->
+    <link rel="apple-touch-icon" sizes="57x57" href="../assets/gn_images/apple-icon-57x57.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/gn_images/favicon-16x16.png">
+    <title>지앤클라우드 웹사이트 </title>
+
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="../assets/gn_css/bootstrap_gn_theme.css">--> <!--기존 솔루션 css, 아래 css정리되면 삭제-->
+    <link rel="stylesheet" href="../assets/gn_css/bootstrap_gnwebsite_theme.css">
+</head>
+
+<body style="background-color: rgba(100,100,100,1)">
+
+
+
+<!--로그인-->
+<div id="loginModal" >
+    <div class="container">
+        <div class="pull-modal-container">
+            <div class="login-logo"></div>
+
+            <h1>로그인</h1>
+            <br>
+            <form>
+                <div class="form-box">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <input type="text" name="user" placeholder="Username">
+                    <p class="middle-line"></p>
+                    <i class="glyphicon glyphicon-lock"></i>
+                    <input type="password" name="pass" placeholder="Password">
+                </div>
+
+                <!--체크박스-->
+                <div class="btn-id">
+                    <input class="form-inputPop" type="checkbox" id="checkbox-id"/>
+                    <i></i>
+                    <label for="checkbox-id" class="label-id">아이디 저장</label>
+                </div>
+
+                <input type="button" class="btn btn-lg btn-block btn-gn-login" value="로그인" id="login_btn">
+                <!--로그인--></input>
+
+                <br>
+                <a href="javascript:history.back()" style="color: #ffffff;">
+                    <i class="glyphicon glyphicon-chevron-left"></i>Back
+                </a>
+            </form>
+        </div><!--class="pull-modal-container"--></div>
+</div><!--login-modal-->
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../assets/gn_js/bootstrap.min.js"></script>
+</body>
+</html>

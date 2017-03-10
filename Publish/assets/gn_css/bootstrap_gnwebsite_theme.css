@@ -1326,7 +1326,7 @@ li.nav-link.active>a:hover,
 
     .jumbotron.gn-banner .visual-img{height: auto;}
     .play-btn{top: 30%;  left: 30%;}
-
+    #intro-video button.close{margin: 0px; color: #ffffff; font-size: 50px;}
     .footer .address,.footer .footer-img{  display: none;}
     .footer .col-sm-2{text-align: center;}
     .footer .gn-copyright{display: block; margin-top: 0;}

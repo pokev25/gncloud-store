@@ -1152,6 +1152,7 @@ li.nav-link.active>a:hover,
 #landing-intro .application{background-color: #f4f4f4; padding-bottom: 120px;}
 #landing-intro .application .container{padding-top: 100px;}
 #landing-intro .application h2{padding: 30px 0;}
+#landing-intro .application a{display: block; color: #58c4c6; text-align: right; margin-top:  10px;}
 
 #landing-intro .dashboard{background-color: #9C9C9C;}
 #landing-intro .dashboard .container{  position: relative; top: -120px; color: #505050;}

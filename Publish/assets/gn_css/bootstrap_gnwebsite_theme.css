@@ -1181,7 +1181,7 @@ li.nav-link.active>a:hover,
 #landing-intro .install{background-color: #f4f4f4; padding: 30px 0;}
 #landing-intro .install p.under{border-color: #58c4c6;}
 #landing-intro .install h2{color: #58c4c6; font-weight: 200;}
-#landing-intro .install button{margin-top: 30px; padding-left:50px; padding-right: 50px; background-color: transparent;}
+#landing-intro .install button{margin-left: 0; margin-top: 30px; padding-left:50px; padding-right: 50px; background-color: transparent;}
 
 #landing-intro .left-intro img,
 #landing-intro .right-intro img{  box-shadow: 0 3px 25px 0 rgba(22,22,22,.15); border-radius: 5px;}
@@ -1257,6 +1257,7 @@ li.nav-link.active>a:hover,
 
 /* 세로 방향 타블렛부터 가로 방향 타블렛과 데스크탑까지 */
 @media (min-width: 768px) and (max-width: 992px) {
+    body{margin-bottom: 206px;}
     /* 홈 */
 
     /* 스토어 */
@@ -1286,7 +1287,7 @@ li.nav-link.active>a:hover,
 
 /* 가로 방향 전화기부터 세로 방향 타블렛까지 */
 @media (max-width: 767px) {
-
+    body{margin-bottom: 253px;}
     /* 홈 */
 
     /* 스토어 */
@@ -1327,8 +1328,11 @@ li.nav-link.active>a:hover,
 
     .jumbotron.gn-banner .visual-img{height: auto;}
     .play-btn{top: 30%;  left: 30%;}
+
     #intro-video button.close{margin: 20px 0 20px 0; color: #ffffff; font-size: 50px;}
     #intro-video .modal-lg{margin-top: 40%;}
+    .install .container h2{margin-left: 0px; line-height: 30px;}
+
     .footer .address,.footer .footer-img{  display: none;}
     .footer .col-sm-2{text-align: center;}
     .footer .gn-copyright{display: block; margin-top: 0;}

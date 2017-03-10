@@ -32,59 +32,58 @@
 
 #### 방화벽 해제
 
-  OS 레벨에서 제공하는 방화벽에 등록을 하거나 해제를 해야한다.
-  ```
-  # CentOS7
-  $ systemctl disable firewalld
-  $ systemctl stop firewalld
-  ```
+OS 레벨에서 제공하는 방화벽에 등록을 하거나 해제를 해야한다.
+
+```
+# CentOS7
+$ systemctl disable firewalld
+$ systemctl stop firewalld
+```
 
 #### docker 설치
 
 도커의 설치는 공식 도커 홈페이지의 설치매뉴얼로 대신합니다.
 
-  1. Docker 엔진설치 : https://docs.docker.com/engine/installation/
-  2. Docker-compose 설치 : https://docs.docker.com/compose/install/
+1. Docker 엔진설치 : https://docs.docker.com/engine/installation/
+2. Docker-compose 설치 : https://docs.docker.com/compose/install/
 
 #### 플랫폼 실행
 
 Docker 와 Docker-compose 가 정상적으로 설치완료되었다면, 이제 지앤클라우드 플랫폼을 실행할수 있습니다.
 
-  1. docker-compose.yml 파일 다운로드
-  https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/docker-compose.yml
+1. docker-compose.yml 파일 다운로드
+https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/docker-compose.yml
 
-  2. 로그, database, docker registry 디렉토리 생성
+2. 로그, database, docker registry 디렉토리 생성
 
-    ```
-    # root 권한으로 디렉토리 생성
-    $ sudo mkdir -p /var/log/gncloud
-    $ sudo mkdir -p /data/mysql
-    $ sudo mkdir -p /data/registry
-	```
+```
+# root 권한으로 디렉토리 생성
+$ sudo mkdir -p /var/log/gncloud
+$ sudo mkdir -p /data/mysql
+$ sudo mkdir -p /data/registry
+```
 
-  3. 지앤클라우드 플랫폼 실행
-    ```
-    $ sudo docker-compose up -d
-    ```
+3. 지앤클라우드 플랫폼 실행
+```
+$ sudo docker-compose up -d
+```
 
- 아래 화면은 `docker-compose` 가 정상적으로 실행중일때의 로그입니다.
+아래 화면은 `docker-compose` 가 정상적으로 실행중일때의 로그입니다.
 
- **[Docker-compose up 화면]**
+**[Docker-compose up 화면]**
 
- <center>![](https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/docker-compose-up.png?raw=true)</center>
+<center>![](https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/docker-compose-up.png?raw=true)</center>
 
- **[Docker service start log]**
- <center>![](https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/docker-compose-up-2.png?raw=true)</center>
+**[Docker service start log]**
+<center>![](https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/docker-compose-up-2.png?raw=true)</center>
 
 
 
 #### 플랫폼 접속
 
-  브라우저로 `http://<설치IP주소>`에 접속하면 아래와 같은 로그인화면이 나타납니다. 기본 관리자 아이디는 `root` 이고 비밀번호는 `11111111` 이며, 차후에 프로필 메뉴에서 비밀번호를 변경할 수 있습니다.
+브라우저로 `http://<설치IP주소>`에 접속하면 아래와 같은 로그인화면이 나타납니다. 기본 관리자 아이디는 `root` 이고 비밀번호는 `11111111` 이며, 차후에 프로필 메뉴에서 비밀번호를 변경할 수 있습니다.
 
-  <center>![](https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/login.png?raw=true)</center>
-
-
+<center>![](https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/login.png?raw=true)</center>
 
 
 
@@ -96,13 +95,13 @@ Hyper-V 호스트 설치
 
 설치순서는 다음과 같습니다.
 
- - 제어판 -> 프로그램 -> windows 기능 켜기/끄기 -> Hyper-V 체크 후 확인 -> 리부팅
+- 제어판 -> 프로그램 -> windows 기능 켜기/끄기 -> Hyper-V 체크 후 확인 -> 리부팅
 
 ##### windows 10
- <center>![](https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/hyper-v-manager.png?raw=true)</center>
+<center>![](https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/hyper-v-manager.png?raw=true)</center>
 
 ##### windows server 2102
- <center>![](https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/server2012.png?raw=true) </center>
+<center>![](https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/server2012.png?raw=true) </center>
 
 
 
@@ -151,16 +150,16 @@ PS> .\"Gncloud Hyper-V Agent\Gncloud Hyper-V Agent"\setup.exe
 
 Hyper-V Agent를 관리자 계정으로 세팅하고 서비스를 시작합니다. 서비스 설정 방법은 아래와 같습니다.
 
-  1. Win + R
-  2. services.msc 입력후 Enter
-  3. Gncloud Hyper-V Agent Service 항목을 더블클릭
-  4. 로그온탭 선택
-  5. 계정 지정 라디오 버튼 선택
+1. Win + R
+2. services.msc 입력후 Enter
+3. Gncloud Hyper-V Agent Service 항목을 더블클릭
+4. 로그온탭 선택
+5. 계정 지정 라디오 버튼 선택
     1. Admin권한의 계정입력
     2. 암호입력
     3. 적용 버튼 클릭
     4. 확인 버튼 클릭
-  6. 계정이름을 모를경우
+6. 계정이름을 모를경우
     1. 찾아보기 클릭 or Alt + B
     2. 고급버튼 클릭 or Alt + A
     3. 지금찾기 클릭 or Alt + N
@@ -169,7 +168,7 @@ Hyper-V Agent를 관리자 계정으로 세팅하고 서비스를 시작합니�
     6. 선택한 계정의 비밀번호 입력
     7. 적용 버튼 클릭
     8. 확인 버튼 클릭
-  7. 절차 완료후 Gncloud Hyper-V Agent Service 서비스 중지 후 다시 시작
+7. 절차 완료후 Gncloud Hyper-V Agent Service 서비스 중지 후 다시 시작
 
 
 원격접속을 허용하도록 합니다.

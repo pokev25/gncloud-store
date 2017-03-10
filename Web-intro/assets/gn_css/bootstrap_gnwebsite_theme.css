@@ -436,6 +436,7 @@ body.modal-open .blur{
     font-size: 16px;
     margin-left: 20px;
     margin-top: 20px;
+    padding: 0px 50px;
 }
 
 .consol-btn > span{
@@ -1093,6 +1094,8 @@ li.nav-link.active>a:hover,
 
 /* 소개 */
 .jumbotron.gn-banner{
+    position: relative;
+    padding-bottom: 0;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#58c4c6+0,65a3eb+100 */
     background: rgba(88,196,198,0.6); /* Old browsers */
     background: -moz-linear-gradient(top, rgba(88,196,198,0.7) 0%, rgba(101,163,235,0.7) 100%); /* FF3.6-15 */
@@ -1100,20 +1103,50 @@ li.nav-link.active>a:hover,
     background: linear-gradient(to bottom, rgba(88,196,198,0.7) 0%,rgba(101,163,235,0.6) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#58c4c6', endColorstr='#65a3eb',GradientType=0 ); /* IE6-9 */
 }
+
+.jumbotron.gn-banner .visual{
+    position: relative;
+    bottom: -50px;}
+
+.visual .visual-img{
+    box-shadow: 0 3px 25px 0 rgba(22,22,22,.15);
+    border-radius: 5px;  }
+
+.play-btn{
+    background: url("../gn_images/playbtn.png")no-repeat;
+    width:101px;
+    height:72px;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    opacity: 0.8;
+}
+
 .gn-banner{margin: 0; text-align: center;}
 .gn-banner h1{
     font-size: 36px;
     text-align: center;
     color: #ffffff;
-    font-weight: 200;  }
+    font-weight: 200;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+    line-height: normal;
+}
 
 .gn-banner a{display: inline-block;  color: #ffffff; padding-top: 50px;}
 .gn-banner i.glyphicon-download-alt{ color: #ffffff; display: block; margin: 10px 0; font-size: 20px;}
 
 /* ----- 메인 랜딩페이지 ----- */
 #landing-intro .container{margin: 0 auto; padding: 30px 0; /*border: 1px solid #ff9600;*/}
+#landing-intro .container h3{  color: #505050; font-weight: 600;}
+#landing-intro .container .under{  width: 60px; border-bottom: 2px solid #58c4c6;}
+
+.right-text{padding-right: 0; font-size: 16px; margin-top: 200px;}
+.left-text{padding-left: 0; font-size: 16px; margin-top: 200px;}
 
 #landing-intro .application{background-color: #f4f4f4; padding-bottom: 120px;}
+#landing-intro .application .container{padding-top: 100px;}
+#landing-intro .application h2{padding: 30px 0;}
 
 #landing-intro .dashboard{background-color: #9C9C9C;}
 #landing-intro .dashboard .container{  position: relative; top: -120px;}
@@ -1131,12 +1164,16 @@ li.nav-link.active>a:hover,
 #landing-intro .image{background-color: #f4f4f4;}
 #landing-intro .image .container{position: relative; top: -120px;}
 
-#landing-intro .team{background-color: rgba(101,163,235,1);/* position: relative; top: -120px;*/ color: #ffffff;}
+#landing-intro .team{background-color: rgba(101,163,235,1); color: #ffffff;}
+#landing-intro .team h2{color: #ffffff; font-weight: 400; padding-top: 20px;}
+#landing-intro .team span{font-size: 24px; margin-bottom: 30px; display: inline-block;  font-weight: 200;}
 
+#landing-intro .architecture h2{color: #505050; font-weight: 400; padding-top: 20px;}
+#landing-intro .architecture span{font-size: 24px; margin-bottom: 30px; display: inline-block;  font-weight: 200;}
+#landing-intro .architecture img{padding: 40px 0}
 
-#landing-intro .application h2{padding: 30px 0;}
 #landing-intro .left-intro img,
-#landing-intro .right-intro img{  box-shadow: 0 3px 25px 0 rgba(22,22,22,.15);}
+#landing-intro .right-intro img{  box-shadow: 0 3px 25px 0 rgba(22,22,22,.15); border-radius: 5px;}
 
 #landing-intro .dashboard .right-intro img,
 #landing-intro .instance-info .right-intro img,
@@ -1147,29 +1184,7 @@ li.nav-link.active>a:hover,
     width: 100%;
     max-width: 1000px;
     height: 100%;
-    max-height: 500px;
-    border-radius: 100px;}
-
-#landing-intro .team span{margin-bottom: 20px; display: inline-block;}
-
-
-/*.landing-intro{position: relative;  z-index: 10;  }
-.landing-intro h2{position: absolute;  top: 40px;  }
-.landing-intro h3{margin-top: 180px;}
-.landing-intro .row a{color: #58c4c6; display: block; text-align: right; margin-top: 30px; font-size: 13px;}
-.landing-intro .row span{font-weight: 300;}
-.landing-intro .row hr{
-    width: 50px;
-    height: 2px;
-    margin: 5px 0;
-    color: #58c4c6;}
-
-.landing-intro .row.team .text-center span{margin-bottom: 20px; display: inline-block;}
-
-.landing-intro .row{  }
-.landing-intro .row .right-text{  }
-
-*/
+    max-height: 500px;}
 
 
 
@@ -1215,6 +1230,13 @@ li.nav-link.active>a:hover,
 /* ================================================= 반응형 ================================================= */
 @media (min-width: 1200px) {
     .container{  width: 1000px;}
+
+    /* 소개 */
+
+
+
+
+
 }
 
 /* 세로 방향 타블렛부터 가로 방향 타블렛과 데스크탑까지 */
@@ -1226,7 +1248,11 @@ li.nav-link.active>a:hover,
     /* 지원 */
 
     /* 소개 */
+    .jumbotron.gn-banner .visual-img{  width: 100%;}
     #landing-intro .left-intro img,#landing-intro .right-intro img{  width: 100%;}
+
+    .right-text{margin-top: 50px;}
+    .left-text{margin-top: 50px;}
 
     #landing-intro .dashboard .right-intro img,
     #landing-intro .instance-info .right-intro img,
@@ -1250,14 +1276,19 @@ li.nav-link.active>a:hover,
     /* 지원 */
 
     /* 소개 */
+    .jumbotron.gn-banner .visual-img{  width: 100%; top: 80px;}
     #landing-intro .left-intro img,#landing-intro .right-intro img{  width: 100%;}
+    #landing-intro .container h2{margin-left: 15px;  }
+
+    .right-text{margin-top: 0px; padding-top: 15px; padding-bottom: 15px;}
+    .left-text{margin-top: 0px; padding-left: 15px; padding-top: 15px; padding-bottom: 15px;}
 
     #landing-intro .dashboard .right-intro img,
     #landing-intro .instance-info .right-intro img,
     #landing-intro .servi-sett .right-intro img,
     #landing-intro .image .right-intro img{  margin-left: 0px;  }
 
-
+    .play-btn{  top: 40%;  left: 40%;}
 
     /* 로그인 */
 
@@ -1267,7 +1298,12 @@ li.nav-link.active>a:hover,
 
 
 /* 가로 방향 전화기 이하 */
-@media (max-width: 480px) {  }
+@media (max-width: 480px) {
+
+    .jumbotron.gn-banner .visual-img{height: auto;}
+    .play-btn{top: 30%;  left: 30%;}
+
+}
 
 
 

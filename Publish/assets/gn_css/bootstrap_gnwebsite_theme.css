@@ -1165,8 +1165,12 @@ li.nav-link.active>a:hover,
 #landing-intro .image .container{position: relative; top: -120px;}
 
 #landing-intro .team{background-color: rgba(101,163,235,1); color: #ffffff;}
-#landing-intro .team h3{color: #ffffff; font-weight: 400;}
-#landing-intro .team span{font-size: 16px;}
+#landing-intro .team h2{color: #ffffff; font-weight: 400; padding-top: 20px;}
+#landing-intro .team span{font-size: 24px; margin-bottom: 30px; display: inline-block;  font-weight: 200;}
+
+#landing-intro .architecture h2{color: #505050; font-weight: 400; padding-top: 20px;}
+#landing-intro .architecture span{font-size: 24px; margin-bottom: 30px; display: inline-block;  font-weight: 200;}
+#landing-intro .architecture img{padding: 40px 0}
 
 #landing-intro .left-intro img,
 #landing-intro .right-intro img{  box-shadow: 0 3px 25px 0 rgba(22,22,22,.15); border-radius: 5px;}
@@ -1181,8 +1185,6 @@ li.nav-link.active>a:hover,
     max-width: 1000px;
     height: 100%;
     max-height: 500px;}
-
-#landing-intro .team span{margin-bottom: 20px; display: inline-block;}
 
 
 
@@ -1249,6 +1251,9 @@ li.nav-link.active>a:hover,
     .jumbotron.gn-banner .visual-img{  width: 100%;}
     #landing-intro .left-intro img,#landing-intro .right-intro img{  width: 100%;}
 
+    .right-text{margin-top: 50px;}
+    .left-text{margin-top: 50px;}
+
     #landing-intro .dashboard .right-intro img,
     #landing-intro .instance-info .right-intro img,
     #landing-intro .servi-sett .right-intro img,
@@ -1273,6 +1278,10 @@ li.nav-link.active>a:hover,
     /* 소개 */
     .jumbotron.gn-banner .visual-img{  width: 100%; top: 80px;}
     #landing-intro .left-intro img,#landing-intro .right-intro img{  width: 100%;}
+    #landing-intro .container h2{margin-left: 15px;  }
+
+    .right-text{margin-top: 0px; padding-top: 15px; padding-bottom: 15px;}
+    .left-text{margin-top: 0px; padding-left: 15px; padding-top: 15px; padding-bottom: 15px;}
 
     #landing-intro .dashboard .right-intro img,
     #landing-intro .instance-info .right-intro img,

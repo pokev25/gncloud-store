@@ -236,22 +236,25 @@ $ systemctl restart libvirtd
 
 #### 호스트 서버 가상화 메타 파일 설치
 
+지앤클라우드 플랫폼 설치 시 생성된 `/var/lib/gncloud/KVM/script`, `/var/lib/gncloud/KVM/script/initcloud` 디렉토리에 메타파일을 복사합니다.
+`user-data`는 `/var/lib/gncloud/KVM/script/initcloud` 디렉토리에 있는지 확인합니다.
+`meta-data`, `config.iso` 다운로드 후 `/var/lib/gncloud/KVM/script/initcloud` 디렉토리에 복사합니다.
+
+
+- https://github.com/gncloud/gncloud/blob/master/KVM/script/initcloud/config.iso?raw=true
+- https://github.com/gncloud/gncloud/blob/master/KVM/script/initcloud/meta-data?raw=true
+
+다음으로 아래의 쉘 파일들을 다운로드 후 `/var/lib/gncloud/KVM/script` 디렉토리에 복사합니다.
+
+- https://github.com/gncloud/gncloud/blob/master/KVM/script/add_sshkeys.sh?raw=true
+- https://github.com/gncloud/gncloud/blob/master/KVM/script/get_ipaddress.sh?raw=true
+- https://github.com/gncloud/gncloud/blob/master/KVM/script/get_vm_use.sh?raw=true
+- https://github.com/gncloud/gncloud/blob/master/KVM/script/make_sshkey.sh?raw=true
+- https://github.com/gncloud/gncloud/blob/master/KVM/script/sshkey_copy.sh?raw=true
+
+쉘 파일을 실행 가능하도록 모드 변경합니다.
+
 ```
-# 지앤클라우드 플랫폼 설치 시 생성된 /var/lib/gncloud/KVM/script, /var/lib/gncloud/KVM/script/initcloud 디렉토리에 메타파일 복사
-# user-data는 /var/lib/gncloud/KVM/script/initcloud 디렉토리에 있는지 확인 필요
-# meta-data, config.iso 다운로드 후 /var/lib/gncloud/KVM/script/initcloud 디렉토리에 복사
-  https://github.com/gncloud/gncloud/blob/master/KVM/script/initcloud/config.iso
-  https://github.com/gncloud/gncloud/blob/master/KVM/script/initcloud/meta-data
-
-# add_sshkeys.sh, get_ipaddress.sh, get_vm_use.sh, sshkey_copy.sh, make_sshkey.sh 다운로드 후
-  /var/lib/gncloud/KVM/script 디렉토리에 복사)
-  https://github.com/gncloud/gncloud/blob/master/KVM/script/add_sshkeys.sh
-  https://github.com/gncloud/gncloud/blob/master/KVM/script/get_ipaddress.sh
-  https://github.com/gncloud/gncloud/blob/master/KVM/script/get_vm_use.sh
-  https://github.com/gncloud/gncloud/blob/master/KVM/script/make_sshkey.sh
-  https://github.com/gncloud/gncloud/blob/master/KVM/script/sshkey_copy.sh
-
-# 실행 가능하도록 모드 변경
 $ cd /var/lib/gncloud/KVM/script
 $ chmod 777 *sh
 ```

@@ -1322,6 +1322,7 @@ li.nav-link.active>a:hover,
 
 /* 가로 방향 전화기 이하 */
 @media (max-width: 480px) {
+    body{margin-bottom: 132px;}
 
     .jumbotron.gn-banner .visual-img{height: auto;}
     .play-btn{top: 30%;  left: 30%;}
@@ -1329,6 +1330,8 @@ li.nav-link.active>a:hover,
     .footer .address,.footer .footer-img{  display: none;}
     .footer .col-sm-2{text-align: center;}
     .footer .gn-copyright{display: block; margin-top: 0;}
+
+
 
 }
 

@@ -204,7 +204,7 @@ $ systemctl enable libvirtd
 $ systemctl start libvirtd
 ```
 
-### 버추얼 네트워크 생성
+#### 버추얼 네트워크 생성
 ```
 $ virsh net-destroy default
 $ virsh net-undefine default
@@ -234,7 +234,7 @@ $ systemctl restart network
 $ yum -y install arp-scan
 ```
 
-### 가상화 풀 생성 및 시작
+#### 가상화 풀 생성 및 시작
 ```
 $ virsh pool-define-as default dir --target  '/var/lib/libvirt/images'
 $ virsh pool-start default
@@ -242,7 +242,7 @@ $ virsh pool-autostart gnpool
 $ systemctl restart libvirtd
 ```
 
-### 호스트 서버 가상화 메타 파일 설치
+#### 호스트 서버 가상화 메타 파일 설치
 
 ```
 # 지앤클라우드 플랫폼 설치 시 생성된 /var/lib/gncloud/KVM/script, /var/lib/gncloud/KVM/script/initcloud 디렉토리에 메타파일 복사

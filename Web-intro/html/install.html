@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="지앤클라우드,클라우드,솔루션,gncloud">
+    <meta name="description" content="지앤클라우드에 오신것을 환영합니다">
+    <!--FAVICON-->
+    <link rel="apple-touch-icon" sizes="57x57" href="/gn_images/apple-icon-57x57.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/gn_images/favicon-16x16.png">
+    <title>지앤클라우드</title>
+
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="../assets/gn_css/bootstrap_gn_theme.css">--> <!--기존 솔루션 css, 아래 css정리되면 삭제-->
+    <link rel="stylesheet" href="/gn_css/bootstrap_gnwebsite_theme.css">
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-93336641-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</head>
+
+<body>
+
+<div class="blur">
+
+    <!--랜딩페이지 HEADER-->
+    <nav class="navbar navbar-default gn-header">
+        <div class="container">
+            <div class="navbar-header">
+
+                <a class="navbar-brand" href="index.html">
+                    <img src="/gn_images/gncloud_header_logo.png" alt="지앤클라우드 웹사이트">
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse gn-header-collapsed">
+                <div class="consol-btn pull-right col-sm-2">
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- 매뉴얼 내용 시작 -->
+
+
+
+<h1>
+    <a id="user-content-지앤클라우드-설치매뉴얼" class="anchor" href="#%EC%A7%80%EC%95%A4%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EC%84%A4%EC%B9%98%EB%A7%A4%EB%89%B4%EC%96%BC" aria-hidden="true">
+        <span aria-hidden="true" class="octicon octicon-link"></span>
+    </a>지앤클라우드 설치매뉴얼
+</h1>
+<h2>
+    <a id="user-content-목차" class="anchor" href="#%EB%AA%A9%EC%B0%A8" aria-hidden="true">
+        <span aria-hidden="true" class="octicon octicon-link"></span>
+    </a>목차
+</h2>
+<ol>
+    <li>지앤클라우드 구성</li>
+    <li>지앤클라우드 플랫폼 설치</li>
+    <li>지앤클라우드 호스트 설치 (Windows - Hyper-V)</li>
+    <li>지앤클라우드 호스트 설치 (Linux - KVM)</li>
+    <li>지앤클라우드 호스트 설치 (Linux - Docker)</li>
+</ol>
+<p></p>
+<h3>
+    <a id="user-content-1-지앤클라우드-구성" class="anchor" href="#1-%EC%A7%80%EC%95%A4%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EA%B5%AC%EC%84%B1" aria-hidden="true">
+        <span aria-hidden="true" class="octicon octicon-link"></span>
+    </a>1. 지앤클라우드 구성
+</h3>
+<hr>
+<p>지앤클라우드는 지앤클라우드 관리 및 운영을 하는 플랫폼과 실제 인스턴스 및 서비스가 동작하는 호스트 들로 구분한다.</p>
+<p></p>
+<p>
+    <a href="https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/gncloud-arch.png?raw=true" target="_blank">
+        <img src="https://github.com/gncloud/gncloud-store/raw/master/Docs/platform/gncloud-arch.png?raw=true" alt="" style="max-width:100%;">
+    </a>
+</p>
+<h3>
+    <a id="user-content-2-지앤클라우드-플랫폼-설치" class="anchor" href="#2-%EC%A7%80%EC%95%A4%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%ED%94%8C%EB%9E%AB%ED%8F%BC-%EC%84%A4%EC%B9%98" aria-hidden="true">
+        <span aria-hidden="true" class="octicon octicon-link"></span>
+    </a>2. 지앤클라우드 플랫폼 설치
+</h3>
+<hr>
+<p>지앤클라우드 플랫폼은 운영자, 사용자의 인터페이스를 담당하는 Web과 실제 내부 처리를 하는 컨트롤러들로 구성 되어 있으며,
+마이크로서비스 아키텍쳐(MSA)를 따르고 있다.
+설치와 관리의 편의를 위해 지앤클라우드 플랫폼은 Docker Container 기반으로 운영 되며 docker 가 설치 되어 있으면
+OS에 상관없이 실행 가능하다.</p>
+<ul>
+    <li>
+        <p>방화벽 해제</p>
+        <p>OS 레벨에서 제공하는 방화벽에 등록을 하거나 해제를 해야한다.</p>
+        <pre>
+            <code># CentOS7 에서는
+$ systemctl disable firewalld
+$ systemctl stop firewalld
+</code>
+        </pre>
+    </li>
+    <li>
+        <p>docker 설치</p>
+        <p>
+            <a href="https://docs.docker.com/engine/installation/">https://docs.docker.com/engine/installation/</a>
+        </p>
+    </li>
+    <li>
+        <p>docker-compose 설치</p>
+        <p>
+            <a href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/</a>
+        </p>
+    </li>
+    <li>
+        <p>docker-compose 실행</p>
+        <p>
+            <a href="https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/docker-compose.yml">https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/docker-compose.yml</a>
+        </p>
+        <ul>
+            <li>docker-compose.yml 파일 다운로드</li>
+            <li>
+                <p>로그, database, docker registry 디렉토리 생성</p>
+                <pre>
+                    <code># root 권한으로 /var/log/gncloud 디렉토리 생성
+$ mkdir -p /var/log/gncloud
+$ mkdir -p /data/mysql
+$ mkdir -p /data/registry
+
+# 지앤클라우드 플랫폼 실행
+$ docker-compose up -d
+</code>
+                </pre>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <p>지앤클라우드 플랫폼 접속 및 설치 완료</p>
+        <p>브라우저를 실행하고 주소창에 "http://&lt;지앤클라우드 플랫폼 설치 ip&gt;"를 입력 하면 아래와 같은 화면이 표시된다.</p>
+        <p></p>
+        <a href="https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/login.png?raw=true" target="_blank">
+            <img src="https://github.com/gncloud/gncloud-store/raw/master/Docs/platform/login.png?raw=true" alt="" style="max-width:100%;">
+        </a>
+        <p>기본 관리자 비밀번호는 11111111 이며 처음 로그인 후 비밀번호를 변경한다.</p>
+        <ul>
+            <li>docker-compose up 화면
+
+
+                <ul>
+                    <li>docker image pull
+
+                        <a href="https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/docker-compose-up.png?raw=true" target="_blank">
+                            <img src="https://github.com/gncloud/gncloud-store/raw/master/Docs/platform/docker-compose-up.png?raw=true" alt="" style="max-width:100%;">
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>docker service start log
+
+                <a href="https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/docker-compose-up-2.png?raw=true" target="_blank">
+                    <img src="https://github.com/gncloud/gncloud-store/raw/master/Docs/platform/docker-compose-up-2.png?raw=true" alt="" style="max-width:100%;">
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>
+<p></p>
+<h3>
+    <a id="user-content-3-지앤클라우드-호스트-설치-windows---hyper-v" class="anchor" href="#3-%EC%A7%80%EC%95%A4%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%ED%98%B8%EC%8A%A4%ED%8A%B8-%EC%84%A4%EC%B9%98-windows---hyper-v" aria-hidden="true">
+        <span aria-hidden="true" class="octicon octicon-link"></span>
+    </a>3. 지앤클라우드 호스트 설치 (Windows - Hyper-V)
+</h3>
+<hr>
+<h4>
+    <a id="user-content-windows-hyper-v-프로그램-설치" class="anchor" href="#windows-hyper-v-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EC%84%A4%EC%B9%98" aria-hidden="true">
+        <span aria-hidden="true" class="octicon octicon-link"></span>
+    </a>Windows Hyper-V 프로그램 설치
+</h4>
+<ul>
+    <li>
+        <p>제어판 -&gt; 프로그램 -&gt; windows 기능 켜기/끄기 -&gt; Hyper-V 체크 후 확인 -&gt; 리부팅</p>
+        <ul>
+            <li>
+                <p>windows 10
+</p>
+                <a href="https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/hyper-v-manager.png?raw=true" target="_blank">
+                    <img src="https://github.com/gncloud/gncloud-store/raw/master/Docs/platform/hyper-v-manager.png?raw=true" alt="" style="max-width:100%;">
+                </a>
+            </li>
+            <li>
+                <p>windows server 2102
+</p>
+                <a href="https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/server2012.png?raw=true" target="_blank">
+                    <img src="https://github.com/gncloud/gncloud-store/raw/master/Docs/platform/server2012.png?raw=true" alt="" style="max-width:100%;">
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+
+
+
+
+        <!--// 매뉴얼 내용 끝 -->
+    </div>
+
+    <!--FOOTER-->
+    <footer class="footer">
+        <div class="container">
+
+            <div class="col-lg-2"><img src="/gn_images/gncloud_footer_logo.png" alt="footer logo"></div>
+            <div class="col-lg-offset-1 col-lg-5 address">
+                <address>주소 : 서울시 강남구 테헤란로 332, 현정빌딩 2층 (06212)</address>
+                <p>2F, Hyunjung Bldg., 332, Teheran-ro, Gangnam-gu, Seoul, Korea (06212)</p>
+                <address>
+                    <a href="mailto:#">contact@gnclouds.com</a>
+                    <span>Tel : 02-508-1151</span>
+                </address>
+            </div>
+            <div class="col-lg-2 address">
+                <p><a href="">약관</a></p>
+                <p><a href="">개인정보보호</a></p>
+            </div>
+            <p class="col-lg-12 text-center gn-copyright">&copy; COPYRIGHT 지앤클라우드 ALL RIGHT RESERVED.</p>
+            <div class="footer-img"></div>
+        </div>
+    </footer>
+
+</div><!--blur-->
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe id="YourIFrameID" class="embed-responsive-item" width="1920" height="1080" src="https://www.youtube.com/embed/W2FV38dbHzU?&autoplay=1" frameborder="0" allowfullscreen allowscriptaccess="always"></iframe>
+        </div>
+
+    </div>
+</div>
+
+
+<!--로그인 모달창-->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+    <div class="modal-dialog modal-sm">
+        <div class="pull-modal-container">
+            <div class="login-logo"></div>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h1>로그인</h1>
+            <br>
+            <form>
+                <div class="form-box">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <input type="text" name="user" placeholder="Username">
+                    <p class="middle-line"></p>
+                    <i class="glyphicon glyphicon-lock"></i>
+                    <input type="password" name="pass" placeholder="Password">
+                </div>
+
+                <!--체크박스-->
+                <div class="btn-id">
+                    <input class="form-inputPop" type="checkbox" id="checkbox-id"/>
+                    <i></i>
+                    <label for="checkbox-id" class="label-id">아이디 저장</label>
+                </div>
+
+                <input type="button" class="btn btn-lg btn-block btn-gn-login" value="로그인" id="login_btn"><!--로그인--></input>
+            </form>
+        </div><!--class="pull-modal-container"-->
+    </div><!--class="modal-dialog modal-sm"-->
+</div><!--login-modal-->
+
+<!-- max-width: 767px 에서 동작하는 header menu 모달창-->
+<div class="modal fade" id="menuModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+    <div class="modal-dialog modal-sm">
+        <div class="pull-modal-container">
+            <!--<div class="login-logo"></div>-->
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            <ul class="list-group">
+                <li><a href="storeMain.html">스토어</a></li>
+                <li><a href="supportMain.html">지원</a></li>
+                <li><a href="intro.html">소개</a></li>
+                <li><a href="mobileLogin.html">로그인</a></li>
+                <li><a href="joinEmail.html">회원가입</a></li>
+            </ul>
+            <button type="submit" value="submit" class="btn btn-default">클라우드 콘솔실행</button>
+
+        </div><!--class="pull-modal-container"-->
+    </div><!--class="modal-dialog modal-sm"-->
+</div><!--모바일 menu-modal-->
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../assets/gn_js/bootstrap.min.js"></script>
+<script language="javascript">
+    $(document).ready(function() {
+        if($('#myModal').data('bs.modal').isShown == true){
+            console.log("Modal is open");
+            alert("test");
+        }
+        $('#myModal').on('modal.fade', function () {
+            $('#YourIFrameID')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+        })
+    });
+
+</script>
+</body>
+</html>

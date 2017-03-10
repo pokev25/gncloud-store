@@ -55,154 +55,173 @@
 
 
 <h1>
-    <a id="user-content-지앤클라우드-설치매뉴얼" class="anchor" href="#%EC%A7%80%EC%95%A4%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EC%84%A4%EC%B9%98%EB%A7%A4%EB%89%B4%EC%96%BC" aria-hidden="true">
+    <a id="user-content-지앤클라우드-설치" class="anchor" href="#%EC%A7%80%EC%95%A4%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EC%84%A4%EC%B9%98" aria-hidden="true">
         <span aria-hidden="true" class="octicon octicon-link"></span>
-    </a>지앤클라우드 설치매뉴얼
+    </a>지앤클라우드 설치
 </h1>
 <h2>
-    <a id="user-content-목차" class="anchor" href="#%EB%AA%A9%EC%B0%A8" aria-hidden="true">
+    <a id="user-content-지앤클라우드-구성" class="anchor" href="#%EC%A7%80%EC%95%A4%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EA%B5%AC%EC%84%B1" aria-hidden="true">
         <span aria-hidden="true" class="octicon octicon-link"></span>
-    </a>목차
+    </a>지앤클라우드 구성
 </h2>
+<p>지앤클라우드는 크게 두가지로 구성됩니다.</p>
 <ol>
-    <li>지앤클라우드 구성</li>
-    <li>지앤클라우드 플랫폼 설치</li>
-    <li>지앤클라우드 호스트 설치 (Windows - Hyper-V)</li>
-    <li>지앤클라우드 호스트 설치 (Linux - KVM)</li>
-    <li>지앤클라우드 호스트 설치 (Linux - Docker)</li>
+    <li>플랫폼 : 호스트들의 관리 및 운영을 전담</li>
+    <li>호스트 : 실제 인스턴스 및 서비스가 동작하는 머신(서버 또는 PC)</li>
 </ol>
-<p></p>
-<h3>
-    <a id="user-content-1-지앤클라우드-구성" class="anchor" href="#1-%EC%A7%80%EC%95%A4%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EA%B5%AC%EC%84%B1" aria-hidden="true">
-        <span aria-hidden="true" class="octicon octicon-link"></span>
-    </a>1. 지앤클라우드 구성
-</h3>
-<hr>
-<p>지앤클라우드는 지앤클라우드 관리 및 운영을 하는 플랫폼과 실제 인스턴스 및 서비스가 동작하는 호스트 들로 구분한다.</p>
 <p></p>
 <p>
     <a href="https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/gncloud-arch.png?raw=true" target="_blank">
         <img src="https://github.com/gncloud/gncloud-store/raw/master/Docs/platform/gncloud-arch.png?raw=true" alt="" style="max-width:100%;">
     </a>
 </p>
-<h3>
-    <a id="user-content-2-지앤클라우드-플랫폼-설치" class="anchor" href="#2-%EC%A7%80%EC%95%A4%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%ED%94%8C%EB%9E%AB%ED%8F%BC-%EC%84%A4%EC%B9%98" aria-hidden="true">
+<h4>
+    <a id="user-content-플랫폼의-구성요소" class="anchor" href="#%ED%94%8C%EB%9E%AB%ED%8F%BC%EC%9D%98-%EA%B5%AC%EC%84%B1%EC%9A%94%EC%86%8C" aria-hidden="true">
         <span aria-hidden="true" class="octicon octicon-link"></span>
-    </a>2. 지앤클라우드 플랫폼 설치
-</h3>
-<hr>
-<p>지앤클라우드 플랫폼은 운영자, 사용자의 인터페이스를 담당하는 Web과 실제 내부 처리를 하는 컨트롤러들로 구성 되어 있으며,
-마이크로서비스 아키텍쳐(MSA)를 따르고 있다.
-설치와 관리의 편의를 위해 지앤클라우드 플랫폼은 Docker Container 기반으로 운영 되며 docker 가 설치 되어 있으면
-OS에 상관없이 실행 가능하다.</p>
+    </a>플랫폼의 구성요소
+</h4>
 <ul>
+    <li>Manager</li>
+    <li>Web</li>
+    <li>Scheduler</li>
+    <li>Mysql</li>
+    <li>Docker Registry</li>
+    <li>KVM Controller</li>
+    <li>Docker Controller</li>
+    <li>Hyper-V Controller</li>
+</ul>
+<p>지앤클라우드 플랫폼은 운영자, 사용자의 인터페이스를 담당하는 Web과 실제 내부 처리를 하는 컨트롤러들로 구성 되어 있으며,
+마이크로서비스 아키텍쳐(MSA)를 따르고 있습니다. 설치와 관리의 편의를 위해 지앤클라우드 플랫폼은 Docker Container 기반으로 운영 되며 docker 가 설치 되어 있으면 OS에 상관없이 어디서든 실행이 가능합니다.</p>
+<h2>
+    <a id="user-content-지앤클라우드-플랫폼-설치" class="anchor" href="#%EC%A7%80%EC%95%A4%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%ED%94%8C%EB%9E%AB%ED%8F%BC-%EC%84%A4%EC%B9%98" aria-hidden="true">
+        <span aria-hidden="true" class="octicon octicon-link"></span>
+    </a>지앤클라우드 플랫폼 설치
+</h2>
+<h5>
+    <a id="user-content-방화벽-해제" class="anchor" href="#%EB%B0%A9%ED%99%94%EB%B2%BD-%ED%95%B4%EC%A0%9C" aria-hidden="true">
+        <span aria-hidden="true" class="octicon octicon-link"></span>
+    </a>방화벽 해제
+</h5>
+<p>OS 레벨에서 제공하는 방화벽에 등록을 하거나 해제를 해야한다.</p>
+<pre>
+    <code>  # CentOS7
+  $ systemctl disable firewalld
+  $ systemctl stop firewalld
+</code>
+</pre>
+<h5>
+    <a id="user-content-docker-설치" class="anchor" href="#docker-%EC%84%A4%EC%B9%98" aria-hidden="true">
+        <span aria-hidden="true" class="octicon octicon-link"></span>
+    </a>docker 설치
+</h5>
+<p>도커의 설치는 공식 도커 홈페이지의 설치매뉴얼로 대신합니다.</p>
+<ol>
+    <li>Docker 엔진설치 : 
+        <a href="https://docs.docker.com/engine/installation/">https://docs.docker.com/engine/installation/</a>
+    </li>
+    <li>Docker-compose 설치 : 
+        <a href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/</a>
+    </li>
+</ol>
+<h5>
+    <a id="user-content-플랫폼-실행" class="anchor" href="#%ED%94%8C%EB%9E%AB%ED%8F%BC-%EC%8B%A4%ED%96%89" aria-hidden="true">
+        <span aria-hidden="true" class="octicon octicon-link"></span>
+    </a>플랫폼 실행
+</h5>
+<p>Docker 와 Docker-compose 가 정상적으로 설치완료되었다면, 이제 지앤클라우드 플랫폼을 실행할수 있습니다.</p>
+<ol>
     <li>
-        <p>방화벽 해제</p>
-        <p>OS 레벨에서 제공하는 방화벽에 등록을 하거나 해제를 해야한다.</p>
+        <p>docker-compose.yml 파일 다운로드
+
+            <a href="https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/docker-compose.yml">https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/docker-compose.yml</a>
+        </p>
+    </li>
+    <li>
+        <p>로그, database, docker registry 디렉토리 생성</p>
         <pre>
-            <code># CentOS7 에서는
-$ systemctl disable firewalld
-$ systemctl stop firewalld
+            <code># root 권한으로 디렉토리 생성
+$ sudo mkdir -p /var/log/gncloud
+$ sudo mkdir -p /data/mysql
+$ sudo mkdir -p /data/registry
 </code>
         </pre>
     </li>
     <li>
-        <p>docker 설치</p>
-        <p>
-            <a href="https://docs.docker.com/engine/installation/">https://docs.docker.com/engine/installation/</a>
-        </p>
-    </li>
-    <li>
-        <p>docker-compose 설치</p>
-        <p>
-            <a href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/</a>
-        </p>
-    </li>
-    <li>
-        <p>docker-compose 실행</p>
-        <p>
-            <a href="https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/docker-compose.yml">https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/docker-compose.yml</a>
-        </p>
-        <ul>
-            <li>docker-compose.yml 파일 다운로드</li>
-            <li>
-                <p>로그, database, docker registry 디렉토리 생성</p>
-                <pre>
-                    <code># root 권한으로 /var/log/gncloud 디렉토리 생성
-$ mkdir -p /var/log/gncloud
-$ mkdir -p /data/mysql
-$ mkdir -p /data/registry
-
-# 지앤클라우드 플랫폼 실행
-$ docker-compose up -d
+        <p>지앤클라우드 플랫폼 실행</p>
+        <pre>
+            <code>$ sudo docker-compose up -d
 </code>
-                </pre>
-            </li>
-        </ul>
-    </li>
-    <li>
-        <p>지앤클라우드 플랫폼 접속 및 설치 완료</p>
-        <p>브라우저를 실행하고 주소창에 "http://&lt;지앤클라우드 플랫폼 설치 ip&gt;"를 입력 하면 아래와 같은 화면이 표시된다.</p>
+        </pre>
+        <p>아래 화면은 
+            <code>docker-compose</code> 가 정상적으로 실행중일때의 로그입니다.
+        </p>
+        <p>
+            <strong>[Docker-compose up 화면]</strong>
+        </p>
         <p></p>
-        <a href="https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/login.png?raw=true" target="_blank">
-            <img src="https://github.com/gncloud/gncloud-store/raw/master/Docs/platform/login.png?raw=true" alt="" style="max-width:100%;">
+        <a href="https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/docker-compose-up.png?raw=true" target="_blank">
+            <img src="https://github.com/gncloud/gncloud-store/raw/master/Docs/platform/docker-compose-up.png?raw=true" alt="" style="max-width:100%;">
         </a>
-        <p>기본 관리자 비밀번호는 11111111 이며 처음 로그인 후 비밀번호를 변경한다.</p>
-        <ul>
-            <li>docker-compose up 화면
-
-
-                <ul>
-                    <li>docker image pull
-
-                        <a href="https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/docker-compose-up.png?raw=true" target="_blank">
-                            <img src="https://github.com/gncloud/gncloud-store/raw/master/Docs/platform/docker-compose-up.png?raw=true" alt="" style="max-width:100%;">
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li>docker service start log
-
-                <a href="https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/docker-compose-up-2.png?raw=true" target="_blank">
-                    <img src="https://github.com/gncloud/gncloud-store/raw/master/Docs/platform/docker-compose-up-2.png?raw=true" alt="" style="max-width:100%;">
-                </a>
-            </li>
-        </ul>
+        <p>
+            <strong>[Docker service start log]</strong>
+        </p>
+        <a href="https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/docker-compose-up-2.png?raw=true" target="_blank">
+            <img src="https://github.com/gncloud/gncloud-store/raw/master/Docs/platform/docker-compose-up-2.png?raw=true" alt="" style="max-width:100%;">
+        </a>
     </li>
-</ul>
+</ol>
+<h5>
+    <a id="user-content-플랫폼-접속" class="anchor" href="#%ED%94%8C%EB%9E%AB%ED%8F%BC-%EC%A0%91%EC%86%8D" aria-hidden="true">
+        <span aria-hidden="true" class="octicon octicon-link"></span>
+    </a>플랫폼 접속
+</h5>
+<p>브라우저로 
+    <code>http://&lt;설치IP주소&gt;</code>에 접속하면 아래와 같은 로그인화면이 나타납니다. 기본 관리자 아이디는
+    <code>root</code> 이고 비밀번호는
+    <code>11111111</code> 이며, 차후에 프로필 메뉴에서 비밀번호를 변경할 수 있습니다.
+</p>
 <p></p>
-<h3>
-    <a id="user-content-3-지앤클라우드-호스트-설치-windows---hyper-v" class="anchor" href="#3-%EC%A7%80%EC%95%A4%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%ED%98%B8%EC%8A%A4%ED%8A%B8-%EC%84%A4%EC%B9%98-windows---hyper-v" aria-hidden="true">
+<p>
+    <a href="https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/login.png?raw=true" target="_blank">
+        <img src="https://github.com/gncloud/gncloud-store/raw/master/Docs/platform/login.png?raw=true" alt="" style="max-width:100%;">
+    </a>
+</p>
+<h2>
+    <a id="user-content-hyper-v-호스트-설치" class="anchor" href="#hyper-v-%ED%98%B8%EC%8A%A4%ED%8A%B8-%EC%84%A4%EC%B9%98" aria-hidden="true">
         <span aria-hidden="true" class="octicon octicon-link"></span>
-    </a>3. 지앤클라우드 호스트 설치 (Windows - Hyper-V)
-</h3>
-<hr>
-<h4>
-    <a id="user-content-windows-hyper-v-프로그램-설치" class="anchor" href="#windows-hyper-v-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EC%84%A4%EC%B9%98" aria-hidden="true">
+    </a>Hyper-V 호스트 설치
+</h2>
+<h5>
+    <a id="user-content-windows-hyper-v-설치" class="anchor" href="#windows-hyper-v-%EC%84%A4%EC%B9%98" aria-hidden="true">
         <span aria-hidden="true" class="octicon octicon-link"></span>
-    </a>Windows Hyper-V 프로그램 설치
-</h4>
+    </a>Windows Hyper-V 설치
+</h5>
+<p>설치순서는 다음과 같습니다.</p>
 <ul>
-    <li>
-        <p>제어판 -&gt; 프로그램 -&gt; windows 기능 켜기/끄기 -&gt; Hyper-V 체크 후 확인 -&gt; 리부팅</p>
-        <ul>
-            <li>
-                <p>windows 10
-</p>
-                <a href="https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/hyper-v-manager.png?raw=true" target="_blank">
-                    <img src="https://github.com/gncloud/gncloud-store/raw/master/Docs/platform/hyper-v-manager.png?raw=true" alt="" style="max-width:100%;">
-                </a>
-            </li>
-            <li>
-                <p>windows server 2102
-</p>
-                <a href="https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/server2012.png?raw=true" target="_blank">
-                    <img src="https://github.com/gncloud/gncloud-store/raw/master/Docs/platform/server2012.png?raw=true" alt="" style="max-width:100%;">
-                </a>
-            </li>
-        </ul>
-    </li>
+    <li>제어판 -&gt; 프로그램 -&gt; windows 기능 켜기/끄기 -&gt; Hyper-V 체크 후 확인 -&gt; 리부팅</li>
 </ul>
+<h5>
+    <a id="user-content-windows-10" class="anchor" href="#windows-10" aria-hidden="true">
+        <span aria-hidden="true" class="octicon octicon-link"></span>
+    </a>windows 10
+</h5>
+<p></p>
+<p>
+    <a href="https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/hyper-v-manager.png?raw=true" target="_blank">
+        <img src="https://github.com/gncloud/gncloud-store/raw/master/Docs/platform/hyper-v-manager.png?raw=true" alt="" style="max-width:100%;">
+    </a>
+</p>
+<h5>
+    <a id="user-content-windows-server-2102" class="anchor" href="#windows-server-2102" aria-hidden="true">
+        <span aria-hidden="true" class="octicon octicon-link"></span>
+    </a>windows server 2102
+</h5>
+<p></p>
+<p>
+    <a href="https://github.com/gncloud/gncloud-store/blob/master/Docs/platform/server2012.png?raw=true" target="_blank">
+        <img src="https://github.com/gncloud/gncloud-store/raw/master/Docs/platform/server2012.png?raw=true" alt="" style="max-width:100%;">
+    </a>
+</p>
 
 
 
